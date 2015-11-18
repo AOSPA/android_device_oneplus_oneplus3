@@ -269,7 +269,7 @@ service imsdatadaemon /system/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
+    group system wifi radio inet log diag readproc
     disabled
 
 service pd_mapper /system/vendor/bin/pd-mapper
