@@ -382,13 +382,3 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice
     start dashd
-
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKLG
-	class late_start
-	disabled
-	oneshot
-
-service iprenew_eth0 /system/bin/dhcpcd -n
-	class late_start
-	disabled
-	oneshot
