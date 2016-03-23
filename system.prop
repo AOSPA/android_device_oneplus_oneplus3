@@ -226,3 +226,6 @@ ro.sys.fw.bg_apps_limit=60
 
 #Camera fullscreen doesn't show navigation bar
 Camera.no_navigation_bar=true
+
+#set cutoff voltage to 3400mV
+ro.cutoff_voltage_mv=3400
