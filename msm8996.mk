@@ -171,3 +171,7 @@ PRODUCT_AAPT_CONFIG += xlarge large
 #Android fingerprint daemon implementation
 PRODUCT_PACKAGES += \
     fingerprintd
+
+#for android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
