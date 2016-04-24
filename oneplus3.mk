@@ -159,3 +159,7 @@ PRODUCT_PACKAGES += \
     lowi.conf \
     sap.conf \
     xtwifi.conf
+
+# Doze mode
+PRODUCT_PACKAGES += \
+    OneplusDoze
