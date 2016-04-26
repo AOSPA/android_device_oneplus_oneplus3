@@ -37,7 +37,7 @@ USE_CAMERA_STUB := true
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
-BOARD_USES_WIPOWER := true
+BOARD_USES_WIPOWER := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/qcom/common
 
 USE_OPENGL_RENDERER := true
