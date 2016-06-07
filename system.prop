@@ -178,6 +178,9 @@ audio.parser.ip.buffer.size=262144
 #property to enable WFD WL solution
 ro.vendor.wl_library=libqti-wl.so
 
+# Dexopt everything inside the boot image
+dalvik.vm.image-dex2oat-filter=everything
+
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
