@@ -92,3 +92,5 @@ TARGET_USES_64_BIT_BINDER := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
+
+BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
