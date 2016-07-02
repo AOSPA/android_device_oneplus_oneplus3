@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-const char *_ZN7android18gClientPackageNameE[] = "client-package-name";
+const char _ZN7android18gClientPackageNameE[] = "client-package-name";
 
