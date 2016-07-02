@@ -149,3 +149,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += power.msm8996
 
 PRODUCT_PACKAGES += lights.qcom
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8996 \
+    flp.conf \
+    gps.conf \
+    izat.conf \
+    lowi.conf \
+    sap.conf \
+    xtwifi.conf
