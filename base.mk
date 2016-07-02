@@ -169,12 +169,6 @@ CONNECTIVITY += services-ext
 CURL := libcurl
 CURL += curl
 
-#DASH
-DASH := libdashplayer
-DASH += libqcmediaplayer
-DASH += qcmediaplayer
-DASH += libextmedia_jni
-
 #EXTENDEDMEDIA_EXT
 EXTENDEDMEDIA_EXT := libextendedmediaextractor
 EXTENDEDMEDIA_EXT += libextendedmediaextractor_jni
@@ -672,7 +666,6 @@ PRODUCT_PACKAGES += $(CIMAX)
 PRODUCT_PACKAGES += $(CONNECTIVITY)
 PRODUCT_PACKAGES += $(CHARGER)
 PRODUCT_PACKAGES += $(CURL)
-PRODUCT_PACKAGES += $(DASH)
 PRODUCT_PACKAGES += $(DATA_OS)
 PRODUCT_PACKAGES += $(E2FSPROGS)
 PRODUCT_PACKAGES += $(EBTABLES)
