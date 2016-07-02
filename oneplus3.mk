@@ -12,11 +12,6 @@ PRODUCT_COPY_FILES += device/oneplus/oneplus3/media/media_profiles.xml:system/et
 
 $(call inherit-product, device/oneplus/oneplus3/common64.mk)
 
-PRODUCT_NAME := oneplus3
-PRODUCT_DEVICE := oneplus3
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := MSM8996 for arm64
-
 PRODUCT_BOOT_JARS += tcmiface
 
 ifneq ($(strip $(QCPATH)),)
