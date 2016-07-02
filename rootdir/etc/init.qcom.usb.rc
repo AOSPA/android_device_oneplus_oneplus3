@@ -29,9 +29,6 @@ on init
     write /sys/class/android_usb/android0/f_rndis/wceis 1
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
 
-on charger
-    setprop sys.usb.config mass_storage
-
 on fs
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
@@ -116,7 +113,7 @@ on property:sys.usb.config=diag,serial_tty,serial_smd,adb
 on property:sys.usb.config=diag,adb
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 05C6
-    write /sys/class/android_usb/android0/idProduct 901D
+    write /sys/class/android_usb/android0/idProduct 676C
     write /sys/class/android_usb/android0/f_diag/clients diag
     write /sys/class/android_usb/android0/functions diag,adb
     write /sys/class/android_usb/android0/enable 1
@@ -710,7 +707,7 @@ on property:sys.usb.config=rndis
 
 on property:sys.usb.config=rndis,none
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 05C6
+    write /sys/class/android_usb/android0/idVendor 2A70#modify from 05C6 to 2A70 by jiachenghui for USB VID customized,2015-10-23 #VENDOR_EDIT
     write /sys/class/android_usb/android0/idProduct F00E
     write /sys/class/android_usb/android0/functions rndis
     write /sys/class/android_usb/android0/enable 1
@@ -848,7 +845,7 @@ on property:sys.usb.config=rndis,diag,diag_mdm,diag_qsc,adb
 
 on property:sys.usb.config=ptp
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 05C6
+    write /sys/class/android_usb/android0/idVendor 2A70#modify from 05C6 to 2A70 by jiachenghui for USB VID customized,2015-10-23 #VENDOR_EDIT
     write /sys/class/android_usb/android0/idProduct 904D
     write /sys/class/android_usb/android0/functions ptp
     write /sys/class/android_usb/android0/enable 1
@@ -865,7 +862,7 @@ on property:sys.usb.config=ptp,adb
 
 on property:sys.usb.config=mtp
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 05C6
+    write /sys/class/android_usb/android0/idVendor 2A70#modify from 05C6 to 2A70 by jiachenghui for USB VID customized,2015-10-23 #VENDOR_EDIT
     write /sys/class/android_usb/android0/idProduct F003
     write /sys/class/android_usb/android0/functions mtp
     write /sys/class/android_usb/android0/enable 1
