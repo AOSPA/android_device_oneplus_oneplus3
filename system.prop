@@ -233,3 +233,5 @@ dalvik.vm.heapminfree=512m
 dalvik.vm.heapmaxfree=8m
 
 persist.radio.force_on_dc=true
+
+ro.sf.lcd_density=480
