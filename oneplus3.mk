@@ -23,14 +23,10 @@ endif
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
-# Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/oneplus/oneplus3/audio_policy.conf:system/etc/audio_policy.conf
-
-PRODUCT_COPY_FILES += \
+    device/oneplus/oneplus3/audio/audio_policy.conf:system/etc/audio_policy.conf \
     device/oneplus/oneplus3/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
     device/oneplus/oneplus3/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/oneplus/oneplus3/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/oneplus/oneplus3/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
     device/oneplus/oneplus3/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
     device/oneplus/oneplus3/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
