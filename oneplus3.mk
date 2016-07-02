@@ -147,3 +147,5 @@ PRODUCT_PACKAGES += \
     fs_config_files
 
 PRODUCT_PACKAGES += power.msm8996
+
+PRODUCT_PACKAGES += lights.qcom
