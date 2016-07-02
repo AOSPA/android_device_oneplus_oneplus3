@@ -159,3 +159,7 @@ PRODUCT_PACKAGES += \
 # Doze mode
 PRODUCT_PACKAGES += \
     OneplusDoze
+
+# Camera extension library
+PRODUCT_PACKAGES +=
+    libop3_cam
