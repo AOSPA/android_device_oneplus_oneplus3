@@ -1,5 +1,5 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
-TARGET_USES_NQ_NFC := false
+TARGET_USES_NQ_NFC := true
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
