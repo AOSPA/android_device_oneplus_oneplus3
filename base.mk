@@ -150,7 +150,6 @@ BT := javax.btobex
 BT += libattrib_static
 BT += hcidump.sh
 BT += libbt-vendor
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/qcom/common
 
 #C2DColorConvert
 C2DCC := libc2dcolorconvert
@@ -655,52 +654,6 @@ WLAN += pronto_wlan.ko
 FSTMAN := fstman
 FSTMAN += fstman.ini
 
-PRODUCT_PACKAGES := \
-    AccountAndSyncSettings \
-    DeskClock \
-    AlarmProvider \
-    Bluetooth \
-    Calculator \
-    Calendar \
-    Camera \
-    CellBroadcastReceiver \
-    CertInstaller \
-    DrmProvider \
-    Email \
-    Gallery2 \
-    LatinIME \
-    Mms \
-    Music \
-    Phone \
-    Provision \
-    Protips \
-    QuickSearchBox \
-    Settings \
-    Sync \
-    SystemUI \
-    Updater \
-    CalendarProvider \
-    SyncProvider \
-    IM \
-    VoiceDialer \
-    FMRadio \
-    FM2 \
-    FMRadio \
-    FMRecord \
-    VideoEditor
-
-
-ifneq ($(TARGET_USES_AOSP),true)
-PRODUCT_PACKAGES += \
-       BluetoothExt \
-       BTTestApp \
-       HiddTestApp \
-       BTLogKit \
-       a4wpservice \
-       BTLogSave \
-       wipowerservice
-endif
-
 PRODUCT_PACKAGES += $(ALSA_HARDWARE)
 PRODUCT_PACKAGES += $(ALSA_UCM)
 PRODUCT_PACKAGES += $(ANGLE)
@@ -860,14 +813,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/qcom/common/media/media_profiles.xml:system/etc/media_profiles.xml \
-    device/qcom/common/media/media_codecs.xml:system/etc/media_codecs.xml
-
-# enable overlays to use our version of
-# source/resources etc.
-DEVICE_PACKAGE_OVERLAYS += device/qcom/common/device/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/qcom/common/product/overlay
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # include additional build utilities
 -include device/qcom/common/utils.mk

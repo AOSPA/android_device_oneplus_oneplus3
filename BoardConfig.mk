@@ -16,32 +16,20 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-ifneq ($(TARGET_USES_AOSP), true)
 TARGET_2ND_CPU_VARIANT := cortex-a53
-else
-TARGET_2ND_CPU_VARIANT := cortex-a9
-endif
-
-TARGET_NO_BOOTLOADER := false
-TARGET_NO_KERNEL := false
-BOOTLOADER_GCC_VERSION := arm-eabi-4.8
-BOOTLOADER_PLATFORM := msm8996 # use msm8996 LK configuration
 
 TARGET_USES_OVERLAY := true
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 
-BOARD_USES_GENERIC_AUDIO := true
-USE_CAMERA_STUB := true
 -include $(QCPATH)/common/msm8996/BoardConfigVendor.mk
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
 BOARD_USES_WIPOWER := false
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/qcom/common
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oneplus/oneplus3/bluetooth
 
 USE_OPENGL_RENDERER := true
-BOARD_USE_LEGACY_UI := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -57,13 +45,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
-ifneq ($(TARGET_USES_AOSP),true)
 TARGET_USES_QCOM_BSP := true
-endif
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
 
-BOARD_EGL_CFG := device/qcom/$(TARGET_BOARD_PLATFORM)/egl.cfg
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_KERNEL_BASE        := 0x80000000
@@ -122,11 +107,6 @@ TARGET_KERNEL_APPEND_DTB := true
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := false
 
-#Add NON-HLOS files for ota upgrade
-ADD_RADIO_FILES := true
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
-TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
-
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 #Add support for firmare upgrade on 8996
@@ -134,3 +114,5 @@ HAVE_SYNAPTICS_DSX_FW_UPGRADE := true
 
 # Enable MDTP (Mobile Device Theft Protection)
 TARGET_USE_MDTP := true
+
+TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
