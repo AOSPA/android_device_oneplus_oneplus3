@@ -1,5 +1,4 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
-BOARD_HAVE_QCOM_FM := true
 TARGET_USES_NQ_NFC := false
 
 #QTIC flag
@@ -21,9 +20,6 @@ PRODUCT_BOOT_JARS += com.qti.location.sdk
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-ifeq ($(strip $(BOARD_HAVE_QCOM_FM)),true)
-PRODUCT_BOOT_JARS += qcom.fmradio
-endif #BOARD_HAVE_QCOM_FM
 PRODUCT_BOOT_JARS += qcmediaplayer
 
 #Android EGL implementation
