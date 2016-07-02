@@ -13,8 +13,6 @@ PRODUCT_COPY_FILES += device/oneplus/oneplus3/media/media_profiles.xml:system/et
 $(call inherit-product, device/oneplus/oneplus3/common64.mk)
 $(call inherit-product-if-exists, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
-PRODUCT_BOOT_JARS += tcmiface
-
 ifneq ($(strip $(QCPATH)),)
 PRODUCT_BOOT_JARS += WfdCommon
 PRODUCT_BOOT_JARS += com.qti.dpmframework
@@ -119,7 +117,6 @@ PRODUCT_COPY_FILES += \
 
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
-endif # TARGET_USES_NQ_NFC
 
 # Reduce client buffer size for fast audio output tracks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -161,7 +158,7 @@ PRODUCT_PACKAGES += \
     OneplusDoze
 
 # Camera extension library
-PRODUCT_PACKAGES +=
+PRODUCT_PACKAGES += \
     libop3_cam
 
 # Keylayouts
