@@ -1,23 +1,19 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8996/overlay
+DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
 BOARD_HAVE_QCOM_FM := true
 TARGET_USES_NQ_NFC := false
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
-# copy customized media_profiles and media_codecs xmls for msm8996
-PRODUCT_COPY_FILES += device/qcom/msm8996/media/media_profiles.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8996/media/media_codecs.xml:system/etc/media_codecs.xml \
-                      device/qcom/msm8996/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
+# copy customized media_profiles and media_codecs xmls for oneplus3
+PRODUCT_COPY_FILES += device/oneplus/oneplus3/media/media_profiles.xml:system/etc/media_profiles.xml \
+                      device/oneplus/oneplus3/media/media_codecs.xml:system/etc/media_codecs.xml \
+                      device/oneplus/oneplus3/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
-# Override heap growth limit due to high display density on device
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=256m
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, device/qcom/common/common64.mk)
+$(call inherit-product, device/oneplus/oneplus3/common64.mk)
 
-PRODUCT_NAME := msm8996
-PRODUCT_DEVICE := msm8996
+PRODUCT_NAME := oneplus3
+PRODUCT_DEVICE := oneplus3
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := MSM8996 for arm64
 
@@ -41,32 +37,29 @@ PRODUCT_PACKAGES += libGLES_android
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8996/audio_policy.conf:system/etc/audio_policy.conf
+    device/oneplus/oneplus3/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8996/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
-    device/qcom/msm8996/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8996/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8996/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
-    device/qcom/msm8996/audio/mixer_paths_dtp.xml:system/etc/mixer_paths_dtp.xml \
-    device/qcom/msm8996/audio/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
-    device/qcom/msm8996/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    device/qcom/msm8996/audio/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
-    device/qcom/msm8996/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/qcom/msm8996/audio/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    device/qcom/msm8996/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/qcom/msm8996/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/qcom/msm8996/listen_platform_info.xml:system/etc/listen_platform_info.xml
+    device/oneplus/oneplus3/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
+    device/oneplus/oneplus3/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/oneplus/oneplus3/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/oneplus/oneplus3/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
+    device/oneplus/oneplus3/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
+    device/oneplus/oneplus3/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/oneplus/oneplus3/audio/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
+    device/oneplus/oneplus3/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    device/oneplus/oneplus3/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/oneplus/oneplus3/listen_platform_info.xml:system/etc/listen_platform_info.xml
 
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8996/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
-    device/qcom/msm8996/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/msm8996/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    device/qcom/msm8996/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/qcom/msm8996/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    device/qcom/msm8996/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    device/qcom/msm8996/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny
+    device/oneplus/oneplus3/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
+    device/oneplus/oneplus3/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/oneplus/oneplus3/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    device/oneplus/oneplus3/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    device/oneplus/oneplus3/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    device/oneplus/oneplus3/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    device/oneplus/oneplus3/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -81,7 +74,7 @@ PRODUCT_PACKAGES += \
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8996/sensors/hals.conf:system/etc/sensors/hals.conf
+    device/oneplus/oneplus3/sensors/hals.conf:system/etc/sensors/hals.conf
 
 # Sensor features
 PRODUCT_COPY_FILES += \
@@ -106,31 +99,20 @@ PRODUCT_COPY_FILES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8996/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    device/oneplus/oneplus3/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
-ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
+# NFC
 PRODUCT_PACKAGES += \
-    NQNfcNci \
-    libnqnfc-nci \
-    libnqnfc_nci_jni \
-    nfc_nci.nqx.default \
-    libp61-jcop-kit \
-    com.nxp.nfc.nq \
-    com.nxp.nfc.nq.xml \
-    libpn547_fw.so \
-    libpn548ad_fw.so \
-    libnfc-brcm.conf \
-    libnfc-nxp.conf \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
-    Tag \
     com.android.nfc_extras \
-    libQPayJNI \
-    com.android.qti.qpay \
-    com.android.qti.qpay.xml \
-    SmartcardService \
-    org.simalliance.openmobileapi \
-    org.simalliance.openmobileapi.xml
+    com.nxp.nfc.nq \
+    NQNfcNci \
+    nfc_nci.nqx.default \
+    Tag
+
+PRODUCT_COPY_FILES += \
+    device/oneplus/oneplus3/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/oneplus/oneplus3/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    device/oneplus/oneplus3/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
 
 PRODUCT_COPY_FILES += \
     packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
