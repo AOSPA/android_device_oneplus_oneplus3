@@ -116,3 +116,5 @@ TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 TARGET_USES_64_BIT_BINDER := true
 
 USE_CUSTOM_AUDIO_POLICY := 1
+
+TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
