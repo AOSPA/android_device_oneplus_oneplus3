@@ -163,3 +163,8 @@ PRODUCT_PACKAGES += \
 # Camera extension library
 PRODUCT_PACKAGES +=
     libop3_cam
+
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    device/oneplus/oneplus3/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
+    device/oneplus/oneplus3/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
