@@ -28,12 +28,11 @@ PRODUCT_COPY_FILES += \
     device/oneplus/oneplus3/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
     device/oneplus/oneplus3/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/oneplus/oneplus3/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
-    device/oneplus/oneplus3/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
     device/oneplus/oneplus3/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
     device/oneplus/oneplus3/audio/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
     device/oneplus/oneplus3/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     device/oneplus/oneplus3/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/oneplus/oneplus3/listen_platform_info.xml:system/etc/listen_platform_info.xml
+    device/oneplus/oneplus3/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml
 
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
