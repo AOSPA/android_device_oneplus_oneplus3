@@ -1,0 +1,3 @@
+type btnvtool, bluetoothdomain;
+type btnvtool_exec, exec_type, file_type;
+domain_auto_trans(init, btnvtool_exec, bluetooth)
