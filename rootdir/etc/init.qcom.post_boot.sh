@@ -178,7 +178,7 @@ function configure_memory_parameters() {
 	fi
 	echo N > /sys/module/lpm_levels/parameters/sleep_disabled
         # Starting io prefetcher service
-        start iop
+        #start iop
 
         rm /data/system/perfd/default_values
         setprop ro.min_freq_0 384000
