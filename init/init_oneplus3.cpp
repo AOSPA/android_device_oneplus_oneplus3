@@ -41,14 +41,11 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_get("ro.boot.rf_version", rf_version);
 
-    if (strstr(rf_version, "11")) {
-        /* Chinese */
-        property_set("ro.product.model", "ONE A3000");
+    if (strstr(rf_version, "11") || strstr(rf_version, "31")) {
+        /* Chinese/America*/
+        property_set("ro.product.model", "ONEPLUS A3000");
     } else if (strstr(rf_version, "21")) {
         /* Asia/Europe */
-        property_set("ro.product.model", "ONE A3003");
-    } else if (strstr(rf_version, "31")) {
-        /* America */
-        property_set("ro.product.model", "ONE A3000");
+        property_set("ro.product.model", "ONEPLUS A3003");
     }
 }
