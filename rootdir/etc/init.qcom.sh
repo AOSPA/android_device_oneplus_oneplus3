@@ -315,6 +315,7 @@ if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_versio
 fi
 cp /firmware/image/modem_pr/mbn_ota.txt /data/misc/radio/modem_config
 chown radio.radio /data/misc/radio/modem_config/mbn_ota.txt
+cp -r /system/etc/firmware/mbn_ota/* /data/misc/radio/modem_config
 echo 1 > /data/misc/radio/copy_complete
 
 #check build variant for printk logging
