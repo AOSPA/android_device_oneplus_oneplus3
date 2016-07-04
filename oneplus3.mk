@@ -55,10 +55,6 @@ PRODUCT_PACKAGES += \
     antradio_app \
     libvolumelistener
 
-# Sensor HAL conf file
-PRODUCT_COPY_FILES += \
-    device/oneplus/oneplus3/sensors/hals.conf:system/etc/sensors/hals.conf
-
 # Sensor features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
