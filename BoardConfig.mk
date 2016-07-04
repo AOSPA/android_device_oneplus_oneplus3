@@ -63,8 +63,11 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 # GPS
 TARGET_NO_RPC := true
 
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+# Init
+TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus3/init/init_oneplus3.cpp
 
 #Enable Peripheral Manager
 TARGET_PER_MGR_ENABLED := true

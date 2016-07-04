@@ -14,8 +14,6 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-# Start in global mode
-ro.telephony.default_network=22,22
 
 debug.sf.hw=1
 debug.egl.hw=1
@@ -73,11 +71,6 @@ bt.max.hfpclient.connections=1
 
 # System property for cabl
 ro.qualcomm.cabl=2
-
-#
-# System props for telephony
-# System prop to turn on CdmaLTEPhone always
-telephony.lteOnCdmaDevice=1,1
 
 #Simulate sdcard on /data/media
 #
@@ -197,9 +190,6 @@ audio.dolby.ds2.hardbypass=false
 audio.offload.passthrough=false
 audio.offload.multiple.enabled=true
 
-# enable navigation bar
-qemu.hw.mainkeys=0
-
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
@@ -229,7 +219,5 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=512m
 dalvik.vm.heapmaxfree=8m
-
-persist.radio.force_on_dc=true
 
 ro.sf.lcd_density=480
