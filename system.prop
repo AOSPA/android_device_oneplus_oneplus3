@@ -1,5 +1,5 @@
 #
-# system.prop for msm8996
+# system.prop for Oneplus 3
 #
 
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
@@ -172,6 +172,11 @@ ro.vendor.wl_library=libqti-wl.so
 ro.vendor.gt_library=libqti-gt.so
 ro.vendor.at_library=libqti-at.so
 sys.games.gt.prof=1
+
+# GPS
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.location
+ro.gps.agps_provider=1
 
 #hwui properties
 ro.hwui.texture_cache_size=96
