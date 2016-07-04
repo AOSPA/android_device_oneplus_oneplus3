@@ -207,7 +207,6 @@ GPS_HARDWARE += libloc_ds_api
 HDMID := hdmid
 
 #HOSTAPD
-HOSTAPD := hostapd
 HOSTAPD += hostapd_cli
 HOSTAPD += nt_password_hash
 HOSTAPD += hlr_auc_gw
@@ -602,7 +601,6 @@ QRGND += qrngtest
 #WPA
 WPA += wpa_supplicant_wcn.conf
 WPA += wpa_supplicant_ath6kl.conf
-WPA += wpa_supplicant
 WPA += hs20-osu-client
 
 #ZLIB

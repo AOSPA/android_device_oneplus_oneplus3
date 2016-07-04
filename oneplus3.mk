@@ -44,6 +44,18 @@ PRODUCT_COPY_FILES += \
     device/oneplus/oneplus3/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
     device/oneplus/oneplus3/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny
 
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    hostapd_default.conf \
+    hostapd.deny \
+    hostapd.accept \
+    hostapd \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf
+
 # MIDI feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
