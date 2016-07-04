@@ -750,9 +750,6 @@ PRODUCT_PACKAGES += tcmiface
 # healthd libaray expanded for mode charger
 PRODUCT_PACKAGES += libhealthd.msm
 
-#intialise PRODUCT_PACKAGES_DEBUG list for debug modules
-PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh
-
 
 #NANOPB_LIBRARY_NAME := libnanopb-c-2.8.0
 
