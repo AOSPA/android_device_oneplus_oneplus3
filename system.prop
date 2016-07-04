@@ -168,11 +168,6 @@ audio.parser.ip.buffer.size=262144
 #property to enable WFD WL solution
 ro.vendor.wl_library=libqti-wl.so
 
-#property for vendor specific library
-ro.vendor.gt_library=libqti-gt.so
-ro.vendor.at_library=libqti-at.so
-sys.games.gt.prof=1
-
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
