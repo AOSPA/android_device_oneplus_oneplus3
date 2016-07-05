@@ -203,7 +203,7 @@ audio.offload.multiple.enabled=true
 persist.hwc.enable_vds=1
 
 #Enable stm events
-ro.dbg.coresight.config=stm_events
+ro.dbg.coresight.config=none
 #property to enable fingerprint
 persist.qfp=false
 
