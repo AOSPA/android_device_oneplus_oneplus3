@@ -23,6 +23,14 @@ endif
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
+# Audio
+PRODUCT_PACKAGES += \
+    audiod \
+    audio_amplifier.msm8996 \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing
+
 PRODUCT_COPY_FILES += \
     device/oneplus/oneplus3/audio/audio_policy.conf:system/etc/audio_policy.conf \
     device/oneplus/oneplus3/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
@@ -107,6 +115,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
+
+#OMX
+PRODUCT_PACKAGES += \
+    libdivxdrmdecrypt \
+    libOmxSwVencHevc \
+    libOmxVidcCommon
 
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
