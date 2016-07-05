@@ -24,6 +24,9 @@ persist.radio.data_ltd_sys_ind=1
 persist.radio.rat_on=combine
 telephony.lteOnGsmDevice=1
 
+# Force enable FastDormancy
+persist.env.fastdorm.enabled=true
+
 debug.sf.hw=1
 debug.egl.hw=1
 debug.gralloc.enable_fb_ubwc=1
