@@ -87,10 +87,6 @@ bt.max.hfpclient.connections=1
 # System property for cabl
 ro.qualcomm.cabl=2
 
-#Simulate sdcard on /data/media
-#
-persist.fuse_sdcard=true
-
 #system prop for Bluetooth SOC type
 qcom.bluetooth.soc=rome
 
