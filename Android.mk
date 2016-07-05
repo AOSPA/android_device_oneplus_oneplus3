@@ -1,3 +1,5 @@
+ifeq ($(TARGET_DEVICE),oneplus3)
+
 #Create symbolic links
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9320; \
     ln -sf /data/misc/audio/wcd9320_anc.bin \
@@ -17,3 +19,5 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
 	    $(TARGET_OUT)/etc/firmware/msadp)
 include $(all-subdir-makefiles)
+
+endif
