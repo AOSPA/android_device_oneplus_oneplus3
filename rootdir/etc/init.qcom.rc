@@ -741,6 +741,7 @@ service cnss_diag /system/bin/cnss_diag -q -f
     user root
     group root
     oneshot
+    disabled
 
 service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
