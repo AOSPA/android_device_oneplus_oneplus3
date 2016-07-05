@@ -182,6 +182,6 @@ function configure_memory_parameters() {
         #start iop
 
         rm /data/system/perfd/default_values
-        setprop ro.min_freq_0 384000
-        setprop ro.min_freq_4 384000
+        setprop ro.min_freq_0 307200
+        setprop ro.min_freq_4 307200
         start perfd
