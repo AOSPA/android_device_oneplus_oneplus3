@@ -75,6 +75,9 @@ AUDIO_FEATURE_ENABLED_SSR := false
 USE_CUSTOM_AUDIO_POLICY := 1
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
+# Gestures
+TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+
 # GPS
 TARGET_NO_RPC := true
 
