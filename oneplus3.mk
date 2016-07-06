@@ -125,14 +125,6 @@ PRODUCT_PACKAGES += \
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 
-# Reduce client buffer size for fast audio output tracks
-PRODUCT_PROPERTY_OVERRIDES += \
-    af.fast_track_multiplier=1
-
-# Low latency audio buffer size in frames
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio_hal.period_size=192
-
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1
 
