@@ -138,6 +138,8 @@
 	fi
 	echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 
+        sleep 30
+
         # Reset the read_ahead_kb to 512
         echo 512 > /sys/block/dm-0/queue/read_ahead_kb
         echo 512 > /sys/block/sda/queue/read_ahead_kb
