@@ -82,7 +82,7 @@
         echo "0:1324800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
         echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
         # Setting b.L scheduler parameters
-        echo 0 > /proc/sys/kernel/sched_boost
+        echo 1 > /proc/sys/kernel/sched_boost
         echo 1 > /proc/sys/kernel/sched_migration_fixup
         echo 45 > /proc/sys/kernel/sched_upmigrate
         echo 45 > /proc/sys/kernel/sched_downmigrate
