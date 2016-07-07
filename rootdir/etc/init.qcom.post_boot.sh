@@ -137,6 +137,12 @@
 		echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 	fi
 	echo N > /sys/module/lpm_levels/parameters/sleep_disabled
+
+        # switch to CFQ
+        echo "cfq" > /sys/block/sda/queue/scheduler
+        echo "cfq" > /sys/block/sde/queue/scheduler
+        echo "cfq" > /sys/block/dm-0/queue/scheduler
+
         # Starting io prefetcher service
         #start iop
 
