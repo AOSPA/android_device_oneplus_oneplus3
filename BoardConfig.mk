@@ -126,12 +126,9 @@ USE_SENSOR_MULTI_HAL := true
 
 TARGET_LDPRELOAD := libNimsWrap.so
 
-TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
-
 TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
 TARGET_USES_64_BIT_BINDER := true
-
 
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
