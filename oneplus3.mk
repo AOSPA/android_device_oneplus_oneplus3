@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += libGLES_android
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
-    audio_amplifier.msm8996 \
+    audio.r_submix.default \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing
