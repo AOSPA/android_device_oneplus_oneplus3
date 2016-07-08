@@ -134,10 +134,6 @@ PRODUCT_AAPT_CONFIG += xlarge large
 PRODUCT_PACKAGES += \
     fingerprintd
 
-#for android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 PRODUCT_PACKAGES += power.msm8996
 
 PRODUCT_PACKAGES += lights.qcom
