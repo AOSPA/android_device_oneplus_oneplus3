@@ -103,4 +103,6 @@
     <integer name="config_proximityCheckTimeout">100</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
+    <!-- Wether device has dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
 </resources>
