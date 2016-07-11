@@ -12,14 +12,6 @@ PRODUCT_COPY_FILES += device/oneplus/oneplus3/media/media_profiles.xml:system/et
 $(call inherit-product, device/oneplus/oneplus3/common64.mk)
 $(call inherit-product-if-exists, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
-ifneq ($(strip $(QCPATH)),)
-PRODUCT_BOOT_JARS += WfdCommon
-PRODUCT_BOOT_JARS += com.qti.dpmframework
-PRODUCT_BOOT_JARS += dpmapi
-PRODUCT_BOOT_JARS += com.qti.location.sdk
-PRODUCT_BOOT_JARS += oem-services
-endif
-
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
