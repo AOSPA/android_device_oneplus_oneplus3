@@ -151,7 +151,7 @@
         echo "cfq" > /sys/block/dm-0/queue/scheduler
 
         # Starting io prefetcher service
-        #start iop
+        start iop
 
         rm /data/system/perfd/default_values
         setprop ro.min_freq_0 307200
