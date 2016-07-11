@@ -105,4 +105,7 @@
 
     <!-- Wether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
+
+    <!-- Wether device has IOP support -->
+    <bool name="config_hasIOP">true</bool>
 </resources>
