@@ -185,16 +185,16 @@ service qfp-daemon /system/bin/qfp-daemon
     user system
     group system drmrpc diag input
 
-service qvop-daemon /system/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
+#service qvop-daemon /system/bin/qvop-daemon
+#    class late_start
+#    user system
+#    group system drmrpc
 
-service qvrd /system/vendor/bin/qvrservice
-    class late_start
-    user system
-    group system camera graphics
-    socket qvrservice stream 0666 system system
+#service qvrd /system/vendor/bin/qvrservice
+#    class late_start
+#    user system
+#    group system camera graphics
+#    socket qvrservice stream 0666 system system
 
 #Start up peripheral manager
 service per_mgr system/bin/pm-service
@@ -229,10 +229,10 @@ service qseecomd /system/bin/qseecomd
    user root
    group root
 
-service secotad /system/bin/secotad
-   class late_start
-   user system
-   group system
+#service secotad /system/bin/secotad
+#   class late_start
+#   user system
+#   group system
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
@@ -307,18 +307,18 @@ on property:sys.ims.DATA_DAEMON_STATUS=1
    start ims_rtp_daemon
    start imscmservice
 
-service dts_configurator /system/bin/dts_configurator
-    class late_start
-    user system
-    group system media audio
-    oneshot
+#service dts_configurator /system/bin/dts_configurator
+#    class late_start
+#    user system
+#    group system media audio
+#    oneshot
 
-service ppd /system/vendor/bin/mm-pp-dpps
-    class late_start
-    user system
-    group system graphics
-    socket pps stream 0660 system system
-    disabled
+#service ppd /system/vendor/bin/mm-pp-dpps
+#    class late_start
+#    user system
+#    group system graphics
+#    socket pps stream 0660 system system
+#    disabled
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
@@ -338,10 +338,10 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service tlocd /system/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
+#service tlocd /system/bin/tloc_daemon
+#    class late_start
+#    user system
+#    group drmrpc gps net_raw
 
 service energy-awareness /system/bin/energy-awareness
     class main
@@ -349,15 +349,15 @@ service energy-awareness /system/bin/energy-awareness
     group system
     oneshot
 
-service hvdcp_opti /system/bin/hvdcp_opti
-    class main
-    user root
-    group root
+#service hvdcp_opti /system/bin/hvdcp_opti
+#    class main
+#    user root
+#    group root
 
-service mdtpd /system/vendor/bin/mdtpd
-   class late_start
-   user root
-   group system radio drmrpc
+#service mdtpd /system/vendor/bin/mdtpd
+#   class late_start
+#   user root
+#   group system radio drmrpc
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
@@ -365,4 +365,4 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice
     mount_all charger.fstab.qcom
-    start hvdcp_opti
+#    start hvdcp_opti
