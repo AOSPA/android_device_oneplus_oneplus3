@@ -1,5 +1,6 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
 TARGET_USES_NQ_NFC := true
+TARGET_WANTS_EXTENDED_DPM_PLATFORM := true
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
