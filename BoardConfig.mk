@@ -76,6 +76,8 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
