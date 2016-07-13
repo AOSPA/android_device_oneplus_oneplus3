@@ -137,7 +137,7 @@ sdm.perf_hint_window=50
 tunnel.audio.encode=false
 
 #Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=32
+audio.offload.buffer.size.kb=512
 
 #Enable offload audio video playback by default
 audio.offload.video=true
