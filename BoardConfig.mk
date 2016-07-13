@@ -82,6 +82,7 @@ TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # GPS
 TARGET_NO_RPC := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := true
 
 # Init
 TARGET_UNIFIED_DEVICE := true
