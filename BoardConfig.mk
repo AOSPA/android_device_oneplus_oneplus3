@@ -117,11 +117,7 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
-# CNE and DPM
 TARGET_LDPRELOAD := libNimsWrap.so
-BOARD_USES_QCNE := true
-BOARD_USES_DPM := true
-
 
 TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
