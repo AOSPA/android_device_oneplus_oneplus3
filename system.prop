@@ -244,3 +244,4 @@ dalvik.vm.heapminfree=2m
 dalvik.vm.heapmaxfree=8m
 
 ro.sf.lcd_density=480
+enable_prefetch=1
