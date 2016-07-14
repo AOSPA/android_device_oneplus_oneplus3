@@ -179,6 +179,9 @@ audio.offload.multiaac.enable=true
 #Enable audio track offload by default
 audio.offload.track.enable=true
 
+# Don't hold AudioOffload wakelock
+ro.audio.offload_wakelock=false
+
 #enable hw aac encoder by default
 qcom.hw.aac.encoder=true
 
