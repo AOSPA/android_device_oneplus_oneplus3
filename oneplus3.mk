@@ -117,7 +117,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxSwVencHevc \
-    libOmxVidcCommon
+    libOmxVidcCommon \
+    libstagefright_soft_flacenc
 
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
