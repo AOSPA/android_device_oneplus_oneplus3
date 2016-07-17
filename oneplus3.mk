@@ -87,7 +87,7 @@ PRODUCT_COPY_FILES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/oneplus/oneplus3/msm_irqbalance.conf:system/etc/msm_irqbalance.conf
+    device/oneplus/oneplus3/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # Thermal
 PRODUCT_COPY_FILES += \
