@@ -26,6 +26,12 @@ telephony.lteOnGsmDevice=1
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1,1
 persist.data.qmi.adb_logmask=0
+persist.radio.custom_ecc=1
+persist.oem.dump=0
+persist.radio.ignore_dom_time=5
+persist.radio.hw_mbn_update=0
+persist.radio.sw_mbn_update=0
+persist.radio.start_ota_daemon=1
 
 # Enable DPM for netmgr
 persist.data.dpm.enable=true
@@ -89,6 +95,11 @@ bt.max.hfpclient.connections=1
 
 # System property for cabl
 ro.qualcomm.cabl=2
+
+# Display power reduction (FOSS)
+ro.qcom.dpps.sensortype=3
+ro.qualcomm.display.paneltype=1
+ro.qualcomm.foss=1
 
 #system prop for Bluetooth SOC type
 qcom.bluetooth.soc=rome
