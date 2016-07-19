@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    device/oneplus/oneplus3/thermal/thermal-engine.conf:system/etc/thermal-engine-8996.conf
+    device/oneplus/oneplus3/thermal/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # NFC
 PRODUCT_PACKAGES += \
