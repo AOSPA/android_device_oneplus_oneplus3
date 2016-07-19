@@ -545,8 +545,8 @@ service qmuxd /system/bin/qmuxd
     user radio
     group radio audio bluetooth gps nfc qcom_diag
 
-service netmgrd /system/bin/netmgrd
-    class main
+#service netmgrd /system/bin/netmgrd
+#    class main
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
@@ -1001,3 +1001,8 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
 
 on charger
     setprop persist.sys.usb.config charging
+
+# hack a shaq
+service netmgrd /system/bin/sh /system/etc/netmgrd_control.sh
+   seclabel u:r:netmgrd:s0
+   class main

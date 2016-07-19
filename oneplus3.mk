@@ -16,6 +16,10 @@ $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
+# hack a shaq
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/netmgrd_control.sh:system/etc/netmgrd_control.sh
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
