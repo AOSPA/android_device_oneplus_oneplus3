@@ -135,6 +135,8 @@
 	fi
 	echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 
+        echo 6 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
+
         # Reset the read_ahead_kb to 512
         echo 512 > /sys/block/dm-0/queue/read_ahead_kb
         echo 512 > /sys/block/sda/queue/read_ahead_kb
