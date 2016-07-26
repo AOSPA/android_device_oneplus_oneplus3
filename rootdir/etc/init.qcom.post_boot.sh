@@ -79,7 +79,7 @@
         echo "0:1324800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
         echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
         # Setting b.L scheduler parameters
-        echo 1 > /proc/sys/kernel/sched_boost
+        echo 0 > /proc/sys/kernel/sched_boost
         echo 1 > /proc/sys/kernel/sched_migration_fixup
         echo 45 > /proc/sys/kernel/sched_downmigrate
         echo 45 > /proc/sys/kernel/sched_upmigrate
@@ -142,14 +142,12 @@
         echo 512 > /sys/block/sda/queue/read_ahead_kb
         echo 512 > /sys/block/sde/queue/read_ahead_kb
 
-        sleep 30
+        sleep 20
 
         # switch to CFQ
         echo "cfq" > /sys/block/sda/queue/scheduler
         echo "cfq" > /sys/block/sde/queue/scheduler
         echo "cfq" > /sys/block/dm-0/queue/scheduler
-
-        echo 0 > /proc/sys/kernel/sched_boost
 
         # Starting io prefetcher service
         start iop
