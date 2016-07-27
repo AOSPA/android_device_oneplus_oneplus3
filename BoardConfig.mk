@@ -1,5 +1,3 @@
-include device/qcom/common/BoardConfigCommon.mk
-
 TARGET_BOARD_PLATFORM := msm8996
 
 TARGET_ARCH := arm64
@@ -14,6 +12,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+include device/qcom/common/BoardConfigCommon.mk
 
 TARGET_USES_OVERLAY := true
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
