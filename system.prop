@@ -69,7 +69,7 @@ mm.enable.sec.smoothstreaming=true
 #185971 is decimal sum of supported parsers in AAL
 #37491 is decimal sum of supported codecs in AAL
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE
-#mm.enable.qcom_parser=1048575
+mm.enable.qcom_parser=1048575
 
 persist.mm.enable.prefetch=true
 
@@ -182,6 +182,28 @@ audio.dolby.ds2.hardbypass=false
 
 audio.offload.passthrough=false
 audio.offload.multiple.enabled=true
+
+#Enable 16 bit PCM offload by default
+audio.offload.pcm.16bit.enable=true
+
+#Enable 24 bit PCM offload by default
+audio.offload.pcm.24bit.enable=true
+
+#Enable multi channel aac through offload
+audio.offload.multiaac.enable=true
+
+#Enable audio track offload by default
+audio.offload.track.enable=true
+
+#enable hw aac encoder by default
+qcom.hw.aac.encoder=true
+
+#flac sw decoder 24 bit decode capability
+flac.sw.decoder.24bit.support=true
+
+#enable software decoders for ALAC and APE
+use.qti.sw.alac.decoder=true
+use.qti.sw.ape.decoder=true
 
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1

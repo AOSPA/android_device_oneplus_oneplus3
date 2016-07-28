@@ -1,6 +1,6 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
 TARGET_USES_NQ_NFC := true
-#TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # copy customized media_profiles and media_codecs xmls for oneplus3
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
@@ -97,11 +97,11 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_flacenc
 
 # QC AV Enhancements
-#PRODUCT_PACKAGES += \
-#    libdashplayer \
-#    libqcmediaplayer \
-#    qcmediaplayer \
-#    libextmedia_jni
+PRODUCT_PACKAGES += \
+    libdashplayer \
+    libqcmediaplayer \
+    qcmediaplayer \
+    libextmedia_jni
 
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
