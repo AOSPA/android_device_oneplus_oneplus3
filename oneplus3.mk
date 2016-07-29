@@ -163,6 +163,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     OneplusDoze
 
+# FOSS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/display/FOSSConfig.xml:system/etc/FOSSConfig.xml
+
 # Camera extension library
 PRODUCT_PACKAGES += \
     libop3_cam

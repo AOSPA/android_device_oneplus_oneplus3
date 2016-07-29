@@ -106,6 +106,8 @@ ro.qualcomm.cabl=2
 ro.qcom.dpps.sensortype=3
 ro.qualcomm.display.paneltype=1
 ro.qualcomm.foss=1
+config.foss.xml=1
+config.foss.path=/system/etc/FOSSConfig.xml
 
 #system prop for Bluetooth SOC type
 qcom.bluetooth.soc=rome
