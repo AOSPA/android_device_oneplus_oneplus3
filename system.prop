@@ -222,6 +222,8 @@ ro.hwui.text_large_cache_height=2048
 #Disable property for Dolby ds2
 audio.dolby.ds2.enabled=false
 
+persist.camera.imglib.fddsp=1
+
 #Disable property for hard bypass
 audio.dolby.ds2.hardbypass=false
 
