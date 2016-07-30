@@ -118,7 +118,6 @@ PRODUCT_COPY_FILES += \
 # Media
 PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
-    libOmxSwVencHevc \
     libOmxVidcCommon \
     libstagefright_soft_flacenc
 
