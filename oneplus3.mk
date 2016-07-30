@@ -13,7 +13,7 @@ PRODUCT_COPY_FILES += device/oneplus/oneplus3/media/media_profiles.xml:system/et
                       device/oneplus/oneplus3/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 $(call inherit-product, device/oneplus/oneplus3/common64.mk)
-$(call inherit-product-if-exists, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
+$(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
