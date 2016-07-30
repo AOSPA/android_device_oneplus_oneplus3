@@ -231,6 +231,9 @@ audio.offload.multiple.enabled=true
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/config
+
 #Enable stm events
 ro.dbg.coresight.config=none
 #property to enable fingerprint
