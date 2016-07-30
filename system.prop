@@ -234,6 +234,9 @@ persist.hwc.enable_vds=1
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+# DRM
+drm.service.enabled=true
+
 #Enable stm events
 ro.dbg.coresight.config=none
 #property to enable fingerprint
