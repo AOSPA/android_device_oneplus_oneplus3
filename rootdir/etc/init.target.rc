@@ -132,6 +132,9 @@ on boot
     chown system graphics /sys/class/graphics/fb0/msm_fb_panel_info
     chmod 0664 /sys/class/graphics/fb0/msm_fb_panel_info
 
+    # Dash Charging
+    chmod 0666 /dev/dash
+
     # NFC
     chmod 0666 /dev/pn544
     chown nfc nfc /dev/pn544
@@ -349,10 +352,20 @@ service energy-awareness /system/bin/energy-awareness
 #   user root
 #   group system radio drmrpc
 
+service dashd /sbin/dashd
+    class core
+    critical
+    seclabel u:r:dashd:s0
+    group root system
+
+on property:init.svc.healthd=restarting
+    restart dashd
+
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice
+    start dashd
 #    mount_all charger.fstab.qcom
 #    start hvdcp_opti
