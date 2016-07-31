@@ -911,6 +911,7 @@ service hcidump /system/bin/sh /system/etc/hcidump.sh
 
 service charger /charger
     class charger
+    critical
     group system graphics
     seclabel u:r:healthd:s0
 
