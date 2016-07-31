@@ -137,6 +137,9 @@ TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Enables Adreno RS driver
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
