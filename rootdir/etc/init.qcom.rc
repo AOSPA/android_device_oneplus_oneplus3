@@ -987,21 +987,6 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     #removed these because of limit of 12 groups
     #graphics net_bt net_bt_admin bluetooth
 
-# Coresight post boot servive
-service cs-post-boot /system/bin/sh /persist/coresight/qdss.agent.sh
-    user root
-    disabled
-    oneshot
-
-on property:sys.boot_completed=1
-    start cs-post-boot
-
-on property:sys.dbg.coresight.enable=1
-    write /persist/coresight/enable 1
-
-on property:sys.dbg.coresight.enable=0
-    write /persist/coresight/enable 0
-
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
