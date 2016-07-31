@@ -241,4 +241,4 @@
 /dev/hbtp_vm              0660   system     system
 
 # Add device block for FRP
-/dev/block/bootdevice/by-name/config    0660   system     system
+/dev/block/sda14          0660   system     system

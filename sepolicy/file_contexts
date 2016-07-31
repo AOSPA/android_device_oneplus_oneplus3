@@ -3,7 +3,7 @@
 /dev/block/sda10                                                u:object_r:modem_efs_partition_device:s0
 
 # FRP partition
-/dev/block/bootdevice/by-name/config                            u:object_r:frp_block_device:s0
+/dev/block/sda14                                                u:object_r:frp_block_device:s0
 
 /system/etc/init\.qcom\.bt\.sh                                  u:object_r:bluetooth_loader_exec:s0
 

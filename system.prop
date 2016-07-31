@@ -234,7 +234,7 @@ audio.offload.multiple.enabled=true
 persist.hwc.enable_vds=1
 
 # FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/config
+ro.frp.pst=/dev/block/sda14
 
 # DRM
 drm.service.enabled=true
