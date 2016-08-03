@@ -511,7 +511,7 @@ MM_CORE := libmm-omxcore
 MM_CORE += libOmxCore
 
 #MM_VIDEO
-MM_VIDEO := ast-mm-vdec-omx-test
+#MM_VIDEO := ast-mm-vdec-omx-test
 MM_VIDEO += liblasic
 MM_VIDEO += libOmxVdec
 MM_VIDEO += libOmxVdecHevc
@@ -522,12 +522,12 @@ MM_VIDEO += libOmxSwVdec
 MM_VIDEO += libOmxSwVencMpeg4
 MM_VIDEO += libstagefrighthw
 MM_VIDEO += mm-vdec-omx-property-mgr
-MM_VIDEO += mm-vdec-omx-test
-MM_VIDEO += mm-venc-omx-test
-MM_VIDEO += mm-venc-omx-test720p
-MM_VIDEO += mm-video-driver-test
-MM_VIDEO += mm-video-encdrv-test
-MM_VIDEO += ExoplayerDemo
+#MM_VIDEO += mm-vdec-omx-test
+#MM_VIDEO += mm-venc-omx-test
+#MM_VIDEO += mm-venc-omx-test720p
+#MM_VIDEO += mm-video-driver-test
+#MM_VIDEO += mm-video-encdrv-test
+#MM_VIDEO += ExoplayerDemo
 
 #OPENCORE
 OPENCORE := libomx_aacdec_sharedlibrary
@@ -647,7 +647,7 @@ PRODUCT_PACKAGES += $(ANGLE)
 PRODUCT_PACKAGES += $(APPOPS_POLICY)
 PRODUCT_PACKAGES += $(AUDIO_HARDWARE)
 PRODUCT_PACKAGES += $(AUDIO_POLICY)
-PRODUCT_PACKAGES += $(TINY_ALSA_TEST_APPS)
+#PRODUCT_PACKAGES += $(TINY_ALSA_TEST_APPS)
 PRODUCT_PACKAGES += $(AMPLOADER)
 PRODUCT_PACKAGES += $(APPS)
 PRODUCT_PACKAGES += $(BRCTL)
@@ -672,7 +672,7 @@ PRODUCT_PACKAGES += $(I420CC)
 PRODUCT_PACKAGES += $(INIT)
 PRODUCT_PACKAGES += $(IPROUTE2)
 PRODUCT_PACKAGES += $(IPTABLES)
-PRODUCT_PACKAGES += $(KERNEL_TESTS)
+#PRODUCT_PACKAGES += $(KERNEL_TESTS)
 PRODUCT_PACKAGES += $(KEYPAD)
 PRODUCT_PACKAGES += $(KS)
 PRODUCT_PACKAGES += $(LIB_NL)
