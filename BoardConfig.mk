@@ -12,6 +12,8 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_USES_64_BIT_BINDER := true
+
 include device/qcom/common/BoardConfigCommon.mk
 
 TARGET_USES_OVERLAY := true
@@ -31,6 +33,13 @@ QCOM_BT_USE_SMD_TTY := true
 
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_USES_ION := true
+
+# Enables Adreno RS driver
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -42,7 +51,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3154116608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 57436708864
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-TARGET_USES_ION := true
+TARGET_LDPRELOAD := libNimsWrap.so
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
@@ -55,9 +64,6 @@ BOARD_MKBOOTIMG_ARGS := --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
 TARGET_KERNEL_CONFIG := oneplus3_defconfig
 TARGET_KERNEL_APPEND_DTB := true
-
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Audio
 AUDIO_FEATURE_ENABLED_AUDIOSPHERE := true
@@ -81,7 +87,6 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_NT_PAUSE_TIMEOUT := true
 AUDIO_FEATURE_ENABLED_SSR := false
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := false
-
 
 USE_CUSTOM_AUDIO_POLICY := 1
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
@@ -110,9 +115,6 @@ TARGET_PER_MGR_ENABLED := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
-#Enable SW based full disk encryption
-TARGET_SWV8_DISK_ENCRYPTION := false
-
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -134,14 +136,7 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
-TARGET_LDPRELOAD := libNimsWrap.so
-
 TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
-
-TARGET_USES_64_BIT_BINDER := true
-
-# Enables Adreno RS driver
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
