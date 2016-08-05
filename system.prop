@@ -100,7 +100,7 @@ ro.opengles.version=196609
 bt.max.hfpclient.connections=1
 
 # System property for cabl
-ro.qualcomm.cabl=2
+#ro.qualcomm.cabl=2
 
 # Display power reduction (FOSS)
 ro.qcom.dpps.sensortype=3
