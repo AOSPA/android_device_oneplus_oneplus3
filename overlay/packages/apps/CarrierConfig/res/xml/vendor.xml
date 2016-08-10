@@ -69,6 +69,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="854">
@@ -77,6 +78,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="855">
@@ -85,6 +87,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="856">
@@ -93,6 +96,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="857">
@@ -101,6 +105,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="858">
@@ -109,6 +114,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="859">
@@ -117,6 +123,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="860">
@@ -125,6 +132,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="861">
@@ -133,6 +141,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="862">
@@ -141,6 +150,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="863">
@@ -149,6 +159,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="864">
@@ -157,6 +168,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="865">
@@ -165,6 +177,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="866">
@@ -173,6 +186,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="867">
@@ -181,6 +195,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="868">
@@ -189,6 +204,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="869">
@@ -197,6 +213,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="870">
@@ -205,6 +222,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="871">
@@ -213,6 +231,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="872">
@@ -221,6 +240,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="873">
@@ -229,6 +249,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="874">
@@ -237,6 +258,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="video_call_use_ext" value="false" />
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
+        <boolean name="config_carrier_specific_network_type_display" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="450" mnc="05">
