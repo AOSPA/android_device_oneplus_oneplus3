@@ -174,8 +174,8 @@ ro.audio.flinger_standbytime_ms=300
 audio.offload.track.enable=true
 
 audio.offload.min.duration.secs=30
-af.fast_track_multiplier=2
-audio_hal.period_size=192
+af.fast_track_multiplier=1
+audio_hal.period_size=160
 
 #Enable music through deep buffer
 audio.deep_buffer.media=true
