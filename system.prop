@@ -224,6 +224,12 @@ audio.dolby.ds2.enabled=false
 
 persist.camera.imglib.fddsp=1
 
+#force HAL1 for some apps
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,
+    com.instagram.android,com.snapchat.android,org.codeaurora.snapcam,
+    com.google.android.GoogleCamera,com.facebook.orca,com.facebook.katana,
+    com.flavionet.android.camera.lite
+
 #Disable property for hard bypass
 audio.dolby.ds2.hardbypass=false
 
