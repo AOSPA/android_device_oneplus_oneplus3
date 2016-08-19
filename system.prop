@@ -33,6 +33,8 @@ persist.radio.hw_mbn_update=0
 persist.radio.sw_mbn_update=0
 persist.radio.start_ota_daemon=1
 
+persist.radio.add_power_save=1
+
 # Enable DPM for netmgr
 persist.data.dpm.enable=true
 
