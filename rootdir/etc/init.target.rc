@@ -129,8 +129,6 @@ on boot
     chmod 0664 /sys/class/graphics/fb0/modes
     chown system graphics /sys/class/graphics/fb0/sre
     chmod 0664 /sys/class/graphics/fb0/sre
-    chown system graphics /sys/class/graphics/fb0/msm_fb_panel_info
-    chmod 0664 /sys/class/graphics/fb0/msm_fb_panel_info
 
     # Crypto
     chmod 0666 /dev/qseecom
