@@ -345,7 +345,6 @@
     <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    <string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string>
 
    <!-- Whether cpu boost is enabled for application's 1st launch. -->
     <bool name="config_enableCpuBoostForAppLaunch">true</bool>
