@@ -225,6 +225,8 @@ ro.hwui.text_large_cache_height=2048
 audio.dolby.ds2.enabled=false
 
 persist.camera.imglib.fddsp=1
+persist.camera.llc=1
+persist.camera.llnoise=1
 
 #force HAL1 for some apps
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,
