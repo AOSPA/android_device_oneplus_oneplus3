@@ -62,6 +62,12 @@ on early-boot
     write /sys/block/sda/queue/read_ahead_kb 2048
     write /sys/block/sde/queue/read_ahead_kb 2048
 
+    # Use more optimized nr_requests for UFS
+    write /sys/block/dm-0/queue/nr_requests 256
+    write /sys/block/dm-1/queue/nr_requests 256
+    write /sys/block/sda/queue/nr_requests 256
+    write /sys/block/sde/queue/nr_requests 256
+
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
