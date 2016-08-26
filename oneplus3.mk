@@ -1,6 +1,6 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
 TARGET_USES_NQ_NFC := true
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+#TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 PRODUCT_BOOT_JARS += telephony-ext
@@ -115,11 +115,11 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_flacenc
 
 # QC AV Enhancements
-PRODUCT_PACKAGES += \
-    libdashplayer \
-    libqcmediaplayer \
-    qcmediaplayer \
-    libextmedia_jni
+#PRODUCT_PACKAGES += \
+#    libdashplayer \
+#    libqcmediaplayer \
+#    qcmediaplayer \
+#    libextmedia_jni
 
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
