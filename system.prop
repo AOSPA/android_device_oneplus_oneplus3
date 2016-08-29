@@ -237,7 +237,7 @@ camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,
 #Disable property for hard bypass
 audio.dolby.ds2.hardbypass=false
 
-audio.offload.passthrough=false
+audio.offload.passthrough=true
 audio.offload.multiple.enabled=true
 
 #property to enable VDS WFD solution
