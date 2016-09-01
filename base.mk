@@ -1,6 +1,3 @@
-
-TARGET_USE_VENDOR_CAMERA_EXT := true
-
 # Below projects/packages with LOCAL_MODULEs will be used by
 # PRODUCT_PACKAGES to build LOCAL_MODULEs that are tagged with
 # optional tag, which will not be available on target unless
@@ -68,7 +65,9 @@ AUDIO_HARDWARE += audio.primary.msm8992
 AUDIO_HARDWARE += audio.primary.msm8996
 AUDIO_HARDWARE += audio.primary.msm8952
 AUDIO_HARDWARE += audio.primary.msm8937
-AUDIO_HARDWARE += audio.primary.thorium
+AUDIO_HARDWARE += audio.primary.msm8953
+AUDIO_HARDWARE += audio.primary.msmgold
+AUDIO_HARDWARE += audio.primary.msmcobalt
 #
 AUDIO_POLICY := audio_policy.mpq8064
 AUDIO_POLICY += audio_policy.apq8084
@@ -92,8 +91,8 @@ AUDIO_POLICY += audio_policy.msm8992
 AUDIO_POLICY += audio_policy.msm8996
 AUDIO_POLICY += audio_policy.msm8952
 AUDIO_POLICY += audio_policy.msm8937
-AUDIO_POLICY += audio_policy.thorium
-
+AUDIO_POLICY += audio_policy.msm8953
+AUDIO_POLICY += audio_policy.msmgold
 #tinyalsa test apps
 TINY_ALSA_TEST_APPS := tinyplay
 TINY_ALSA_TEST_APPS += tinycap
@@ -120,6 +119,7 @@ BT := javax.btobex
 BT += libattrib_static
 BT += hcidump.sh
 BT += libbt-vendor
+BT += libbthost_if
 
 #C2DColorConvert
 C2DCC := libc2dcolorconvert
@@ -130,6 +130,13 @@ CHROMIUM += libwebviewchromium_plat_support
 
 #CIMAX
 CIMAX := libcimax_spi
+
+#CM
+CM :=CMFileManager
+#CM += Trebuchet
+
+#Default Launcher
+DELAUN := Launcher3
 
 #CONNECTIVITY
 CONNECTIVITY := libcnefeatureconfig
@@ -165,6 +172,9 @@ FASTPOWERON := FastBoot
 FM := qcom.fmradio
 FM += libqcomfm_jni
 FM += libfmjni
+FM += fm_helium
+FM += libfm-hci
+FM += fmhal_service
 
 #GPS
 GPS_HARDWARE := gps.conf
@@ -173,6 +183,7 @@ GPS_HARDWARE += libgps.utils
 GPS_HARDWARE += libloc_eng
 GPS_HARDWARE += libloc_api_v02
 GPS_HARDWARE += libloc_ds_api
+GPS_HARDWARE += libgnsspps
 
 #HDMID
 HDMID := hdmid
@@ -211,6 +222,7 @@ INIT += init.qcom.wifi.sh
 INIT += vold.fstab
 INIT += init.qcom.ril.path.sh
 INIT += init.qcom.usb.rc
+INIT += init.msm.usb.configfs.rc
 INIT += init.qcom.usb.sh
 INIT += usf_post_boot.sh
 INIT += init.qcom.efs.sync.sh
@@ -261,6 +273,7 @@ KEYPAD += 8660_handset.kl
 KEYPAD += atmel_mxt_ts.kl
 KEYPAD += synaptics_rmi4_i2c.kl
 KEYPAD += synaptics_dsx.kl
+KEYPAD += synaptics_dsxv26.kl
 KEYPAD += cyttsp-i2c.kl
 KEYPAD += ft5x06_ts.kl
 KEYPAD += ffa-keypad.kl
@@ -301,8 +314,11 @@ LIBCAMERA += camera.msm8916
 LIBCAMERA += camera.msm8994
 LIBCAMERA += camera.msm8992
 LIBCAMERA += camera.msm8996
+LIBCAMERA += camera.msmcobalt
+LIBCAMERA += camera.msmfalcon
 LIBCAMERA += camera.msm8952
 LIBCAMERA += camera.msm8937
+LIBCAMERA += camera.msm8953
 LIBCAMERA += libcamera
 LIBCAMERA += libmmcamera_interface
 LIBCAMERA += libmmcamera_interface2
@@ -334,6 +350,8 @@ LIBCOPYBIT += copybit.msm7627a
 LIBCOPYBIT += copybit.msm8996
 LIBCOPYBIT += copybit.msm8952
 LIBCOPYBIT += copybit.msm8937
+LIBCOPYBIT += copybit.msm8953
+LIBCOPYBIT += copybit.msmcobalt
 
 #LIBGESTURES
 LIBGESTURES := libgestures
@@ -361,6 +379,8 @@ LIBGRALLOC += gralloc.msm7627a
 LIBGRALLOC += gralloc.msm8996
 LIBGRALLOC += gralloc.msm8952
 LIBGRALLOC += gralloc.msm8937
+LIBGRALLOC += gralloc.msm8953
+LIBGRALLOC += gralloc.msmcobalt
 LIBGRALLOC += libmemalloc
 
 #memtrack
@@ -376,6 +396,8 @@ LIBMEMTRACK += memtrack.mpq8092
 LIBMEMTRACK += memtrack.msm8996
 LIBMEMTRACK += memtrack.msm8952
 LIBMEMTRACK += memtrack.msm8937
+LIBMEMTRACK += memtrack.msm8953
+LIBMEMTRACK += memtrack.msmcobalt
 
 #LIBLIGHTS
 LIBLIGHTS := lights.msm8660
@@ -397,6 +419,8 @@ LIBLIGHTS += lights.apq8084
 LIBLIGHTS += lights.msm8996
 LIBLIGHTS += lights.msm8952
 LIBLIGHTS += lights.msm8937
+LIBLIGHTS += lights.msm8953
+LIBLIGHTS += lights.msmcobalt
 
 #LIBHWCOMPOSER
 LIBHWCOMPOSER := hwcomposer.msm8660
@@ -419,6 +443,8 @@ LIBHWCOMPOSER += hwcomposer.msm7627a
 LIBHWCOMPOSER += hwcomposer.msm8996
 LIBHWCOMPOSER += hwcomposer.msm8952
 LIBHWCOMPOSER += hwcomposer.msm8937
+LIBHWCOMPOSER += hwcomposer.msm8953
+LIBHWCOMPOSER += hwcomposer.msmcobalt
 
 #CEC HAL
 LIBHDMICEC   :=  hdmi_cec.msm8996
@@ -500,14 +526,28 @@ MM_VIDEO += mm-vdec-omx-property-mgr
 #MM_VIDEO += mm-video-encdrv-test
 #MM_VIDEO += ExoplayerDemo
 
+#NQ_NFC
+NQ_NFC := NQNfcNci
+NQ_NFC += libnqnfc-nci
+NQ_NFC += libnqnfc_nci_jni
+NQ_NFC += nfc_nci.nqx.default
+NQ_NFC += libp61-jcop-kit
+NQ_NFC += com.nxp.nfc.nq
+NQ_NFC += com.nxp.nfc.nq.xml
+NQ_NFC += libpn547_fw.so
+NQ_NFC += libpn548ad_fw.so
+NQ_NFC += libnfc-brcm.conf
+NQ_NFC += libnfc-nxp.conf
+NQ_NFC += nqnfcee_access.xml
+NQ_NFC += nqnfcse_access.xml
+NQ_NFC += Tag
+NQ_NFC += com.android.nfc_extras
+
 #OPENCORE
 OPENCORE := libomx_aacdec_sharedlibrary
-OPENCORE += libomx_amrdec_sharedlibrary
-OPENCORE += libomx_amrenc_sharedlibrary
 OPENCORE += libomx_avcdec_sharedlibrary
 OPENCORE += libomx_m4vdec_sharedlibrary
 OPENCORE += libomx_mp3dec_sharedlibrary
-OPENCORE += libomx_sharedlibrary
 OPENCORE += libopencore_author
 OPENCORE += libopencore_common
 OPENCORE += libopencore_download
@@ -518,11 +558,8 @@ OPENCORE += libopencore_net_support
 OPENCORE += libopencore_player
 OPENCORE += libopencore_rtsp
 OPENCORE += libopencore_rtspreg
-OPENCORE += libpvdecoder_gsmamr
 OPENCORE += libpvplayer_engine
-OPENCORE += libpvamrwbdecoder
 OPENCORE += libpvauthorengine
-OPENCORE += libomx_amr_component_lib
 OPENCORE += pvplayer
 OPENCORE += pvplayer_engine_test
 
@@ -591,6 +628,13 @@ VT_JNI += libimscamera_jni
 # VT QTI Permissions
 VT_QTI_PERMISSIONS := qti_permissions.xml
 
+#RCS
+RCS := rcs_service_aidl
+RCS += rcs_service_aidl.xml
+RCS += rcs_service_aidl_static
+RCS += rcs_service_api
+RCS += rcs_service_api.xml
+
 #IMS SETTINGS
 IMS_SETTINGS := imssettings
 
@@ -607,6 +651,7 @@ CRDA += init.crda.sh
 #WLAN
 WLAN := prima_wlan.ko
 WLAN += pronto_wlan.ko
+WLAN += qca_cld_wlan.ko
 
 #FSTMAN
 FSTMAN := fstman
@@ -627,6 +672,9 @@ PRODUCT_PACKAGES += $(BT)
 PRODUCT_PACKAGES += $(C2DCC)
 PRODUCT_PACKAGES += $(CHROMIUM)
 PRODUCT_PACKAGES += $(CIMAX)
+PRODUCT_PACKAGES += $(CM)
+PRODUCT_PACKAGES += $(DELAUN)
+PRODUCT_PACKAGES += $(RCS)
 PRODUCT_PACKAGES += $(CONNECTIVITY)
 PRODUCT_PACKAGES += $(CHARGER)
 PRODUCT_PACKAGES += $(CURL)
@@ -672,6 +720,9 @@ PRODUCT_PACKAGES += $(MEDIA_PROFILES)
 PRODUCT_PACKAGES += $(MM_AUDIO)
 PRODUCT_PACKAGES += $(MM_CORE)
 PRODUCT_PACKAGES += $(MM_VIDEO)
+ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
+PRODUCT_PACKAGES += $(NQ_NFC)
+endif
 PRODUCT_PACKAGES += $(OPENCORE)
 PRODUCT_PACKAGES += $(PPP)
 PRODUCT_PACKAGES += $(PVOMX)
@@ -743,7 +794,6 @@ PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
@@ -770,6 +820,24 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+
+ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:system/etc/permissions/android.hardware.nfc.hcef.xml
+endif
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level-0.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
+
+# enable overlays to use our version of
+# source/resources etc.
+DEVICE_PACKAGE_OVERLAYS += device/qcom/common/device/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/qcom/common/product/overlay
 
 #Enabling video for live effects
 -include frameworks/base/data/videos/VideoPackage1.mk

@@ -152,7 +152,4 @@
         # Starting io prefetcher service
         start iop
 
-        rm /data/system/perfd/default_values
-        setprop ro.min_freq_0 307200
-        setprop ro.min_freq_4 307200
-        start perfd
+	setprop sys.post_boot.parsed 1
