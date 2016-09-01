@@ -1,9 +1,11 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
 TARGET_USES_NQ_NFC := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_USES_MEDIA_EXTENSIONS := true
 
-#QTIC flag
--include $(QCPATH)/common/config/qtic-config.mk
+PRODUCT_BOOT_JARS += telephony-ext
+
+PRODUCT_PACKAGES += telephony-ext
 
 # copy customized media_profiles and media_codecs xmls for oneplus3
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
@@ -12,6 +14,7 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_pr
 
 $(call inherit-product, device/oneplus/oneplus3/common64.mk)
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
+include $(TOPDIR)hardware/qcom/audio/configs/msm8996/msm8996.mk
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
@@ -25,7 +28,6 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
