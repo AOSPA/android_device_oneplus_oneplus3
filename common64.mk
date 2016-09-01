@@ -1,11 +1,6 @@
 $(call inherit-product, device/oneplus/oneplus3/base.mk)
 
 PRODUCT_BRAND := oneplus
-PRODUCT_AAPT_CONFIG += hdpi mdpi
-
-ifndef PRODUCT_MANUFACTURER
-PRODUCT_MANUFACTURER := QUALCOMM
-endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
@@ -13,5 +8,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.sib16_support=1 \
     persist.radio.custom_ecc=1 \
     ro.frp.pst=/dev/block/bootdevice/by-name/config
-
-PRODUCT_PRIVATE_KEY := device/qcom/common/qcom.key
