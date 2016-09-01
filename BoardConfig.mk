@@ -56,7 +56,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 TARGET_LDPRELOAD := libNimsWrap.so
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff androidboot.selinux=permissive
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -74,7 +74,6 @@ AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
 AUDIO_FEATURE_ENABLED_CUSTOMSTEREO := false
 AUDIO_FEATURE_ENABLED_DEV_ARBI := true
 AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER := true
-AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := true
 AUDIO_FEATURE_ENABLED_PCM_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_PCM_OFFLOAD_24 := true
 AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
@@ -96,10 +95,10 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+#BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 # Gestures
-TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+#TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # GPS
 TARGET_NO_RPC := true
@@ -140,6 +139,4 @@ USE_SENSOR_MULTI_HAL := true
 
 TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
-TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
-
-BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
+#BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy

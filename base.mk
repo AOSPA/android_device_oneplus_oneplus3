@@ -722,7 +722,7 @@ PRODUCT_PACKAGES += vcard
 PRODUCT_PACKAGES += tcmiface
 
 # healthd libaray expanded for mode charger
-PRODUCT_PACKAGES += libhealthd.msm
+#PRODUCT_PACKAGES += libhealthd.msm
 
 
 #NANOPB_LIBRARY_NAME := libnanopb-c-2.8.0
