@@ -358,11 +358,11 @@
          so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
-    <!-- Enable overlay for all location components. -->
+    <!-- Enable overlay for all location components.
     <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
     <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string> -->
 
    <!-- Whether cpu boost is enabled for application's 1st launch. -->
     <bool name="config_enableCpuBoostForAppLaunch">true</bool>
