@@ -171,8 +171,6 @@ ro.nfc.port=I2C
 ro.vendor.wl_library=libqti-wl.so
 
 # GPS
-persist.gps.qc_nlp_in_use=1
-persist.loc.nlp_name=
 ro.gps.agps_provider=1
 
 #hwui properties
