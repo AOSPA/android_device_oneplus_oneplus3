@@ -16,4 +16,3 @@
 
 const char _ZN7android18gClientPackageNameE[] = "client-package-name";
 const char _ZN7android16CameraParameters19CLIENT_PACKAGE_NAMEE[] = "client-package-name";
-const char _ZNK7android13SensorManager13getSensorListEPPKPKNS_6SensorE[] = "get-sensor-list";
