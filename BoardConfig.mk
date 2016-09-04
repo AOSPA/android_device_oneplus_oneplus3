@@ -71,7 +71,6 @@ AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := false
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-#BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 # Gestures
 #TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
