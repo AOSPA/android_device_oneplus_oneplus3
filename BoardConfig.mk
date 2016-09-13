@@ -120,3 +120,6 @@ TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
 #BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
+
+# Use M Sensors ABI
+BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
