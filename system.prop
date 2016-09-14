@@ -147,6 +147,12 @@ persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
 
+#property for vendor specific library
+ro.vendor.gt_library=libqti-gt.so
+ro.vendor.at_library=libqti-at.so
+sys.games.gt.prof=1
+sys.apps.hwaccel.enable=1
+
 #property to enable sde downscale feature for external display
 #sdm.debug.downscale_external=1
 
