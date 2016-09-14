@@ -104,6 +104,9 @@ PRODUCT_PACKAGES += \
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 
+# QPerformance
+PRODUCT_BOOT_JARS += QPerformance
+
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1
 
