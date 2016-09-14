@@ -80,6 +80,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # Thermal
+PRODUCT_PACKAGES += \
+    thermal.msm8996
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/thermal/thermal-engine.conf:system/etc/thermal-engine.conf
 
