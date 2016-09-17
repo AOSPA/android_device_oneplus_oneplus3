@@ -47,4 +47,7 @@
     -->
     <integer name="config_longPressOnHardwareHomeBehavior">3</integer>
 
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
 </resources>
