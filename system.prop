@@ -181,7 +181,7 @@ ro.nfc.port=I2C
 ro.vendor.wl_library=libqti-wl.so
 
 # GPS
-ro.gps.agps_provider=1
+ro.gps.agps_provider=0
 
 #hwui properties
 ro.hwui.texture_cache_size=96
