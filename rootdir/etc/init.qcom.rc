@@ -890,3 +890,6 @@ service poweroffhandler /system/bin/poweroffhandler
     group graphics audio
     disabled
     oneshot
+
+on property:vold.decrypt=trigger_restart_min_framework
+    start time_daemon
