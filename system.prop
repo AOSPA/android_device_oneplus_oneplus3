@@ -63,8 +63,7 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
-mm.enable.sec.smoothstreaming=false
-av.debug.disable.pers.cache=true
+mm.enable.sec.smoothstreaming=true
 
 #185971 is decimal sum of supported parsers in AAL
 #37491 is decimal sum of supported codecs in AAL
@@ -123,13 +122,6 @@ ro.bluetooth.emb_wp_mode=true
 #
 #snapdragon value add features
 #
-ro.qc.sdk.audio.ssr=false
-
-##fluencetype can be "fluence" or "fluencepro" or "none"
-ro.qc.sdk.audio.fluencetype=fluence
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
 
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
@@ -163,22 +155,11 @@ debug.enable.gamed=1
 #property to specify the number of frames to skip before setting hint
 sdm.perf_hint_window=50
 
-#Reduce audio flinger standby delay
-ro.audio.flinger_standbytime_ms=300
-
-audio.offload.min.duration.secs=30
-af.fast_track_multiplier=2
-
 # system prop for NFC DT
 ro.nfc.port=I2C
 
 # Dexopt everything inside the boot image
 dalvik.vm.image-dex2oat-filter=everything
-# system prop for NFC DT
-ro.nfc.port=I2C
-
-#property to enable WFD WL solution
-ro.vendor.wl_library=libqti-wl.so
 
 # GPS
 ro.gps.agps_provider=0
@@ -195,9 +176,6 @@ ro.hwui.text_small_cache_width=2048
 ro.hwui.text_small_cache_height=2048
 ro.hwui.text_large_cache_width=3072
 ro.hwui.text_large_cache_height=2048
-
-#Disable property for Dolby ds2
-audio.dolby.ds2.enabled=false
 
 persist.camera.imglib.fddsp=1
 persist.camera.llc=1
