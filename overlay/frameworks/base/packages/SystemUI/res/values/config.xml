@@ -31,10 +31,6 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-    <!-- The default tiles to display in QuickSettings -->
-    <string name="quick_settings_tiles_default" translatable="false">
-        wifi,bt,inversion,dnd,cell,airplane,rotation,flashlight,location,cast,hotspot,intent(org.codeaurora.qs.tiles.wificallingtile)
-    </string>
     <!-- The maximum number of items to be displayed in quick settings -->
     <integer name="quick_settings_detail_max_item_count">12</integer>
 
