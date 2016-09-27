@@ -181,12 +181,6 @@ persist.camera.imglib.fddsp=1
 persist.camera.llc=1
 persist.camera.llnoise=1
 
-#force HAL1 for some apps
-camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,
-    com.instagram.android,com.snapchat.android,org.codeaurora.snapcam,
-    com.google.android.GoogleCamera,com.facebook.orca,com.facebook.katana,
-    com.flavionet.android.camera.lite,com.nianticlabs.pokemongo
-
 #Disable property for hard bypass
 audio.dolby.ds2.hardbypass=false
 
