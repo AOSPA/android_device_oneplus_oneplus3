@@ -426,14 +426,14 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-#service cnd /system/bin/cnd
-#    class main
-#    socket cnd stream 660 root inet
+service cnd /system/bin/cnd
+    class main
+    socket cnd stream 660 root inet
 
-#service dpmd /system/bin/dpmd
-#    class late_start
-#    socket dpmd stream 660 root system
-     group system readproc
+service dpmd /system/bin/dpmd
+    class late_start
+    socket dpmd stream 660 root system
+    group system readproc
 
 service irsc_util /system/bin/irsc_util "/system/etc/sec_config"
     class core
@@ -711,10 +711,10 @@ service cnss-daemon /system/bin/cnss-daemon -n -l
 on property:sys.shutdown.requested=*
     stop cnss-daemon
 
-#service loc_launcher /system/bin/loc_launcher
+service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
-#   class late_start
-#   group gps inet qcom_diag wifi
+   class late_start
+   group gps inet qcom_diag wifi
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
