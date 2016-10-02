@@ -14,8 +14,8 @@ binder_use(dashd)
 binder_service(dashd)
 binder_call(dashd, system_server)
 
-# Write to state file.
-allow dashd sysfs:file write;
+# We need rw perms to write file
+allow dashd sysfs:file rw_file_perms;
 
 ###
 ### dashd: charger mode
@@ -34,7 +34,7 @@ allow dashd input_device:chr_file  rw_file_perms;
 allow dashd tty_device:chr_file rw_file_perms;
 allow dashd ashmem_device:chr_file execute;
 allow dashd self:process execmem;
+allow dashd proc:file r_file_perms;
 allow dashd proc_sysrq:file rw_file_perms;
 allow dashd self:capability { sys_boot dac_override};
 allow dashd device:dir { open read write } ;
-#allow dashd device:chr_file { write read };

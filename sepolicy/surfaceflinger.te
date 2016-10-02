@@ -1,1 +1,4 @@
+set_prop(surfaceflinger, diag_prop)
+
 allow surfaceflinger system_data_file:sock_file write;
+allow surfaceflinger vfat:dir r_dir_perms;

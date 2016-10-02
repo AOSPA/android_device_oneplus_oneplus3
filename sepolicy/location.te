@@ -1,1 +1,3 @@
+set_prop(location, diag_prop)
+
 allow location permission_service:service_manager find;
