@@ -3,10 +3,6 @@ TARGET_USES_NQ_NFC := true
 #TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
-PRODUCT_BOOT_JARS += telephony-ext
-
-PRODUCT_PACKAGES += telephony-ext
-
 # copy customized media_profiles and media_codecs xmls for oneplus3
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
                       $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
