@@ -74,7 +74,7 @@ AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := false
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # Gestures
-#TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # GPS
 TARGET_NO_RPC := true
