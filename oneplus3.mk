@@ -103,6 +103,26 @@ ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 # QPerformance
 PRODUCT_BOOT_JARS += QPerformance
 
+# Camera
+PRODUCT_PACKAGES += \
+    libopencv_calib3d \
+    libopencv_flann \
+    libopencv_imgproc \
+    libopencv_photo \
+    libopencv_stitching \
+    libopencv_video \
+    libopencv_core \
+    libopencv_highgui \
+    libopencv_ml \
+    libopencv_rsobjdetect \
+    libopencv_superres \
+    libopencv_videostab \
+    libopencv_features2d \
+    libopencv_imgcodecs \
+    libopencv_objdetect \
+    libopencv_shape \
+    libopencv_videoio
+
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1
 
