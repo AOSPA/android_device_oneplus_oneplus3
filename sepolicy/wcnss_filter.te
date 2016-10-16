@@ -1,0 +1,2 @@
+allow wcnss_filter diag_prop:file read;
+allow wcnss_filter diag_prop:property_service set;
