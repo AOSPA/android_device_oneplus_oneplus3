@@ -32,7 +32,6 @@
 #include <linux/types.h>
 
 #include <platform_lib_includes.h>
-#include "log_util.h"
 #include "loc_eng_dmn_conn_glue_msg.h"
 #include "loc_eng_dmn_conn_handler.h"
 

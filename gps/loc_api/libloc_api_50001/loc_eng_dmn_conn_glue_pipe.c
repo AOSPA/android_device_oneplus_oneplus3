@@ -36,9 +36,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include <platform_lib_includes.h>
-#include "log_util.h"
 #include "loc_eng_dmn_conn_glue_pipe.h"
+#include <platform_lib_includes.h>
 /*===========================================================================
 FUNCTION    loc_eng_dmn_conn_glue_pipeget
 

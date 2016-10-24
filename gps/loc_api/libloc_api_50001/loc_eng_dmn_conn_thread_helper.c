@@ -29,7 +29,6 @@
 #include <stdio.h>
 
 #include <platform_lib_includes.h>
-#include "log_util.h"
 #include "loc_eng_dmn_conn_thread_helper.h"
 
 /*===========================================================================

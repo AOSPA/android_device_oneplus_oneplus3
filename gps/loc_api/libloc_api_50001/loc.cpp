@@ -40,6 +40,8 @@
 #include <dlfcn.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
 #include <LocDualContext.h>
 #include <platform_lib_includes.h>
 #include <cutils/properties.h>
@@ -208,7 +210,7 @@ extern "C" const GpsInterface* gps_get_hardware_interface ()
     loc_eng_read_config();
 
     // check to see if GPS should be disabled
-    property_get("gps.disable", propBuf, "");
+    platform_lib_abstraction_property_get("gps.disable", propBuf, "");
     if (propBuf[0] == '1')
     {
         LOC_LOGD("gps_get_interface returning NULL because gps.disable=1\n");
@@ -646,7 +648,7 @@ const void* loc_get_extension(const char* name)
    else if (strcmp(name, AGPS_RIL_INTERFACE) == 0)
    {
        char baseband[PROPERTY_VALUE_MAX];
-       property_get("ro.baseband", baseband, "msm");
+       platform_lib_abstraction_property_get("ro.baseband", baseband, "msm");
        if (strcmp(baseband, "csfb") == 0)
        {
            ret_val = &sLocEngAGpsRilInterface;
