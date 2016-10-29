@@ -57,6 +57,13 @@ PRODUCT_PACKAGES += \
     antradio_app \
     libvolumelistener
 
+# Vr
+PRODUCT_PACKAGES += \
+    vr.msm8996
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8996
