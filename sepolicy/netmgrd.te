@@ -1,3 +1,4 @@
 set_prop(netmgrd, diag_prop)
 
 allow netmgrd self:capability { dac_override dac_read_search };
+allow netmgrd system_data_file:file r_file_perms;
