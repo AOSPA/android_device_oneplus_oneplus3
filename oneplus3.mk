@@ -150,6 +150,8 @@ PRODUCT_PACKAGES += lights.qcom
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # GPS
+PRODUCT_BOOT_JARS += com.android.location.provider
+
 PRODUCT_PACKAGES += gps.msm8996
 
 PRODUCT_COPY_FILES += \
