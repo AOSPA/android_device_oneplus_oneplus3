@@ -188,7 +188,7 @@ audio.offload.multiple.enabled=true
 persist.hwc.enable_vds=1
 
 # FRP
-ro.frp.pst=/dev/block/sda14
+ro.frp.pst=/dev/block/platform/soc/624000.ufshc/by-name/config
 
 # DRM
 drm.service.enabled=true
