@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     libwpa_client \
     wpa_supplicant \
-    wpa_supplicant.conf \
+    wpa_supplicant.conf
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -58,15 +58,13 @@ PRODUCT_PACKAGES += \
     libvolumelistener
 
 # Vr
-PRODUCT_PACKAGES += \
-    vr.msm8996
+PRODUCT_PACKAGES += vr.msm8996
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
 
 # Sensors
-PRODUCT_PACKAGES += \
-    sensors.msm8996
+PRODUCT_PACKAGES += sensors.msm8996
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -86,8 +84,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # Thermal
-PRODUCT_PACKAGES += \
-    thermal.msm8996
+PRODUCT_PACKAGES += thermal.msm8996
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
@@ -115,6 +112,7 @@ PRODUCT_BOOT_JARS += QPerformance
 
 # Camera
 PRODUCT_PACKAGES += \
+    libop3_cam \
     libopencv_calib3d \
     libopencv_flann \
     libopencv_imgproc \
@@ -140,8 +138,7 @@ PRODUCT_AAPT_CONFIG += xlarge large
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 #Android fingerprint daemon implementation
-PRODUCT_PACKAGES += \
-    fingerprintd
+PRODUCT_PACKAGES += fingerprintd
 
 PRODUCT_PACKAGES += power.msm8996
 
@@ -168,16 +165,11 @@ PRODUCT_PACKAGES += \
     libjson
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
+PRODUCT_PACKAGES += OneplusDoze
 
 # FOSS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/display/FOSSConfig.xml:system/etc/FOSSConfig.xml
-
-# Camera extension library
-PRODUCT_PACKAGES += \
-    libop3_cam
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
