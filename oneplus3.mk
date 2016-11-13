@@ -1,7 +1,6 @@
 DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
 TARGET_USES_NQ_NFC := true
 #TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_MEDIA_EXTENSIONS := true
 
 # copy customized media_profiles and media_codecs xmls for oneplus3
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
