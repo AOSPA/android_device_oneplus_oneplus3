@@ -176,6 +176,8 @@ ro.hwui.text_large_cache_height=2048
 persist.camera.imglib.fddsp=1
 persist.camera.llc=1
 persist.camera.llnoise=1
+persist.camera.eis.enable=1
+persist.camera.is_type=4
 
 #Disable property for hard bypass
 audio.dolby.ds2.hardbypass=false
