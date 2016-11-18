@@ -18,6 +18,7 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan/qca_cld; \
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
 	    $(TARGET_OUT)/etc/firmware/msadp)
-include $(all-subdir-makefiles)
+
+include $(call all-subdir-makefiles)
 
 endif
