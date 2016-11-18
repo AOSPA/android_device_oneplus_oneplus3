@@ -126,6 +126,4 @@ USE_SENSOR_MULTI_HAL := true
 
 TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
-TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
-
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
