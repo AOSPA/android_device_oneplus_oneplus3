@@ -147,6 +147,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # GPS
 PRODUCT_BOOT_JARS += com.android.location.provider
+PRODUCT_BOOT_JARS += izat.xt.srv
 
 PRODUCT_PACKAGES += gps.msm8996
 
