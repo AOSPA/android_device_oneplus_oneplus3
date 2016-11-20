@@ -84,6 +84,9 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
+# Releasetools extension for shipping firmware
+TARGET_RELEASETOOLS_EXTENSIONS := device/oneplus/oneplus3
+
 # GPS
 TARGET_NO_RPC := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm8996
