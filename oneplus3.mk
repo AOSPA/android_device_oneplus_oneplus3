@@ -133,8 +133,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1
 
-PRODUCT_AAPT_CONFIG += xlarge large
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
 #Android fingerprint daemon implementation
 PRODUCT_PACKAGES += fingerprintd
