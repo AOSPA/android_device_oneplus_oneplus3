@@ -246,6 +246,9 @@ dalvik.vm.dex2oat-swap=false
 ro.sf.lcd_density=480
 enable_prefetch=1
 
+# IMS
+service.qti.ims.enabled=1
+
 #Disable face beautification
 persist.ts.postmakeup=false
 persist.ts.rtmakeup=false
