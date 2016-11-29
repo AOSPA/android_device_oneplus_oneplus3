@@ -25,7 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
 import init.qcom.usb.rc
 import init.msm.usb.configfs.rc
 import init.target.rc
@@ -55,6 +54,7 @@ on early-boot
 
     # set aggressive read ahead during boot up.
     write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/sda/queue/read_ahead_kb 2048
     write /sys/block/sde/queue/read_ahead_kb 2048
 
@@ -123,7 +123,6 @@ on boot
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
-
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -310,6 +309,10 @@ on post-fs-data
     #Create PERFD deamon related dirs
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
+    rm /data/system/perfd/default_values
+    setprop ro.min_freq_0 307200
+    setprop ro.min_freq_4 307200
+    start perfd
 
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
@@ -330,11 +333,6 @@ on post-fs-data
     write /data/misc/radio/db_check_done 0
     chown radio radio /data/misc/radio/db_check_done
     chmod 0660 /data/misc/radio/db_check_done
-
-    # set aggressive read ahead for dm-0 and dm-1 during boot up
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
-    write /sys/block/dm-1/queue/read_ahead_kb 2048
-
 
 service perfd /system/vendor/bin/perfd
    class main
@@ -382,14 +380,6 @@ on property:persist.sys.ssr.enable_ramdumps=1
 
 on property:persist.sys.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
-
-on property:sys.boot_completed=1
-    write /dev/kmsg "Boot completed "
-    #Reset read ahead for dm-0 and dm-1 to 512kb
-    write /sys/block/dm-0/queue/read_ahead_kb 512
-    write /sys/block/dm-1/queue/read_ahead_kb 512
-    #WDSP FW boot sysfs node used by STHAL
-    chown media audio /sys/kernel/wdsp0/boot
 
 on property:bluetooth.sap.status=running
     start bt-sap
@@ -547,6 +537,7 @@ service qmuxd /system/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps nfc qcom_diag
+    disabled
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -708,8 +699,8 @@ on property:sys.shutdown.requested=*
 
 service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
-   class late_start
-   group gps inet qcom_diag wifi
+    class late_start
+    group gps inet qcom_diag wifi
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
@@ -744,6 +735,12 @@ service sensor-sh /system/bin/sh /init.qcom.sensors.sh
     user root
     oneshot
 
+service qcom-post-boot /system/bin/sh /system/bin/init.qcom.post_boot.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start
     user root
@@ -759,6 +756,12 @@ service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
 
 on property:persist.data.ds_fmc_app.mode=1
     start ds_fmc_appd
+
+on property:sys.boot_completed=1
+    start qcom-post-boot
+    write /dev/kmsg "Boot completed "
+    #WDSP FW boot sysfs node used by STHAL
+    chown media audio /sys/kernel/wdsp0/boot
 
 service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
     class late_start

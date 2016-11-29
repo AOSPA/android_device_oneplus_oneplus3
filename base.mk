@@ -237,7 +237,6 @@ INIT += fstab.qcom
 INIT += init.qcom.debug.sh
 INIT += init.qcom.sensors.sh
 INIT += charger.fstab.qcom
-INIT += init.qcom.power.rc
 
 #IPROUTE2
 IPROUTE2 := ip
