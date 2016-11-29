@@ -39,6 +39,8 @@ on init
 
     symlink /sdcard /storage/sdcard0
 
+    write /proc/sys/vm/swappiness 0
+
     # Create cgroup mount point for memory
     mkdir /sys/fs/cgroup/memory/bg 0750 root system
     write /sys/fs/cgroup/memory/bg/memory.move_charge_at_immigrate 1
