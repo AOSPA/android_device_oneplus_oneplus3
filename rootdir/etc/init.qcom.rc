@@ -312,8 +312,6 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
     rm /data/system/perfd/default_values
-    setprop ro.min_freq_0 307200
-    setprop ro.min_freq_4 307200
     start perfd
 
     # NFC local data and nfcee xml storage
