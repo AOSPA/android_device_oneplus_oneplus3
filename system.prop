@@ -106,10 +106,6 @@ bt.max.hfpclient.connections=1
 # System property for cabl
 #ro.qualcomm.cabl=2
 
-# HAX - remove ASAP
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
-
 # Display
 ro.qualcomm.display.paneltype=1
 

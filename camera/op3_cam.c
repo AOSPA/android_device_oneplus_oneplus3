@@ -20,9 +20,3 @@ const char _ZN7android18gClientPackageNameE[] = "client-package-name";
 const char _ZN7android16CameraParameters19CLIENT_PACKAGE_NAMEE[] = "client-package-name";
 const char _ZN7android16CameraParameters31KEY_SUPPORTED_VIDEO_SIZES_60FPSE[] = "support-60fps-video-sizes";
 const char _ZN7android13GraphicBufferC1Ejjij[] = "graphic-buffer";
-
-extern ssize_t _ZN7android13SensorManager13getSensorListEPPKPKNS_6SensorE(void*, void*);
-
-ssize_t _ZNK7android13SensorManager13getSensorListEPPKPKNS_6SensorE(void* thiz, void* list) {
-    return _ZN7android13SensorManager13getSensorListEPPKPKNS_6SensorE(thiz, list);
-}
