@@ -50,6 +50,8 @@ $(call add-firmware-file,$(target_firmware_path)/devcfg.mbn)
 $(call add-firmware-file,$(target_firmware_path)/keymaster.mbn)
 # xbl file
 $(call add-firmware-file,$(target_firmware_path)/xbl.elf)
+# lksecapp image
+$(call add-firmware-file,$(target_firmware_path)/lksecapp.mbn)
 
 # Unset local variable
 target_firmware_path :=
