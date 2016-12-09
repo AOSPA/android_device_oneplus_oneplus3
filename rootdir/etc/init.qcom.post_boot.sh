@@ -118,7 +118,9 @@ echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 
 # Enable all LPMs by default
 # This will enable C4, D4, D3, E4 and M3 LPMs
+# This will also disable console suspend
 echo N > /sys/module/lpm_levels/parameters/sleep_disabled
+echo N > /sys/module/printk/parameters/console_suspend
 
 # Set GPU default power level to 6
 echo 6 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
