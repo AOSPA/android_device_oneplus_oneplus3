@@ -110,12 +110,8 @@ bt.max.hfpclient.connections=1
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
 
-# Display power reduction (FOSS)
-ro.qcom.dpps.sensortype=3
+# Display
 ro.qualcomm.display.paneltype=1
-ro.qualcomm.foss=1
-config.foss.xml=1
-config.foss.path=/system/etc/FOSSConfig.xml
 
 #system prop for Bluetooth SOC type
 qcom.bluetooth.soc=rome

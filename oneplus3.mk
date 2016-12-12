@@ -165,10 +165,6 @@ PRODUCT_PACKAGES += \
     libtinyxml2 \
     libjson
 
-# FOSS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/display/FOSSConfig.xml:system/etc/FOSSConfig.xml
-
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
