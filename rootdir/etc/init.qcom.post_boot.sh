@@ -36,8 +36,6 @@ bcl_soc_hotplug_mask=`cat /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask`
 echo 0 > /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask
 echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
 
-echo "18432,23040,27648,51256,110296,200640" > /sys/module/lowmemorykiller/parameters/minfree
-
 # configure governor settings for little cluster
 echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
