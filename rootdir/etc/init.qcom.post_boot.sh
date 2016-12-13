@@ -27,6 +27,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Get project id
+project=`getprop ro.boot.project_name`
+
 # disable thermal bcl hotplug to switch governor
 echo 0 > /sys/module/msm_thermal/core_control/enabled
 echo -n disable > /sys/devices/soc/soc:qcom,bcl/mode
@@ -74,9 +77,22 @@ echo -n disable > /sys/devices/soc/soc:qcom,bcl/mode
 echo $bcl_hotplug_mask > /sys/devices/soc/soc:qcom,bcl/hotplug_mask
 echo $bcl_soc_hotplug_mask > /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask
 echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
+
 # input boost configuration
-echo "0:1324800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+case "$project" in
+    "15801")
+        echo "0:1324800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
+        echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+    ;;
+esac
+
+case "$project" in
+    "15811")
+        echo "0:1286400 2:1286400" > /sys/module/cpu_boost/parameters/input_boost_freq
+        echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+    ;;
+esac
+
 # Setting b.L scheduler parameters
 echo 0 > /proc/sys/kernel/sched_boost
 echo 1 > /proc/sys/kernel/sched_migration_fixup
