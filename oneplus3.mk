@@ -114,9 +114,6 @@ PRODUCT_BOOT_JARS += QPerformance
 PRODUCT_PACKAGES += \
     libop3_cam
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=1
-
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
