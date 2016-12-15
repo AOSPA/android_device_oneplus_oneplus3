@@ -111,6 +111,10 @@ PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml
 
+# High performance VR feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
+
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/msm8996/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
@@ -142,3 +146,12 @@ else
     PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
         ro.logdumpd.enabled=0
 endif
+
+-include $(QCPATH)/common/config/rendering-engine.mk
+ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
+        MULTI_LANG_ENGINE := REVERIE
+endif
+
+# Defined the locales
+PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN ta_IN te_IN zh_HK \
+        in_ID my_MM km_KH sw_KE uk_UA pl_PL sr_RS sl_SI fa_IR kn_IN ml_IN ur_IN gu_IN or_IN
