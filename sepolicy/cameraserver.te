@@ -1,0 +1,2 @@
+allow cameraserver adsprpcd_file:dir r_dir_perms;
+allow cameraserver adsprpcd_file:file r_file_perms;
