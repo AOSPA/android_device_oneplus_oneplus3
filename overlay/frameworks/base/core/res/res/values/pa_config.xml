@@ -91,13 +91,13 @@
 
     <integer name="config_drawArrowRightDefault">5</integer>
 
-    <!-- Whether to intercept inputs on screen off. -->
+    <!-- Whether to intercept inputs on screen off -->
     <bool name="config_enableKeyHandler">true</bool>
 
     <!-- Whether device has fysical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
 
-    <!-- Wether device has dash charging support -->
+    <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
 
 </resources>
