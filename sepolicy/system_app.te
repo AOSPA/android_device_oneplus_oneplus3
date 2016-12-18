@@ -6,5 +6,4 @@ allow system_app qmuxd:unix_stream_socket connectto;
 allow system_app qmuxd_socket:dir w_dir_perms;
 allow system_app qmuxd_socket:sock_file { create write };
 
-# HAX
 allow system_app qtitetherservice_service:service_manager add;
