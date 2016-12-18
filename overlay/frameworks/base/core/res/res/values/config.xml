@@ -449,4 +449,8 @@
     <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
 
     <bool name="config_volte_preferred">true</bool>
+
+    <!-- Should the pinner service pin the Camera application? -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
 </resources>
