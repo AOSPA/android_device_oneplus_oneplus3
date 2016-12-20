@@ -31,19 +31,6 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">19</integer>
 
-    <!-- Control the behavior when the user long presses the home button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch Camera
-         This needs to match the constants in
-         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-    -->
-    <integer name="config_longPressOnHardwareHomeBehavior">3</integer>
-
     <!-- Keycodes of gestures. If the gesture is not supported set it to 0. -->
     <integer name="config_doubleTapKeyCode">59</integer>
 
