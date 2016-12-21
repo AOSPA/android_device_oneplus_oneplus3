@@ -685,6 +685,11 @@ IMS_SETTINGS := imssettings
 #IMS Extension module for Android Telephony
 IMS_EXT := ims-ext-common
 
+#CARRIER ONE RCS
+CARRIER_ONE_RCS := rcscommon
+CARRIER_ONE_RCS += rcscommon.xml
+CARRIER_ONE_RCS += RCSService
+
 #CRDA
 CRDA := crda
 CRDA += regdbdump
@@ -831,6 +836,7 @@ PRODUCT_PACKAGES += $(WLAN)
 PRODUCT_PACKAGES += $(IPACM)
 PRODUCT_PACKAGES += $(FSTMAN)
 PRODUCT_PACKAGES += $(IMS_EXT)
+PRODUCT_PACKAGES += $(CARRIER_ONE_RCS)
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
