@@ -13,6 +13,10 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
 	    $(TARGET_OUT)/etc/firmware/msadp)
 
+# Read WiFi MAC Address from persist partition
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld ; \
+	ln -sf /persist/wlan_mac.bin $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/wlan_mac.bin)
+
 include $(call all-subdir-makefiles)
 
 endif
