@@ -57,7 +57,7 @@ def FullOTA_InstallEnd(info):
   image_partitions_op3.update(image_partitions_common);
   image_partitions_op3t.update(image_partitions_common);
 
-  info.script.AppendExtra('if getprop("ro.product.device") == "oneplus3" then')
+  info.script.AppendExtra('if getprop("ro.boot.project_name") == "15801" then')
   for k, v in image_partitions_op3.iteritems():
     try:
       img_file = info.input_zip.read("firmware/" + k + "-op3")
@@ -67,7 +67,7 @@ def FullOTA_InstallEnd(info):
 
   info.script.AppendExtra('endif;')
 
-  info.script.AppendExtra('if getprop("ro.product.device") == "oneplus3t" then')
+  info.script.AppendExtra('if getprop("ro.boot.project_name") == "15811" then')
   for k, v in image_partitions_op3t.iteritems():
     try:
       img_file = info.input_zip.read("firmware/" + k + "-op3t")
