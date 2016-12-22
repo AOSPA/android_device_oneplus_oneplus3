@@ -196,6 +196,11 @@ use.qti.sw.ape.decoder=true
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
+# b/30022738
+# Work around janky screenrecord performance by disabling hardware composer
+# virtual displays
+debug.sf.disable_hwc_vds=1
+
 # FRP
 ro.frp.pst=/dev/block/platform/soc/624000.ufshc/by-name/config
 
