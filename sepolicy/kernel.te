@@ -1,3 +1,4 @@
 allow kernel vfat:file r_file_perms;
 allow kernel self:capability { dac_read_search dac_override };
 allow kernel self:socket create;
+allow kernel block_device:dir r_dir_perms;
