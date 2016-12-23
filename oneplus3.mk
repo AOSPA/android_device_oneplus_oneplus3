@@ -16,7 +16,7 @@ include $(TOPDIR)hardware/qcom/audio/configs/msm8996/msm8996.mk
 PRODUCT_PACKAGES += libGLES_android
 
 # Audio
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence
 
 PRODUCT_PACKAGES += \
