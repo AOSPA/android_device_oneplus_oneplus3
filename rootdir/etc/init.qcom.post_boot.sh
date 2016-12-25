@@ -166,7 +166,7 @@ if [ -f /sys/devices/soc0/select_image ]; then
     image_variant=`getprop ro.product.name`
     image_variant+="-"
     image_variant+=`getprop ro.build.type`
-    oem_version=`getprop ro.build.version.codename`
+    oem_version=`getprop ro.modversion`
     echo 10 > /sys/devices/soc0/select_image
     echo $image_version > /sys/devices/soc0/image_version
     echo $image_variant > /sys/devices/soc0/image_variant
