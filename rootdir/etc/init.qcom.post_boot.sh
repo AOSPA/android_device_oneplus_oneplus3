@@ -90,7 +90,7 @@ case "$project" in
         echo "0:1286400 2:1286400" > /sys/module/cpu_boost/parameters/input_boost_freq
     ;;
 esac
-echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+echo 150 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 # Setting b.L scheduler parameters
 echo 0 > /proc/sys/kernel/sched_boost
