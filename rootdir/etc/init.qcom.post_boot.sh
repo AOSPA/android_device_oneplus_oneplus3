@@ -82,16 +82,15 @@ echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
 case "$project" in
     "15801")
         echo "0:1324800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-        echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
     ;;
 esac
 
 case "$project" in
     "15811")
         echo "0:1286400 2:1286400" > /sys/module/cpu_boost/parameters/input_boost_freq
-        echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
     ;;
 esac
+echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 # Setting b.L scheduler parameters
 echo 0 > /proc/sys/kernel/sched_boost
