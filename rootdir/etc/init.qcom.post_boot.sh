@@ -153,6 +153,9 @@ echo "cfq" > /sys/block/sde/queue/scheduler
 # Starting io prefetcher service
 start iop
 
+# Starting IRQ Balancer
+start msm_irqbalance
+
 # Post-setup services
 setprop sys.post_boot.parsed 1
 
