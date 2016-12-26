@@ -29,7 +29,7 @@ telephony.lteOnCdmaDevice=1,1
 persist.data.qmi.adb_logmask=0
 persist.radio.custom_ecc=1
 persist.oem.dump=0
-persist.radio.ignore_dom_time=5
+persist.radio.ignore_dom_time=10
 persist.radio.hw_mbn_update=0
 persist.radio.sw_mbn_update=0
 persist.radio.start_ota_daemon=1
@@ -101,7 +101,7 @@ ro.opengles.version=196610
 bt.max.hfpclient.connections=1
 
 # System property for cabl
-#ro.qualcomm.cabl=2
+ro.qualcomm.cabl=0
 
 # Display
 ro.qualcomm.display.paneltype=1
@@ -221,8 +221,8 @@ ro.sys.fw.bg_apps_limit=45
 #reschedule killed services during app launch
 ro.am.reschedule_service=true
 
-#set cutoff voltage to 3400mV
-ro.cutoff_voltage_mv=3400
+#set cutoff voltage to 3250MV
+ro.cutoff_voltage_mv=3250
 
 # Dalvik properties
 dalvik.vmheapstartsize=8m
