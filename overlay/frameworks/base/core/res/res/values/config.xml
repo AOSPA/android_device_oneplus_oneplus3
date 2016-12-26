@@ -214,6 +214,7 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
         <item>4</item>
         <item>9</item>
         <item>13</item>
@@ -252,7 +253,7 @@
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">6</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -260,7 +261,7 @@
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">53</integer>
+    <integer name="config_screenBrightnessSettingDefault">41</integer>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -351,7 +352,7 @@
     <bool name="config_dozePulsePickup">true</bool>
 
     <!-- Screen brightness when dozing. -->
-    <integer name="config_screenBrightnessDoze">17</integer>
+    <integer name="config_screenBrightnessDoze">13</integer>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
