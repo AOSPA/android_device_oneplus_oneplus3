@@ -107,6 +107,10 @@ TARGET_HW_DISK_ENCRYPTION := true
 #Enable PD locater/notifier
 TARGET_PD_SERVICE_ENABLED := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus3/init/init_oneplus3.cpp
+
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_CAMERA_STUB := true
