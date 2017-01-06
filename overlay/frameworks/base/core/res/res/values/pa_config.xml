@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2016, The Paranoid Android Project
+** Copyright 2016-2017, The Paranoid Android Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -86,5 +86,20 @@
 
     <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
+
+  <!-- Extended Boosts for QPerformance -->
+
+  <!-- Whether cpu boost is enabled right after boot -->
+   <bool name="config_enableCpuBoostOnBoot">true</bool>
+
+  <!-- Boost parameters which get passed to QPerformance -->
+   <integer-array name="onbootboost_param_value">
+       <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+       <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+       <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
+       <item>0x6A4</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+       <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode -->
+       <item>0x7D0</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+   </integer-array>
 
 </resources>
