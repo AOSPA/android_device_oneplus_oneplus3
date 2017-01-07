@@ -55,4 +55,7 @@
     <!-- Intercept inputs on screen off. -->
     <bool name="config_enableKeyHandler">true</bool>
 
+    <!-- SRGB -->
+    <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
+
 </resources>
