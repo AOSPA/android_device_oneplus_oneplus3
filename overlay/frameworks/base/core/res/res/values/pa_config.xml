@@ -102,4 +102,7 @@
        <item>0x7D0</item>      <!-- CPUBOOST MIN_FREQ resource value -->
    </integer-array>
 
+  <!-- sRGB sysfs path -->
+  <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
+
 </resources>
