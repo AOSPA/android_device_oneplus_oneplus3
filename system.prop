@@ -238,3 +238,6 @@ service.qti.ims.enabled=1
 #Disable face beautification
 persist.ts.postmakeup=false
 persist.ts.rtmakeup=false
+
+# Enable sdcardfs
+ro.sys.sdcardfs=true
