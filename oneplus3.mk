@@ -10,14 +10,16 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_pr
 
 $(call inherit-product, device/oneplus/oneplus3/common64.mk)
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
-include $(TOPDIR)hardware/qcom/audio/configs/msm8996/msm8996.mk
 
-#Android EGL implementation
-PRODUCT_PACKAGES += libGLES_android
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence
+
+include $(TOPDIR)hardware/qcom/audio/configs/msm8996/msm8996.mk
+
+#Android EGL implementation
+PRODUCT_PACKAGES += libGLES_android
 
 PRODUCT_PACKAGES += \
     audiod \
