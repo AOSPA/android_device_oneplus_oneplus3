@@ -220,7 +220,7 @@ ro.am.reschedule_service=true
 ro.cutoff_voltage_mv=3250
 
 # Dalvik properties
-dalvik.vmheapstartsize=8m
+dalvik.vm.heapstartsize=8m
 dalvik.vm.heapgrowthlimit=384m
 dalvik.vm.heapsize=1024m
 dalvik.vm.heaptargetutilization=0.75
