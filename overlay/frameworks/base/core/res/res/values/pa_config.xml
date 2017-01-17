@@ -105,4 +105,6 @@
   <!-- sRGB sysfs path -->
   <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
 
+  <!-- Internal default to navigation bar value -->
+  <bool name="config_defaultToNavigationBar">false</bool>
 </resources>
