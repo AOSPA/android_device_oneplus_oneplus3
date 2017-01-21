@@ -164,6 +164,9 @@ ro.hwui.text_large_cache_height=2048
 
 persist.camera.llc=1
 
+#force HAL1 for some apps
+camera.hal1.packagelist=org.codeaurora.snapcam
+
 #Disable property for hard bypass
 audio.dolby.ds2.hardbypass=false
 
