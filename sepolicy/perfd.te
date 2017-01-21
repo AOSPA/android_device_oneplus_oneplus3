@@ -1,1 +1,2 @@
 allow perfd device:file open;
+allow perfd cameraserver:process signull;
