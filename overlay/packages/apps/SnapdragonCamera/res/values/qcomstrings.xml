@@ -27,4 +27,8 @@
 
     <!-- Default face  detection setting. -->
     <string name="pref_camera_facedetection_default" translatable="false">on</string>
+
+    <!-- Default noise reduction setting. Do not translate. -->
+    <string name="pref_camera_noise_reduction_default">high-quality</string>
+
 </resources>
