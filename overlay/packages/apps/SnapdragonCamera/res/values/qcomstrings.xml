@@ -27,7 +27,4 @@
 
     <!-- Default face  detection setting. -->
     <string name="pref_camera_facedetection_default" translatable="false">on</string>
-
-    <!-- Default Anti Banding setting. -->
-    <string name="pref_camera_antibanding_default">on</string>
 </resources>
