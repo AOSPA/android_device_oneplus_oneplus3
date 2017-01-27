@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<resources>
+    <!-- Camera Preferences Scene Mode dialog box entries -->
+    <string-array name="pref_camera_scenemode_entries" translatable="false">
+        <item>@string/pref_camera_scenemode_entry_auto</item>
+        <item>@string/pref_camera_scenemode_entry_hdr</item>
+        <item>@string/pref_camera_scenemode_entry_refocus</item>
+        <item>@string/pref_camera_scenemode_entry_optizoom</item>
+        <item>@string/pref_camera_scenemode_entry_landscape</item>
+        <item>@string/pref_camera_scenemode_entry_sports</item>
+        <item>@string/pref_camera_scenemode_entry_flowers</item>
+        <item>@string/pref_camera_scenemode_entry_backlight</item>
+        <item>@string/pref_camera_scenemode_entry_candlelight</item>
+        <item>@string/pref_camera_scenemode_entry_sunset</item>
+        <item>@string/pref_camera_scenemode_entry_night</item>
+        <item>@string/pref_camera_scenemode_entry_beach</item>
+        <item>@string/pref_camera_scenemode_entry_snow</item>
+        <item>@string/pref_camera_scenemode_entry_asd</item>
+    </string-array>
+
+    <array name="scenemode_thumbnails" translatable="false">
+        <item>@drawable/ic_scene_mode_auto</item>
+        <item>@drawable/ic_scene_mode_hdr</item>
+        <item>@drawable/ic_scene_mode_refocus</item>
+        <item>@drawable/ic_scene_mode_optizoom</item>
+        <item>@drawable/ic_scene_mode_landscape</item>
+        <item>@drawable/ic_scene_mode_sports</item>
+        <item>@drawable/ic_scene_mode_flower</item>
+        <item>@drawable/ic_scene_mode_backlight</item>
+        <item>@drawable/ic_scene_mode_candlelight</item>
+        <item>@drawable/ic_scene_mode_sunset</item>
+        <item>@drawable/ic_scene_mode_night</item>
+        <item>@drawable/ic_scene_mode_beach</item>
+        <item>@drawable/ic_scene_mode_snow</item>
+        <item>@drawable/ic_scene_mode_smartauto</item>
+    </array>
+
+    <string-array name="pref_camera_scenemode_entryvalues" translatable="false">
+        <item>auto</item>
+        <item>hdr</item>
+        <item>@string/pref_camera_advanced_feature_value_refocus_on</item>
+        <item>@string/pref_camera_advanced_feature_value_optizoom_on</item>
+        <item>landscape</item>
+        <item>sports</item>
+        <item>flowers</item>
+        <item>backlight</item>
+        <item>candlelight</item>
+        <item>sunset</item>
+        <item>night</item>
+        <item>beach</item>
+        <item>snow</item>
+        <item>asd</item>
+    </string-array>
+</resources>
