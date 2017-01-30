@@ -128,10 +128,10 @@ echo N > /sys/module/printk/parameters/console_suspend
 # Set GPU default power level to 7
 echo 7 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
 
-# Reset the read_ahead_kb to 512
+# Reset the read_ahead_kb to 128
 for block_device in /sys/block/*
 do
-    echo 512 > $block_device/queue/read_ahead_kb
+    echo 128 > $block_device/queue/read_ahead_kb
 done
 
 # switch to CFQ
