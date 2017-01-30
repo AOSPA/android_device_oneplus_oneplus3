@@ -79,18 +79,8 @@ echo $bcl_soc_hotplug_mask > /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask
 echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
 
 # input boost configuration
-case "$project" in
-    "15801")
-        echo "0:1324800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-    ;;
-esac
-
-case "$project" in
-    "15811")
-        echo "0:1286400 2:1286400" > /sys/module/cpu_boost/parameters/input_boost_freq
-    ;;
-esac
-echo 150 > /sys/module/cpu_boost/parameters/input_boost_ms
+echo "0:1190400 2:1190400" > /sys/module/cpu_boost/parameters/input_boost_freq
+echo 200 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 # Setting b.L scheduler parameters
 echo 0 > /proc/sys/kernel/sched_boost
