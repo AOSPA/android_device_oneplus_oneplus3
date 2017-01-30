@@ -129,10 +129,10 @@ echo N > /sys/module/printk/parameters/console_suspend
 echo 7 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
 
 # Reset the read_ahead_kb to 512
-echo 512 > /sys/block/dm-0/queue/read_ahead_kb
-echo 512 > /sys/block/dm-1/queue/read_ahead_kb
-echo 512 > /sys/block/sda/queue/read_ahead_kb
-echo 512 > /sys/block/sde/queue/read_ahead_kb
+for block_device in /sys/block/*
+do
+    echo 512 > $block_device/queue/read_ahead_kb
+done
 
 # switch to CFQ
 echo "cfq" > /sys/block/dm-0/queue/scheduler
