@@ -109,6 +109,9 @@ ro.qualcomm.display.paneltype=1
 #system prop for Bluetooth SOC type
 qcom.bluetooth.soc=rome
 
+# Qualcomm BT aptXHD
+persist.bt.enableAptXHD=true
+
 #system prop for wipower support
 ro.bluetooth.wipower=true
 
