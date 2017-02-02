@@ -2183,6 +2183,7 @@
         <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
         <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
         <ctl name="EAR PA Gain" value="G_6_DB" />
+        <ctl name="RX0 Digital Volume" value="89" />
     </path>
 <!-- #ifdef VENDOR_EDIT -->
 <!-- /*zhiguang.su@MultiMedia.AudioDrv , 2015/10/21, add for pa*/  -->
