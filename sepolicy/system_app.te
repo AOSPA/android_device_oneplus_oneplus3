@@ -7,3 +7,5 @@ allow system_app qmuxd_socket:dir w_dir_perms;
 allow system_app qmuxd_socket:sock_file { create write };
 
 allow system_app qtitetherservice_service:service_manager add;
+
+allow system_app fingerprintd:binder call;
