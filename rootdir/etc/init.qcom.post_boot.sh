@@ -125,7 +125,9 @@ echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 echo N > /sys/module/printk/parameters/console_suspend
 
-# Set GPU default power level to 7
+# msm8996: Set GPU default power level to 6
+echo 6 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
+# msm8996pro: Set GPU default power level to 7
 echo 7 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
 
 # Reset the read_ahead_kb to 256
