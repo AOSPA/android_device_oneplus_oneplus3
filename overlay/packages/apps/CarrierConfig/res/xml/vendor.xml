@@ -57,6 +57,27 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="false" />
         <boolean name="config_hide_preview_in_vt_confcall" value="false" />
         <boolean name="config_carrier_cs_retry_available" value="false" />
+        <!-- Controls modify call capabilities
+             FALSE - default capabilities will be retained
+             TRUE - remove modify call capabilities which will hide modify call button -->
+        <boolean name="remove_modify_call_capability" value="false" />
+        <!-- Config to show/hide Video quality toast -->
+        <boolean name="show_video_quality_toast" value="true"/>
+        <!-- Config to show/hide call session event toast like player start/stop -->
+        <boolean name="show_call_session_event_toast" value="true"/>
+        <!-- Config to show/hide data usage toast -->
+        <boolean name="show_data_usage_toast" value="true"/>
+        <!-- Config to enable video conference call suuport -->
+        <boolean name="support_video_conference_call_bool" value="true"/>
+        <!-- Config that controls whether to show static image related UI elements or not
+             eg. static image option under IMS Settings, static image in preview window,
+             hide me button in active call screen etc. -->
+        <boolean name="show_static_image_ui" value="false"/>
+        <!-- Config that controls whether to transmit static image instead of
+             preview video stream -->
+        <boolean name="transmit_static_image" value="false"/>
+        <!-- default Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="222" mnc="01">
@@ -71,6 +92,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="854">
@@ -80,6 +111,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="855">
@@ -89,6 +130,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="856">
@@ -98,6 +149,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="857">
@@ -107,6 +168,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="858">
@@ -116,6 +187,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="859">
@@ -125,6 +206,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="860">
@@ -134,6 +225,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="861">
@@ -143,6 +244,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="862">
@@ -152,6 +263,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="863">
@@ -161,6 +282,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="864">
@@ -170,6 +301,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="865">
@@ -179,6 +320,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="866">
@@ -188,6 +339,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="867">
@@ -197,6 +358,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="868">
@@ -206,6 +377,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="869">
@@ -215,6 +396,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="870">
@@ -224,6 +415,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="871">
@@ -233,6 +434,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="872">
@@ -242,6 +453,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="873">
@@ -251,6 +472,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="405" mnc="874">
@@ -260,6 +491,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="use_custom_video_ui" value="true" />
         <boolean name="config_hide_preview_in_vt_confcall" value="true" />
         <boolean name="config_carrier_specific_network_type_display" value="true"/>
+        <boolean name="remove_modify_call_capability" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="true"/>
+        <boolean name="config_dds_switch_alert_dialog_supported" value="true"/>
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
+        <boolean name="config_retry_sms_over_ims" value="true"/>
+        <!-- Config to validate RCS enriched call capability -->
+        <boolean name="config_enriched_call_capable" value="true"/>
     </carrier_config>
 
     <carrier_config mcc="450" mnc="05">
@@ -282,6 +523,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="config_enable_callbarring_over_ims" value="true" />
         <boolean name="config_spn_override_enabled" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_disable_clir_over_ut" value="true" />
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="460" mnc="01">
@@ -295,12 +540,17 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="config_enable_callbarring_over_ims" value="true" />
         <boolean name="config_spn_override_enabled" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_disable_clir_over_ut" value="true" />
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="460" mnc="03">
         <boolean name="ascii_7_bit_support_for_long_message" value="true" />
         <boolean name="cdma_cw_cf_enabled_bool" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_show_orig_dial_string_for_cdma" value="true" />
     </carrier_config>
 
     <carrier_config mcc="460" mnc="04">
@@ -322,6 +572,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="config_enable_callbarring_over_ims" value="true" />
         <boolean name="config_spn_override_enabled" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_disable_clir_over_ut" value="true" />
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="460" mnc="08">
@@ -329,6 +583,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="check_mobile_data_for_cf" value="true" />
         <boolean name="config_enable_callbarring_over_ims" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_disable_clir_over_ut" value="true" />
+        <boolean name="show_video_quality_toast" value="false"/>
+        <boolean name="show_call_session_event_toast" value="false"/>
+        <boolean name="show_data_usage_toast" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="460" mnc="09">
@@ -343,56 +601,161 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="ascii_7_bit_support_for_long_message" value="true" />
         <boolean name="cdma_cw_cf_enabled_bool" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_show_orig_dial_string_for_cdma" value="true" />
     </carrier_config>
 
     <carrier_config mcc="460" mnc="12">
         <boolean name="ascii_7_bit_support_for_long_message" value="true" />
         <boolean name="cdma_cw_cf_enabled_bool" value="true" />
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+        <boolean name="config_show_orig_dial_string_for_cdma" value="true" />
     </carrier_config>
 
     <carrier_config mcc="310" mnc="030">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
     </carrier_config>
 
     <carrier_config mcc="310" mnc="070">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="080">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
     </carrier_config>
 
     <carrier_config mcc="310" mnc="030">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
     </carrier_config>
 
     <carrier_config mcc="310" mnc="150">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="170">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="280">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="380">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="410">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="560">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="310" mnc="680">
         <boolean name="config_enable_display_14digit_imei" value="true" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="transmit_static_image" value="true"/>
+        <boolean name="show_static_image_ui" value="false"/>
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="260">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="160">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="200">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="210">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="220">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="230">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="240">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="250">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="270">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="300">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="310">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="490">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="530">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="580">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="590">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="640">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="660">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="310" mnc="800">
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="311" mnc="480">
+        <boolean name="support_video_conference_call_bool" value="false"/>
     </carrier_config>
 
 </carrier_config_list>

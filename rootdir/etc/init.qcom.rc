@@ -189,6 +189,12 @@ on boot
     chown system graphics /sys/class/graphics/fb0/SRGB
     chmod 0664 /sys/class/graphics/fb0/SRGB
 
+    # Allow access to emmc rawdump block partition and dload sysfs node
+    chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chown root system /sys/kernel/dload/emmc_dload
+    chmod 0660 /sys/kernel/dload/emmc_dload
+
 # msm specific files that need to be created on /data
 on post-fs-data
     #Create directories for Fingerprint
@@ -896,3 +902,6 @@ service poweroffhandler /system/bin/poweroffhandler
 
 on property:vold.decrypt=trigger_restart_min_framework
     start time_daemon
+
+on property:vold.decrypt=trigger_restart_framework
+    restart time_daemon

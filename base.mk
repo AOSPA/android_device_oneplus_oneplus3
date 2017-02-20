@@ -67,7 +67,7 @@ AUDIO_HARDWARE += audio.primary.msm8952
 AUDIO_HARDWARE += audio.primary.msm8937
 AUDIO_HARDWARE += audio.primary.msm8953
 AUDIO_HARDWARE += audio.primary.msmgold
-AUDIO_HARDWARE += audio.primary.msmcobalt
+AUDIO_HARDWARE += audio.primary.msm8998
 #
 AUDIO_POLICY := audio_policy.mpq8064
 AUDIO_POLICY += audio_policy.apq8084
@@ -120,6 +120,8 @@ BT += libattrib_static
 BT += hcidump.sh
 BT += libbt-vendor
 BT += libbthost_if
+BT += libbt-logClient
+BT += bt_logger
 
 #C2DColorConvert
 C2DCC := libc2dcolorconvert
@@ -234,7 +236,6 @@ INIT += ssr_setup
 INIT += init.mdm.sh
 INIT += init.qcom.uicc.sh
 INIT += fstab.qcom
-INIT += init.qcom.debug.sh
 INIT += init.qcom.sensors.sh
 INIT += charger.fstab.qcom
 
@@ -314,7 +315,7 @@ LIBCAMERA += camera.msm8916
 LIBCAMERA += camera.msm8994
 LIBCAMERA += camera.msm8992
 LIBCAMERA += camera.msm8996
-LIBCAMERA += camera.msmcobalt
+LIBCAMERA += camera.msm8998
 LIBCAMERA += camera.msmfalcon
 LIBCAMERA += camera.msm8952
 LIBCAMERA += camera.msm8937
@@ -351,7 +352,7 @@ LIBCOPYBIT += copybit.msm8996
 LIBCOPYBIT += copybit.msm8952
 LIBCOPYBIT += copybit.msm8937
 LIBCOPYBIT += copybit.msm8953
-LIBCOPYBIT += copybit.msmcobalt
+LIBCOPYBIT += copybit.msm8998
 
 #LIBGESTURES
 LIBGESTURES := libgestures
@@ -380,7 +381,7 @@ LIBGRALLOC += gralloc.msm8996
 LIBGRALLOC += gralloc.msm8952
 LIBGRALLOC += gralloc.msm8937
 LIBGRALLOC += gralloc.msm8953
-LIBGRALLOC += gralloc.msmcobalt
+LIBGRALLOC += gralloc.msm8998
 LIBGRALLOC += libmemalloc
 
 #memtrack
@@ -397,7 +398,7 @@ LIBMEMTRACK += memtrack.msm8996
 LIBMEMTRACK += memtrack.msm8952
 LIBMEMTRACK += memtrack.msm8937
 LIBMEMTRACK += memtrack.msm8953
-LIBMEMTRACK += memtrack.msmcobalt
+LIBMEMTRACK += memtrack.msm8998
 
 #LIBLIGHTS
 LIBLIGHTS := lights.msm8660
@@ -420,7 +421,7 @@ LIBLIGHTS += lights.msm8996
 LIBLIGHTS += lights.msm8952
 LIBLIGHTS += lights.msm8937
 LIBLIGHTS += lights.msm8953
-LIBLIGHTS += lights.msmcobalt
+LIBLIGHTS += lights.msm8998
 
 #LIBHWCOMPOSER
 LIBHWCOMPOSER := hwcomposer.msm8660
@@ -444,7 +445,7 @@ LIBHWCOMPOSER += hwcomposer.msm8996
 LIBHWCOMPOSER += hwcomposer.msm8952
 LIBHWCOMPOSER += hwcomposer.msm8937
 LIBHWCOMPOSER += hwcomposer.msm8953
-LIBHWCOMPOSER += hwcomposer.msmcobalt
+LIBHWCOMPOSER += hwcomposer.msm8998
 
 #CEC HAL
 LIBHDMICEC   :=  hdmi_cec.msm8996
@@ -536,7 +537,7 @@ NQ_NFC += com.nxp.nfc.nq.xml
 NQ_NFC += libpn547_fw.so
 NQ_NFC += libpn548ad_fw.so
 NQ_NFC += libnfc-brcm.conf
-NQ_NFC += libnfc-nxp.conf
+NQ_NFC += libnfc-nxp_default.conf
 NQ_NFC += nqnfcee_access.xml
 NQ_NFC += nqnfcse_access.xml
 NQ_NFC += Tag
@@ -642,6 +643,11 @@ IMS_SETTINGS := imssettings
 #IMS Extension module for Android Telephony
 IMS_EXT := ims-ext-common
 
+#CARRIER ONE RCS
+CARRIER_ONE_RCS := rcscommon
+CARRIER_ONE_RCS += rcscommon.xml
+CARRIER_ONE_RCS += RCSService
+
 #CRDA
 CRDA := crda
 CRDA += regdbdump
@@ -746,6 +752,7 @@ PRODUCT_PACKAGES += $(WLAN)
 PRODUCT_PACKAGES += $(IPACM)
 PRODUCT_PACKAGES += $(FSTMAN)
 PRODUCT_PACKAGES += $(IMS_EXT)
+PRODUCT_PACKAGES += $(CARRIER_ONE_RCS)
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -761,9 +768,6 @@ PRODUCT_PACKAGES += \
 
 # Qcril configuration file
 PRODUCT_PACKAGES += qcril.db
-
-# Flatland
-PRODUCT_PACKAGES += flatland
 
 # MSM updater library
 PRODUCT_PACKAGES += librecovery_updater_msm
