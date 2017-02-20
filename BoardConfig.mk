@@ -102,6 +102,9 @@ TARGET_PER_MGR_ENABLED := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
+#Enabling IMS Feature
+TARGET_USES_IMS := true
+
 #Enable PD locater/notifier
 TARGET_PD_SERVICE_ENABLED := true
 
