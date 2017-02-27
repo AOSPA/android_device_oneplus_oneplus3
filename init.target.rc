@@ -125,7 +125,7 @@ service qvrd /system/vendor/bin/qvrservice
 service per_mgr system/bin/pm-service
     class core
     user system
-    group system net_raw
+    group system
     ioprio rt 4
 
 service per_proxy /system/bin/pm-proxy
