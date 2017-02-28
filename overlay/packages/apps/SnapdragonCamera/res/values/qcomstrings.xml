@@ -31,4 +31,7 @@
     <!-- Default noise reduction setting. Do not translate. -->
     <string name="pref_camera_noise_reduction_default">high-quality</string>
 
+    <!-- Default DIS/EIS setting. Do not translate. -->
+    <string name="pref_camera_dis_default">enable</string>
+
 </resources>
