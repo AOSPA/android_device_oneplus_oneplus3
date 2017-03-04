@@ -25,6 +25,7 @@ persist.radio.rat_on=combine
 telephony.lteOnGsmDevice=1
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1,1
+persist.data.iwlan.enable=true
 persist.data.qmi.adb_logmask=0
 persist.radio.custom_ecc=1
 persist.oem.dump=0
