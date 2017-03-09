@@ -102,6 +102,27 @@
        <item>0x7D0</item>      <!-- CPUBOOST MIN_FREQ resource value -->
    </integer-array>
 
+   <!-- Whether Keypress Boost is enabled -->
+   <bool name="config_enableKeypressBoost">true</bool>
+
+   <!-- Boost parameters which get passed to QPerformance -->
+   <integer-array name="keypressboost_weak_param_value">
+       <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
+       <item>0x514</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+       <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode -->
+       <item>0x578</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+   </integer-array>
+   <integer-array name="keypressboost_strong_param_value">
+       <item>0x41800000</item> <!-- CPUBW_MIN_FREQ resource opcode-->
+       <item>140</item>        <!-- CPUBW_MIN_FREQ resource value-->
+       <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
+       <item>0x578</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+       <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode -->
+       <item>0x6A4</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+       <item>0x40400000</item> <!-- PWR_CLPS DIS resource opcode-->
+       <item>0x1</item>        <!-- PWR_CLPS DIS resource value-->
+   </integer-array>
+
   <!-- sRGB sysfs path -->
   <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
 
