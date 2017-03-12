@@ -106,10 +106,6 @@ ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 # QPerformance
 PRODUCT_BOOT_JARS += QPerformance
 
-# Camera
-PRODUCT_PACKAGES += \
-    libop3_cam
-
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
