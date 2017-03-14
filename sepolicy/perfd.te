@@ -1,2 +1,6 @@
 allow perfd device:file open;
-allow perfd cameraserver:process signull;
+
+allow perfd {
+     cameraserver
+     mm-qcamerad
+}:process signull;

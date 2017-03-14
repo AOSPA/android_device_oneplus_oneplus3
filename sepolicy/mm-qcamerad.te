@@ -2,11 +2,13 @@ set_prop(mm-qcamerad, diag_prop)
 
 allow mm-qcamerad camera_prop:property_service set;
 allow mm-qcamerad permission_service:service_manager find;
-allow mm-qcamerad mpctl_socket:sock_file write;
-allow mm-qcamerad perfd:unix_stream_socket connectto;
 
 allow mm-qcamerad remosaic_service:service_manager find;
 
 allow mm-qcamerad permission_service:service_manager find;
+
+# interaction with mp-ctl
+allow mm-qcamerad mpctl_socket:dir r_dir_perms;
+unix_socket_connect(mm-qcamerad, mpctl, perfd)
 
 binder_call(mm-qcamerad, remosaic_daemon);
