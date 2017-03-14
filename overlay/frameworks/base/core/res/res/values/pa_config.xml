@@ -123,6 +123,11 @@
        <item>0x1</item>        <!-- PWR_CLPS DIS resource value-->
    </integer-array>
 
+    <!-- Whether FP unlock Boost is enabled
+         Depends on Keypress Boost -->
+   <bool name="config_enableFPUnlockBoost">true</bool>
+   <integer name="fpunlockboost_duration">800</integer>
+
   <!-- sRGB sysfs path -->
   <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
 
