@@ -238,6 +238,7 @@ INIT += init.qcom.uicc.sh
 INIT += fstab.qcom
 INIT += init.qcom.sensors.sh
 INIT += charger.fstab.qcom
+INIT += tp_updater.sh
 
 #IPROUTE2
 IPROUTE2 := ip
