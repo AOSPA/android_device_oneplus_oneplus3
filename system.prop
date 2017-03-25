@@ -240,9 +240,9 @@ enable_prefetch=1
 # IMS
 service.qti.ims.enabled=1
 
-#Disable face beautification
+#Disable face beautification for gallery app
 persist.ts.postmakeup=false
-persist.ts.rtmakeup=false
+persist.ts.rtmakeup=true
 
 # Enable sdcardfs
 ro.sys.sdcardfs=true
