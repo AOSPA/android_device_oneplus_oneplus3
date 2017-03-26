@@ -132,7 +132,7 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
-TARGET_RECOVERY_FSTAB = device/oneplus/oneplus3/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
