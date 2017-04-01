@@ -62,9 +62,6 @@
 
     <!-- Extended Boosts for QPerformance -->
 
-    <!-- Whether cpu boost is enabled right after boot -->
-    <bool name="config_enableCpuBoostOnBoot">true</bool>
-
     <!-- Boost parameters which get passed to QPerformance -->
     <integer-array name="onbootboost_param_value">
        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
@@ -75,17 +72,14 @@
        <item>0x7D0</item>      <!-- CPUBOOST MIN_FREQ resource value -->
     </integer-array>
 
-    <!-- Whether Keypress Boost is enabled -->
-    <bool name="config_enableKeypressBoost">true</bool>
-
     <!-- Boost parameters which get passed to QPerformance -->
-    <integer-array name="keypressboost_weak_param_value">
+    <integer-array name="qboost_weak_param_value">
         <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
         <item>0x514</item>      <!-- CPUBOOST MIN_FREQ resource value -->
         <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode -->
         <item>0x578</item>      <!-- CPUBOOST MIN_FREQ resource value -->
     </integer-array>
-    <integer-array name="keypressboost_strong_param_value">
+    <integer-array name="qboost_strong_param_value">
         <item>0x41800000</item> <!-- CPUBW_MIN_FREQ resource opcode-->
         <item>140</item>        <!-- CPUBW_MIN_FREQ resource value-->
         <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
@@ -96,9 +90,7 @@
         <item>0x1</item>        <!-- PWR_CLPS DIS resource value-->
     </integer-array>
 
-    <!-- Whether FP unlock Boost is enabled
-         Depends on Keypress Boost -->
-    <bool name="config_enableFPUnlockBoost">true</bool>
+    <!-- Keypress Boost duration -->
     <integer name="fpunlockboost_duration">800</integer>
 
     <!-- sRGB sysfs path -->
