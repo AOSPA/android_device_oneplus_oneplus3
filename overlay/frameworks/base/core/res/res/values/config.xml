@@ -410,9 +410,9 @@
    <bool name="config_enableCpuBoostForScroller">true</bool>
    <integer-array name="scrollboost_param_value">
         <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode -->
-        <item>0x4B0</item> <!-- CPUBOOST MIN_FREQ resource value -->
+        <item>0x506</item> <!-- CPUBOOST MIN_FREQ resource value -->
         <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
-        <item>0x4B0</item> <!-- CPUBOOST MIN_FREQ resource value -->
+        <item>0x420</item> <!-- CPUBOOST MIN_FREQ resource value -->
    </integer-array>
 
    <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
