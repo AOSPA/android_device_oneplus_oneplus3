@@ -414,13 +414,6 @@
         <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode -->
         <item>0x4B0</item> <!-- CPUBOOST MIN_FREQ resource value -->
    </integer-array>
-   <bool name="config_enableKeypressOptimization">true</bool>
-   <integer-array name="keypress_param_value">
-        <item>0x41818000</item> <!-- CPUBW_MAX_FREQ resource opcode-->
-        <item>0x76</item>       <!-- CPUBW_MAX_FREQ resource value-->
-        <item>0x4181C000</item> <!-- CPUBW_POLLING_INTERVAL resource opcode -->
-        <item>0x14</item>       <!-- CPUBW_POLLING_INTERVAL resource value -->
-   </integer-array>
 
    <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
    on the headphone/microphone jack. When false use the older uevent framework -->
