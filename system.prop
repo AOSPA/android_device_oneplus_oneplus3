@@ -1,10 +1,6 @@
 #
-# system.prop for Oneplus 3
+# system.prop for OnePlus 3(T)
 #
-ro.build.product=OnePlus3
-ro.product.device=OnePlus3
-ro.build.description=OnePlus3-user 7.0 NRD90M 3 dev-keys
-ro.build.fingerprint=OnePlus/OnePlus3/OnePlus3:7.0/NRD90M/11292307:user/release-keys
 
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 persist.rild.nitz_plmn=
