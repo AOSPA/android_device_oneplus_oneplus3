@@ -93,6 +93,10 @@ on boot
     start rmt_storage
     start rfs_access
 
+    # Update tp firmware(s3320 and s1302)
+    write /sys/bus/i2c/devices/12-0020/tp_fw_update 0
+    write /proc/s1302/fw_update 0
+
     # Fingerprint
     chmod 0664 /sys/devices/soc/soc:fpc_fpc1020/irq
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
