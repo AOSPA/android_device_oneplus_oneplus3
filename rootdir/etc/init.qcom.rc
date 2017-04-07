@@ -759,11 +759,6 @@ service qcom-post-boot /system/bin/sh /system/bin/init.qcom.post_boot.sh
     disabled
     oneshot
 
-service tp-updater /system/bin/sh /system/bin/tp_updater.sh
-    class late_start
-    user root
-    oneshot
-
 service hostapd /system/bin/hostapd /data/hostapd/hostapd.conf
     class late_start
     user root
