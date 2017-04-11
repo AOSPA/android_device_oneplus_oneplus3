@@ -27,7 +27,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# Get project id
+# Get project id to decide whether the target uses msm8996 or msm8996pro
 project=`getprop ro.boot.project_name`
 
 # disable thermal bcl hotplug to switch governor
@@ -80,10 +80,24 @@ echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
 
 # Setup multi-step input boost
 # Step 1
-echo "0:1286400 2:1363200" > /sys/module/cpu_boost/parameters/input_boost_freq
+case "$project" in
+    "15801") # msm8996
+        echo "0:1228800 2:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
+    ;;
+    "15811") # msm8996pro
+        echo "0:1286400 2:1363200" > /sys/module/cpu_boost/parameters/input_boost_freq
+    ;;
+esac
 echo 70 > /sys/module/cpu_boost/parameters/input_boost_ms
 # Step 2
-echo "0:1132800 2:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq_s2
+case "$project" in
+    "15801") # msm8996
+        echo "0:1113600 2:1248000" > /sys/module/cpu_boost/parameters/input_boost_freq_s2
+    ;;
+    "15811") # msm8996pro
+        echo "0:1132800 2:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq_s2
+    ;;
+esac
 echo 150 > /sys/module/cpu_boost/parameters/input_boost_ms_s2
 
 # Setting b.L scheduler parameters
