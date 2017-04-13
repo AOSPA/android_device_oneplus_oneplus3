@@ -67,6 +67,9 @@ TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
 TARGET_KERNEL_CONFIG := oneplus3_defconfig
 TARGET_KERNEL_APPEND_DTB := true
 
+# Enable libc wrapper
+BOARD_USES_LIBC_WRAPPER := true
+
 # THP
 TARGET_SUPPORTS_THP := true
 
