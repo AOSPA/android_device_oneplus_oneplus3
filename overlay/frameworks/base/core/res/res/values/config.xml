@@ -366,10 +366,6 @@
          In hundreths of a degree. -->
     <integer name="config_autoPowerModeThresholdAngle">200</integer>
 
-    <!-- The sensor id of an "any motion" sensor used in auto-power save modes.
-         0 indicates this sensor is not available. -->
-    <integer name="config_autoPowerModeAnyMotionSensor">25</integer>
-
     <!-- The duration (in milliseconds) that the radio will scan for a signal
          when there's no network connection. If the scan doesn't timeout, use zero -->
     <integer name="config_radioScanningTimeout">200</integer>
@@ -443,9 +439,6 @@
         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
    -->
     <integer name="config_longPressOnHomeBehavior">2</integer>
-
-    <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
 
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
