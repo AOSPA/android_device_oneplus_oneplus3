@@ -1,2 +1,10 @@
 allow cameraserver adsprpcd_file:dir r_dir_perms;
 allow cameraserver adsprpcd_file:file r_file_perms;
+
+allow cameraserver media_rw_data_file:file rw_file_perms;
+
+allow cameraserver sdcardfs:dir r_dir_perms;
+allow cameraserver sdcardfs:file rw_file_perms;
+
+allow cameraserver storage_file:dir r_dir_perms;
+allow cameraserver storage_file:file rw_file_perms;
