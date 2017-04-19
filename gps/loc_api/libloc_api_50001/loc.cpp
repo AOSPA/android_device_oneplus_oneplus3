@@ -567,7 +567,7 @@ static void loc_delete_aiding_data(GpsAidingData f)
 {
     ENTRY_LOG();
 
-    //loc_eng_delete_aiding_data(loc_afw_data, f);
+    loc_eng_delete_aiding_data(loc_afw_data, f);
 
     EXIT_LOG(%s, VOID_RET);
 }
