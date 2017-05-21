@@ -40,6 +40,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     std::string rf_version = property_get("ro.boot.rf_version");
 
     if (project_name == "15811") {
+        property_set("ro.power_profile", "/system/etc/power_profile_3t.xml");
         property_set("ro.product.device", "OnePlus3T");
         if (rf_version == "12") {
             /* China model */
@@ -59,6 +60,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
             property_set("ro.product.model", "ONEPLUS A3000");
         }
    } else {
+        property_set("ro.power_profile", "/system/etc/power_profile.xml");
         property_set("ro.product.device", "OnePlus3");
         if (rf_version == "11" || rf_version == "31") {
             /* China / North America model */

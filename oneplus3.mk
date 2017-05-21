@@ -42,6 +42,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/power_profile.xml:system/etc/power_profile.xml \
+    $(LOCAL_PATH)/power/power_profile_3t.xml:system/etc/power_profile_3t.xml
+
 PRODUCT_PACKAGES += \
     hostapd \
     libwpa_client \
