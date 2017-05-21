@@ -41,7 +41,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     if (project_name == "15811") {
         property_set("ro.product.device", "OnePlus3T");
-        property_set("ro.battery.capacity", "3400");
         if (rf_version == "12") {
             /* China model */
             property_set("ro.telephony.default_network", "22,22");
@@ -61,7 +60,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         }
    } else {
         property_set("ro.product.device", "OnePlus3");
-        property_set("ro.battery.capacity", "3000");
         if (rf_version == "11" || rf_version == "31") {
             /* China / North America model */
             property_set("ro.telephony.default_network", "22,22");
