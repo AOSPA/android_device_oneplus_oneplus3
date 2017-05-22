@@ -123,6 +123,12 @@ PRODUCT_PACKAGES += lights.qcom
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# Camera
+ifeq ($(TARGET_BUILD_VARIANT), user)
+  PRODUCT_PROPERTY_OVERRIDES += \
+      persist.camera.hal.debug=0
+endif
+
 # GPS
 PRODUCT_BOOT_JARS += com.android.location.provider
 PRODUCT_BOOT_JARS += izat.xt.srv
