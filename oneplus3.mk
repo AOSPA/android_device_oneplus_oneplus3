@@ -152,8 +152,8 @@ PRODUCT_PACKAGES += \
     libjson
 
 # For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
+PRODUCT_PACKAGES += fs_config_files \
+                    fs_config_dirs
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
