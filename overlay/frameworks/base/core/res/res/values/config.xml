@@ -461,4 +461,11 @@
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up. -->
     <bool name="config_lidControlsSleep">true</bool>
+
+    <!-- Enable overlay for all location components. -->
+    <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
+    <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
+    <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+
 </resources>
