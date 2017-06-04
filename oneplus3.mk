@@ -129,10 +129,6 @@ ifeq ($(TARGET_BUILD_VARIANT), user)
       persist.camera.hal.debug=0
 endif
 
-# GPS
-PRODUCT_BOOT_JARS += com.android.location.provider
-PRODUCT_BOOT_JARS += izat.xt.srv
-
 PRODUCT_PACKAGES += gps.msm8996
 
 PRODUCT_COPY_FILES += \
