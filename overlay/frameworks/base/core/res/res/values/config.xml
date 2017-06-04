@@ -376,7 +376,7 @@
 
     <!-- The duration (in milliseconds) that the radio will scan for a signal
          when there's no network connection. If the scan doesn't timeout, use zero -->
-    <integer name="config_radioScanningTimeout">200</integer>
+    <integer name="config_radioScanningTimeout">5000</integer>
 
    <!-- Whether cpu boost is enabled for application's 1st launch. -->
     <bool name="config_enableCpuBoostForAppLaunch">true</bool>
