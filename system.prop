@@ -140,9 +140,6 @@ sdm.perf_hint_window=50
 # system prop for NFC DT
 ro.nfc.port=I2C
 
-# Dexopt everything inside the boot image
-dalvik.vm.image-dex2oat-filter=everything
-
 #hwui properties
 ro.hwui.texture_cache_size=96
 ro.hwui.layer_cache_size=64
