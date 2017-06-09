@@ -34,7 +34,8 @@ start_sensors()
    chmod -h 775 /persist/sensors
    chmod -h 664 /persist/sensors/sensors_settings
    chown -h system.root /persist/sensors/sensors_settings
-
+   chmod -h 664 /persist/sensors/gyro_sensitity_cal
+   chown -h system.root /persist/sensors/gyro_sensitity_cal
    mkdir -p /data/misc/sensors
    chmod -h 775 /data/misc/sensors
 
