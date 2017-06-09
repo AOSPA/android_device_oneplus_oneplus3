@@ -83,6 +83,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
+# RIL
+PRODUCT_BOOT_JARS += \
+    qcnvitems \
+    qcrilhook
+
 # Thermal
 PRODUCT_PACKAGES += thermal.msm8996
 
