@@ -228,7 +228,7 @@ get_scaled_duty_pcts(int brightness)
         strcat(buf, temp);
         pad = ",";
     }
-    ALOGV("%s: brightness=%d duty=%s", __func__, brightness, buf);
+    ALOGI("%s: brightness=%d duty=%s", __func__, brightness, buf);
     return buf;
 }
 
@@ -259,7 +259,7 @@ set_speaker_light_locked(struct light_device_t* dev,
 
     colorRGB = state->color;
 
-    ALOGV("set_speaker_light_locked mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
+    ALOGI("set_speaker_light_locked mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
             state->flashMode, colorRGB, onMS, offMS);
 
     red = (colorRGB >> 16) & 0xFF;
@@ -268,6 +268,7 @@ set_speaker_light_locked(struct light_device_t* dev,
     // bias for true white
     if (colorRGB != 0 && red == green && green == blue) {
         blue = (blue * 171) / 256;
+        ALOGI("set_speaker_light_locked change blue to bias true white");
     }
     blink = onMS > 0 && offMS > 0;
 
