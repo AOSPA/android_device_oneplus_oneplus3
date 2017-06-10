@@ -215,6 +215,9 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>5</item>
+        <item>20</item>
         <item>45</item>
         <item>1025</item>
         <item>1480</item>
@@ -228,6 +231,9 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>3</item>
+        <item>6</item>
+        <item>8</item>
         <item>11</item>
         <item>26</item>
         <item>60</item>
@@ -236,10 +242,10 @@
         <item>255</item>
     </integer-array>
 
-    <!-- OOS brightness tweaks -->
-    <integer name="config_autoBrightnessBrighteningLightFastDebounce">200</integer>
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+    <!-- Bightness tuning -->
+    <integer name="config_autoBrightnessBrighteningLightFastDebounce">600</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1600</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">3200</integer>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">6</integer>
