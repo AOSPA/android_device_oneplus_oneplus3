@@ -23,6 +23,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 
 -include $(QCPATH)/common/msm8996/BoardConfigVendor.mk
+include vendor/oneplus/oneplus3/BoardConfigVendor.mk
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
