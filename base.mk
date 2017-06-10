@@ -526,22 +526,13 @@ MM_VIDEO += mm-vdec-omx-property-mgr
 #MM_VIDEO += mm-video-encdrv-test
 #MM_VIDEO += ExoplayerDemo
 
-#NQ_NFC
-NQ_NFC := NQNfcNci
-NQ_NFC += libnqnfc-nci
-NQ_NFC += libnqnfc_nci_jni
-NQ_NFC += nfc_nci.nqx.default
-NQ_NFC += libp61-jcop-kit
-NQ_NFC += com.nxp.nfc.nq
-NQ_NFC += com.nxp.nfc.nq.xml
-NQ_NFC += libpn547_fw.so
-NQ_NFC += libpn548ad_fw.so
-NQ_NFC += libnfc-brcm.conf
-NQ_NFC += libnfc-nxp_default.conf
-NQ_NFC += nqnfcee_access.xml
-NQ_NFC += nqnfcse_access.xml
-NQ_NFC += Tag
-NQ_NFC += com.android.nfc_extras
+#NFC
+NFC :=
+NFC += NfcNci
+NFC += libp61-jcop-kit
+NFC += Tag
+NFC += libnfc_nci_jni
+NFC += com.android.nfc_extras
 
 #OPENCORE
 OPENCORE := libomx_aacdec_sharedlibrary
@@ -727,9 +718,7 @@ PRODUCT_PACKAGES += $(MEDIA_PROFILES)
 PRODUCT_PACKAGES += $(MM_AUDIO)
 PRODUCT_PACKAGES += $(MM_CORE)
 PRODUCT_PACKAGES += $(MM_VIDEO)
-ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
-PRODUCT_PACKAGES += $(NQ_NFC)
-endif
+PRODUCT_PACKAGES += $(NFC)
 PRODUCT_PACKAGES += $(OPENCORE)
 PRODUCT_PACKAGES += $(PPP)
 PRODUCT_PACKAGES += $(PROTOBUF)
@@ -823,14 +812,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:system/etc/permissions/android.hardware.nfc.hcef.xml
-endif
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level-0.xml \
