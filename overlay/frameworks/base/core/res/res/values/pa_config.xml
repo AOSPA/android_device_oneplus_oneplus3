@@ -78,9 +78,6 @@
         <item>0x1</item>        <!-- PWR_CLPS DIS resource value-->
     </integer-array>
 
-    <!-- Keypress Boost duration -->
-    <integer name="fpunlockboost_duration">800</integer>
-
     <!-- sRGB sysfs path -->
     <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
 
