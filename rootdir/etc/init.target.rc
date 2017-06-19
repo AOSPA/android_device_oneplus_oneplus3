@@ -164,6 +164,8 @@ on boot
     chown system system /sys/class/leds/blue/blink
     chown system system /sys/class/leds/green/blink
 
+    chown system system /sys/class/leds/rgb/rgb_blink
+
     chmod 660 /sys/class/leds/red/brightness
     chmod 660 /sys/class/leds/green/brightness
     chmod 660 /sys/class/leds/blue/brightness
@@ -191,6 +193,8 @@ on boot
     chmod 660 /sys/class/leds/red/blink
     chmod 660 /sys/class/leds/green/blink
     chmod 660 /sys/class/leds/blue/blink
+
+    chmod 660 /sys/class/leds/rgb/rgb_blink
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
