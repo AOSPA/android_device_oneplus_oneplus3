@@ -88,7 +88,7 @@ case "$project" in
         echo "0:1286400 2:1363200" > /sys/module/cpu_boost/parameters/input_boost_freq
     ;;
 esac
-echo 70 > /sys/module/cpu_boost/parameters/input_boost_ms
+echo 90 > /sys/module/cpu_boost/parameters/input_boost_ms
 # Step 2
 case "$project" in
     "15801") # msm8996
