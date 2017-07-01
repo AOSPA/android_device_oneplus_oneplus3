@@ -230,6 +230,10 @@ enable_prefetch=1
 
 # IMS
 service.qti.ims.enabled=1
+persist.dbg.ims_volte_enable=0
+persist.dbg.volte_avail_ovr=0
+persist.dbg.vt_avail_ovr=0
+persist.dbg.wfc_avail_ovr=0
 
 #Disable face beautification for gallery app
 persist.ts.postmakeup=false
