@@ -1,5 +1,6 @@
 #!/system/bin/sh
-# Copyright (c) 2012-2013,2016 The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2013, 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, Paranoid Android
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,9 +27,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-export PATH=/system/bin
-
-# Set platform variables
+# Setup the platform variables reading from sysfs.
 if [ -f /sys/devices/soc0/hw_platform ]; then
     soc_hwplatform=`cat /sys/devices/soc0/hw_platform` 2> /dev/null
 else
@@ -44,51 +43,51 @@ if [ -f /sys/devices/soc0/platform_version ]; then
 else
     soc_hwver=`cat /sys/devices/system/soc/soc0/platform_version` 2> /dev/null
 fi
-
 if [ -f /sys/class/graphics/fb0/virtual_size ]; then
     res=`cat /sys/class/graphics/fb0/virtual_size` 2> /dev/null
     fb_width=${res%,*}
 fi
 
-log -t BOOT -p i "MSM target '$1', SoC '$soc_hwplatform', HwID '$soc_hwid', SoC ver '$soc_hwver'"
+# Message the kmsg device to indicate this script has run.
+echo "[Qcom] Running early-boot script..." | tee /dev/kmsg
 
-# Setup display nodes & permissions
-# HDMI can be fb1 or fb2
-# Loop through the sysfs nodes and determine
-# the HDMI(dtv panel)
+# Print some information regarding the hardware nodes.
+echo "[Qcom] SoC: $soc_hwplatform" | tee /dev/kmsg
+echo "[Qcom] HwID: $soc_hwid" | tee /dev/kmsg
+echo "[Qcom] SoC ver: $soc_hwver" | tee /dev/kmsg
+echo "[Qcom] Width: $fb_width" | tee /dev/kmsg
 
+# Common function to setup sysfs permissions.
 function set_perms() {
-    #Usage set_perms <filename> <ownership> <permission>
     chown -h $2 $1
     chmod $3 $1
 }
 
-# check for mdp caps
+# Setup display framebuffer nodes and permissions.
 setprop debug.gralloc.gfx_ubwc_disable 1
 file=/sys/class/graphics/fb0/mdp/caps
 if [ -f "$file" ]
 then
     cat $file | while read line; do
-      case "$line" in
-                *"ubwc"*)
+        case "$line" in
+            *"ubwc"*)
                 setprop debug.gralloc.enable_fb_ubwc 1
                 setprop debug.gralloc.gfx_ubwc_disable 0
-            esac
+        esac
     done
 fi
 
 file=/sys/class/graphics/fb0
 if [ -d "$file" ]
 then
-        set_perms $file/idle_time system.graphics 0664
-        set_perms $file/dynamic_fps system.graphics 0664
-        set_perms $file/dyn_pu system.graphics 0664
-        set_perms $file/modes system.graphics 0664
-        set_perms $file/mode system.graphics 0664
-        set_perms $file/msm_cmd_autorefresh_en system.graphics 0664
+    set_perms $file/idle_time system.graphics 0664
+    set_perms $file/dynamic_fps system.graphics 0664
+    set_perms $file/dyn_pu system.graphics 0664
+    set_perms $file/modes system.graphics 0664
+    set_perms $file/mode system.graphics 0664
+    set_perms $file/msm_cmd_autorefresh_en system.graphics 0664
 fi
 
-# set lineptr permissions for all displays
 for fb_cnt in 0 1 2 3
 do
     file=/sys/class/graphics/fb$fb_cnt/lineptr_value
@@ -97,7 +96,7 @@ do
     fi
 done
 
-# copy GPU frequencies to system property
+# Setup the available GPU frequencies to system property.
 if [ -f /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies ]; then
     gpu_freq=`cat /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies` 2> /dev/null
     setprop ro.gpu.available_frequencies "$gpu_freq"
