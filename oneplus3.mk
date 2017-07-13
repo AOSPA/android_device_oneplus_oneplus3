@@ -1,4 +1,4 @@
-DEVICE_PACKAGE_OVERLAYS := device/oneplus/oneplus3/overlay
+DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus3/overlay
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
