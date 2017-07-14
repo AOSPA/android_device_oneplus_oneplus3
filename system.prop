@@ -198,6 +198,9 @@ ro.frp.pst=/dev/block/platform/soc/624000.ufshc/by-name/config
 # DRM
 drm.service.enabled=true
 
+# Fastdormancy
+persist.env.fastdorm.enabled=true
+
 #property to enable fingerprint
 persist.qfp=false
 
