@@ -30,9 +30,6 @@ persist.radio.start_ota_daemon=1
 
 persist.radio.add_power_save=1
 
-# Enable DPM for netmgr
-persist.data.dpm.enable=true
-
 # Enable TX mask
 persist.data.tcp_rst_drop=true
 
