@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The Android Open Source Project
- * Copyright (C) 2016 Paranoid Android
+ * Copyright (C) 2016-2017 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,28 +20,21 @@
 #include <inttypes.h>
 #include <stdlib.h>
 #include <string.h>
-
 #define LOG_TAG "ThermalHAL"
 #include <utils/Log.h>
-
 #include <hardware/hardware.h>
 #include <hardware/thermal.h>
-
 #define MAX_LENGTH                    50
-
 #define CPU_USAGE_FILE                "/proc/stat"
 #define TEMPERATURE_FILE_FORMAT       "/sys/class/thermal/thermal_zone%d/temp"
 #define CPU_ONLINE_FILE_FORMAT        "/sys/devices/system/cpu/cpu%d/online"
-
 #define BATTERY_SENSOR_NUM            29
-#define GPU_SENSOR_NUM                16
-#define SKIN_SENSOR_NUM               18
-
-const int CPU_SENSORS[] = {5, 7, 10, 12};
-
+#define GPU_SENSOR_NUM                14
+#define SKIN_SENSOR_NUM               24
+const int CPU_SENSORS[] = {4, 6, 9, 11};
 #define CPU_NUM                       (sizeof(CPU_SENSORS) / sizeof(int))
-#define TEMPERATURE_NUM               11
-
+// Sum of CPU_NUM + 3 for GPU, BATTERY, and SKIN.
+#define TEMPERATURE_NUM               7
 //qcom, therm-reset-temp
 #define CPU_SHUTDOWN_THRESHOLD        115
 //qcom, limit-temp
@@ -49,15 +42,12 @@ const int CPU_SENSORS[] = {5, 7, 10, 12};
 #define BATTERY_SHUTDOWN_THRESHOLD    60
 // device/oneplus/oneplus3/thermal/thermal-engine.conf
 #define SKIN_THROTTLING_THRESHOLD     41
-#define SKIN_SHUTDOWN_THRESHOLD       64
-#define VR_THROTTLED_BELOW_MIN        47
-
+#define SKIN_SHUTDOWN_THRESHOLD       70
+#define VR_THROTTLED_BELOW_MIN        58
 #define GPU_LABEL                     "GPU"
 #define BATTERY_LABEL                 "battery"
 #define SKIN_LABEL                    "skin"
-
 const char *CPU_LABEL[] = {"CPU0", "CPU1", "CPU2", "CPU3"};
-
 /**
  * Reads device temperature.
  *
@@ -78,7 +68,6 @@ static ssize_t read_temperature(int sensor_num, int type, const char *name, floa
     FILE *file;
     char file_name[MAX_LENGTH];
     float temp;
-
     sprintf(file_name, TEMPERATURE_FILE_FORMAT, sensor_num);
     file = fopen(file_name, "r");
     if (file == NULL) {
@@ -90,9 +79,7 @@ static ssize_t read_temperature(int sensor_num, int type, const char *name, floa
         ALOGE("%s: failed to read a float: %s", __func__, strerror(errno));
         return errno ? -errno : -EIO;
     }
-
     fclose(file);
-
     (*out) = (temperature_t) {
         .type = type,
         .name = name,
@@ -101,20 +88,17 @@ static ssize_t read_temperature(int sensor_num, int type, const char *name, floa
         .shutdown_threshold = shutdown_threshold,
         .vr_throttling_threshold = vr_throttling_threshold
     };
-
     return 0;
 }
-
 static ssize_t get_cpu_temperatures(temperature_t *list, size_t size) {
     size_t cpu;
-
     for (cpu = 0; cpu < CPU_NUM; cpu++) {
         if (cpu >= size) {
             break;
         }
-        // tsens_tz_sensor[4,6,9,11]: temperature in Celsius.
+        // tsens_tz_sensor[4,6,9,11]: temperature in decidegrees Celsius.
         ssize_t result = read_temperature(CPU_SENSORS[cpu], DEVICE_TEMPERATURE_CPU, CPU_LABEL[cpu],
-                1, CPU_THROTTLING_THRESHOLD, CPU_SHUTDOWN_THRESHOLD, UNKNOWN_TEMPERATURE,
+                0.1, CPU_THROTTLING_THRESHOLD, CPU_SHUTDOWN_THRESHOLD, UNKNOWN_TEMPERATURE,
                 &list[cpu]);
         if (result != 0) {
             return result;
@@ -122,25 +106,21 @@ static ssize_t get_cpu_temperatures(temperature_t *list, size_t size) {
     }
     return cpu;
 }
-
 static ssize_t get_temperatures(thermal_module_t *module, temperature_t *list, size_t size) {
     ssize_t result = 0;
     size_t current_index = 0;
-
     if (list == NULL) {
         return TEMPERATURE_NUM;
     }
-
     result = get_cpu_temperatures(list, size);
     if (result < 0) {
         return result;
     }
     current_index += result;
-
     // GPU temperature.
     if (current_index < size) {
-        // tsens_tz_sensor15: temperature in Celsius.
-        result = read_temperature(GPU_SENSOR_NUM, DEVICE_TEMPERATURE_GPU, GPU_LABEL, 1,
+        // tsens_tz_sensor14: temperature in decidegrees Celsius.
+        result = read_temperature(GPU_SENSOR_NUM, DEVICE_TEMPERATURE_GPU, GPU_LABEL, 0.1,
                 UNKNOWN_TEMPERATURE, UNKNOWN_TEMPERATURE, UNKNOWN_TEMPERATURE,
                 &list[current_index]);
         if (result < 0) {
@@ -148,10 +128,9 @@ static ssize_t get_temperatures(thermal_module_t *module, temperature_t *list, s
         }
         current_index++;
     }
-
     // Battery temperature.
     if (current_index < size) {
-        // hwmon sensor: battery: temperature in millidegrees Celsius.
+        // tsens_tz_sensor29: battery: temperature in millidegrees Celsius.
         result = read_temperature(BATTERY_SENSOR_NUM, DEVICE_TEMPERATURE_BATTERY, BATTERY_LABEL,
                 0.001, UNKNOWN_TEMPERATURE, BATTERY_SHUTDOWN_THRESHOLD, UNKNOWN_TEMPERATURE,
                 &list[current_index]);
@@ -160,11 +139,10 @@ static ssize_t get_temperatures(thermal_module_t *module, temperature_t *list, s
         }
         current_index++;
     }
-
     // Skin temperature.
     if (current_index < size) {
-        // msm_thermal: temperature in Celsius.
-        result = read_temperature(SKIN_SENSOR_NUM, DEVICE_TEMPERATURE_SKIN, SKIN_LABEL, 1,
+        // tsens_tz_sensor24: temperature in Celsius.
+        result = read_temperature(SKIN_SENSOR_NUM, DEVICE_TEMPERATURE_SKIN, SKIN_LABEL, 1.,
                 SKIN_THROTTLING_THRESHOLD, SKIN_SHUTDOWN_THRESHOLD, VR_THROTTLED_BELOW_MIN,
                 &list[current_index]);
         if (result < 0) {
@@ -174,7 +152,6 @@ static ssize_t get_temperatures(thermal_module_t *module, temperature_t *list, s
     }
     return TEMPERATURE_NUM;
 }
-
 static ssize_t get_cpu_usages(thermal_module_t *module, cpu_usage_t *list) {
     int vals, cpu_num, online;
     ssize_t read;
@@ -185,17 +162,14 @@ static ssize_t get_cpu_usages(thermal_module_t *module, cpu_usage_t *list) {
     char file_name[MAX_LENGTH];
     FILE *file;
     FILE *cpu_file;
-
     if (list == NULL) {
         return CPU_NUM;
     }
-
     file = fopen(CPU_USAGE_FILE, "r");
     if (file == NULL) {
         ALOGE("%s: failed to open: %s", __func__, strerror(errno));
         return -errno;
     }
-
     while ((read = getline(&line, &len, file)) != -1) {
         // Skip non "cpu[0-9]" lines.
         if (strnlen(line, read) < 4 || strncmp(line, "cpu", 3) != 0 || !isdigit(line[3])) {
@@ -204,14 +178,11 @@ static ssize_t get_cpu_usages(thermal_module_t *module, cpu_usage_t *list) {
             len = 0;
             continue;
         }
-
         vals = sscanf(line, "cpu%d %" SCNu64 " %" SCNu64 " %" SCNu64 " %" SCNu64, &cpu_num, &user,
                 &nice, &system, &idle);
-
         free(line);
         line = NULL;
         len = 0;
-
         if (vals != 5 || size == CPU_NUM) {
             if (vals != 5) {
                 ALOGE("%s: failed to read CPU information from file: %s", __func__,
@@ -222,10 +193,8 @@ static ssize_t get_cpu_usages(thermal_module_t *module, cpu_usage_t *list) {
             fclose(file);
             return errno ? -errno : -EIO;
         }
-
         active = user + nice + system;
         total = active + idle;
-
         // Read online CPU information.
         snprintf(file_name, MAX_LENGTH, CPU_ONLINE_FILE_FORMAT, cpu_num);
         cpu_file = fopen(file_name, "r");
@@ -243,36 +212,31 @@ static ssize_t get_cpu_usages(thermal_module_t *module, cpu_usage_t *list) {
             return errno ? -errno : -EIO;
         }
         fclose(cpu_file);
-
         list[size] = (cpu_usage_t) {
             .name = CPU_LABEL[size],
             .active = active,
             .total = total,
             .is_online = online
         };
-
         size++;
     }
     fclose(file);
-
     if (size != CPU_NUM) {
         ALOGE("/proc/stat file has incorrect format.");
         return -EIO;
     }
     return CPU_NUM;
 }
-
 static struct hw_module_methods_t thermal_module_methods = {
     .open = NULL,
 };
-
 thermal_module_t HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
         .module_api_version = THERMAL_HARDWARE_MODULE_API_VERSION_0_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = THERMAL_HARDWARE_MODULE_ID,
-        .name = "Oneplus 3 Thermal HAL",
+        .name = "Oneplus 3(T) Thermal HAL",
         .author = "The Android Open Source Project",
         .methods = &thermal_module_methods,
     },
