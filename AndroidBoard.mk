@@ -50,6 +50,8 @@ $(call add-firmware-file,$(target_firmware_path)/xbl.elf-op3)
 $(call add-firmware-file,$(target_firmware_path)/emmc_appsboot.mbn-op3)
 # lksecapp image
 $(call add-firmware-file,$(target_firmware_path)/lksecapp.mbn-op3)
+# mdtp image
+$(call add-firmware-file,$(target_firmware_path)/mdtp.img-op3)
 
 # Oneplus 3T
 # static_nvbk file
@@ -80,6 +82,10 @@ $(call add-firmware-file,$(target_firmware_path)/keymaster.mbn-op3t)
 $(call add-firmware-file,$(target_firmware_path)/xbl.elf-op3t)
 # bootloader image
 $(call add-firmware-file,$(target_firmware_path)/emmc_appsboot.mbn-op3t)
+# lksecapp image
+$(call add-firmware-file,$(target_firmware_path)/lksecapp.mbn-op3t)
+# mdtp image
+$(call add-firmware-file,$(target_firmware_path)/mdtp.img-op3t)
 
 # Unset local variable
 target_firmware_path :=
