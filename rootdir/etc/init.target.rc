@@ -43,11 +43,29 @@ on fs
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
+    wait /dev/block/bootdevice/by-name/cache
+    #ifdef VENDOR_EDIT
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/cache
+    #endif
+    mount ext4 /dev/block/bootdevice/by-name/cache /cache noatime nosuid nodev barrier=1
+
     wait /dev/block/bootdevice/by-name/persist
+    #ifdef VENDOR_EDIT
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/persist
+    #endif
     mount ext4 /dev/block/bootdevice/by-name/persist /persist noatime nosuid nodev barrier=1
     mkdir /persist/data 0700 system system
     mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
+
+    wait /dev/block/bootdevice/by-name/dsp
+    mount ext4 /dev/block/bootdevice/by-name/dsp /dsp ro nosuid nodev barrier=1
+
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
+
+    wait /dev/block/bootdevice/by-name/bluetooth
+    mount vfat /dev/block/bootdevice/by-name/bluetooth /bt_firmware ro shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -197,8 +215,56 @@ on boot
 
     chmod 660 /sys/class/leds/rgb/rgb_blink
 
+    write /proc/sys/kernel/sched_boost 1
+
+    #chenneng@camera add for torch permission @2015-10-26
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chmod 666 /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chmod 666 /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:switch/brightness
+    chmod 666 /sys/class/leds/led:switch/brightness
+
+#ifdef VENDOR_EDIT
+    chmod 0666 /sys/devices/virtual/graphics/fb0/SRGB
+    chmod 0666 /sys/devices/virtual/graphics/fb0/Adobe_RGB
+    chmod 0666 /sys/devices/virtual/graphics/fb0/DCI_P3
+    chmod 0666 /sys/devices/virtual/graphics/fb0/hbm
+    chmod 0666 /sys/devices/virtual/graphics/fb0/night_mode
+    chmod 0666 /sys/devices/virtual/graphics/fb0/oneplus_mode
+
+on property:sys.srgb=1
+   write /sys/devices/virtual/graphics/fb0/SRGB 1
+on property:sys.srgb=0
+   write /sys/devices/virtual/graphics/fb0/SRGB 0
+
+on property:sys.adobergb=1
+   write /sys/devices/virtual/graphics/fb0/Adobe_RGB 1
+on property:sys.adobergb=0
+   write /sys/devices/virtual/graphics/fb0/Adobe_RGB 0
+
+on property:sys.dci3p=1
+   write /sys/devices/virtual/graphics/fb0/DCI_P3 1
+on property:sys.dci3p=0
+   write /sys/devices/virtual/graphics/fb0/DCI_P3 0
+
+on property:sys.hbm=1
+   write /sys/devices/virtual/graphics/fb0/hbm 2
+on property:sys.hbm=0
+   write /sys/devices/virtual/graphics/fb0/hbm 0
+
+on property:sys.night_mode=1
+   write /sys/devices/virtual/graphics/fb0/night_mode 1
+on property:sys.night_mode=0
+   write /sys/devices/virtual/graphics/fb0/night_mode 0
+on property:sys.default_mode=1
+   write /sys/devices/virtual/graphics/fb0/oneplus_mode 1
+on property:sys.default_mode=0
+   write /sys/devices/virtual/graphics/fb0/oneplus_mode 0
+#endif
+
 #start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics

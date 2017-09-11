@@ -1,4 +1,5 @@
-#!/vendor/bin/sh
+#! /vendor/bin/sh
+
 # Copyright (c) 2009-2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -26,57 +27,67 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#
-# Correct input permissions
-#
-chmod 0660 /sys/class/input/input*/secure_touch_enable
-chmod 0440 /sys/class/input/input*/secure_touch
-chown system.drmrpc /sys/class/input/input*/secure_touch_enable
-chown system.drmrpc /sys/class/input/input*/secure_touch
+target=`getprop ro.board.platform`
+if [ -f /sys/devices/soc0/soc_id ]; then
+    platformid=`cat /sys/devices/soc0/soc_id`
+else
+    platformid=`cat /sys/devices/system/soc/soc0/id`
+fi
+
+start_copying_prebuilt_qcril_db()
+{
+    if [ -f /vendor/radio/qcril_database/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
+        cp /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
+        chown -h radio.radio /data/vendor/radio/qcril.db
+    fi
+}
+
+baseband=`getprop ro.baseband`
+echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
 
 #
 # Copy qcril.db if needed for RIL
 #
-    if [ -f /vendor/radio/qcril_database/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
-        cp /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
-        chown -h radio.radio /data/vendor/radio/qcril.db
-fi
+start_copying_prebuilt_qcril_db
 echo 1 > /data/vendor/radio/db_check_done
 
 #
 # Make modem config folder and copy firmware config to that folder for RIL
 #
-if [ -f /data/misc/radio/ver_info.txt ]; then
-    prev_version_info=`cat /data/misc/radio/ver_info.txt`
-else
-    prev_version_info=""
-fi
+#ifdef VENDOR_EDIT
+# modify the source path to /system/etc/firmware/mbn_ota/ , hanqingpu, 20151119
+##if [ -f /data/vendor/radio/ver_info.txt ]; then
+##    prev_version_info=`cat /data/vendor/radio/ver_info.txt`
+##else
+##    prev_version_info=""
+##fi
 
-cur_version_info=`cat /firmware/verinfo/ver_info.txt`
-if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_version_info" ]; then
+##cur_version_info=`cat /firmware/verinfo/ver_info.txt`
+##if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_version_info" ]; then
     rm -rf /data/vendor/radio/modem_config
     mkdir /data/vendor/radio/modem_config
     chmod 770 /data/vendor/radio/modem_config
-    cp -r /firmware/image/modem_pr/mcfg/configs/* /data/vendor/radio/modem_config
+##    cp -r /firmware/image/modem_pr/mcfg/configs/* /data/vendor/radio/modem_config
+cp -r /system/etc/firmware/mbn_ota/* /data/vendor/radio/modem_config
     chown -hR radio.radio /data/vendor/radio/modem_config
-    cp /firmware/verinfo/ver_info.txt /data/vendor/radio/ver_info.txt
-    chown radio.radio /data/vendor/radio/ver_info.txt
-fi
-cp /firmware/image/modem_pr/mbn_ota.txt /data/vendor/radio/modem_config
-chown radio.radio /data/vendor/radio/modem_config/mbn_ota.txt
+##    cp /firmware/verinfo/ver_info.txt /data/vendor/radio/ver_info.txt
+##    chown radio.radio /data/vendor/radio/ver_info.txt
+##fi
+##cp /firmware/image/modem_pr/mbn_ota.txt /data/vendor/radio/modem_config
+##chown radio.radio /data/vendor/radio/modem_config/mbn_ota.txt
+#endif /*VENDOR_EDIT*/
 echo 1 > /data/vendor/radio/copy_complete
 
-#
-# Check build variant for printk logging
-#
+#check build variant for printk logging
+#current default minimum boot-time-default
 buildvariant=`getprop ro.build.type`
 case "$buildvariant" in
     "userdebug" | "eng")
-        # Set default loglevel to KERN_INFO
+        #set default loglevel to KERN_INFO
         echo "6 6 1 7" > /proc/sys/kernel/printk
         ;;
     *)
-        # Set default loglevel to KERN_WARNING
+        #set default loglevel to KERN_WARNING
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac

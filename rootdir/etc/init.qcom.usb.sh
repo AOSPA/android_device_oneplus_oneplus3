@@ -106,6 +106,22 @@ else
 	soc_id=`cat /sys/devices/system/soc/soc0/id`
 fi
 
+#ifdef VENDOR_EDIT
+boot_mode=`getprop ro.boot.ftm_mode`
+echo "boot_mode: $boot_mode" > /dev/kmsg
+case "$boot_mode" in
+    "ftm_at" | "ftm_rf" | "ftm_wlan" | "ftm_mos")
+    usb_config=`getprop persist.sys.usb.config`
+    echo "BEFORE boot_mode: $usb_config" > /dev/kmsg
+    if [ "$usb_config" != "diag,adb" ] ; then
+        setprop persist.sys.usb.config diag,adb
+    fi
+    ;;
+esac
+usb_config=`getprop persist.sys.usb.config`
+echo "AFTER boot_mode: $usb_config" > /dev/kmsg
+#endif
+
 #
 # Allow USB enumeration with default PID/VID
 #
@@ -113,9 +129,8 @@ baseband=`getprop ro.baseband`
 
 echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 usb_config=`getprop persist.sys.usb.config`
-echo "BEFORE: $usb_config" > /dev/kmsg
 case "$usb_config" in
-    "" | "adb" | "none") #USB persist config not set, select default configuration
+    "" | "adb") #USB persist config not set, select default configuration
       case "$esoc_link" in
           "PCIe")
               setprop persist.sys.usb.config diag,diag_mdm,serial_cdev,rmnet_qti_ether,mass_storage,adb
@@ -163,11 +178,8 @@ case "$usb_config" in
 	              "msm8952" | "msm8953")
 		          setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
 		      ;;
-	              "msm8998" | "sdm660" | "apq8098_latv")
+	              "msm8998" | "sdm660" | "sdm845" | "apq8098_latv")
 		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
-		      ;;
-	              "sdm845")
-		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
 	              *)
 		          setprop persist.sys.usb.config diag,adb
@@ -201,7 +213,6 @@ case "$target" in
         setprop sys.usb.controller "a800000.dwc3"
         setprop sys.usb.rndis.func.name "rndis_bam"
 	setprop sys.usb.rmnet.func.name "rmnet_bam"
-	echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
         ;;
     "sdm845")
         setprop sys.usb.controller "a600000.dwc3"
@@ -238,15 +249,6 @@ if [ -d /config/usb_gadget ]; then
 	fi
 
 	setprop sys.usb.configfs 1
-else
-	persist_comp=`getprop persist.sys.usb.config`
-	comp=`getprop sys.usb.config`
-	echo $persist_comp
-	echo $comp
-	if [ "$comp" != "$persist_comp" ]; then
-		echo "setting sys.usb.config"
-		setprop sys.usb.config $persist_comp
-	fi
 fi
 
 #
@@ -365,4 +367,3 @@ case "$soc_id" in
 		setprop sys.usb.rps_mask 40
 	;;
 esac
-
