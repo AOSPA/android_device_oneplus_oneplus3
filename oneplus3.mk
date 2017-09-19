@@ -130,7 +130,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # Camera
 ifeq ($(TARGET_BUILD_VARIANT), user)
   PRODUCT_PROPERTY_OVERRIDES += \
-      persist.camera.hal.debug=0
+      persist.camera.hal.debug=0 \
+      persist.camera.mobicat=0
 endif
 
 PRODUCT_PACKAGES += gps.msm8996
