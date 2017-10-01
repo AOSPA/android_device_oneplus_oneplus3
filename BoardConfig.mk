@@ -5,13 +5,15 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo
+# REVISITME: TARGET_CPU_VARIANT := kryo
+TARGET_CPU_VARIANT := generic
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := kryo
+# REVISITME: TARGET_2ND_CPU_VARIANT := kryo
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -37,6 +39,10 @@ QCOM_BT_USE_SMD_TTY := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_ION := true
+TARGET_USES_HWC2 := true
+TARGET_USES_GRALLOC1 := true
+TARGET_USES_QCOM_DISPLAY_BSP := true
+TARGET_USES_COLOR_METADATA := true
 TARGET_USES_C2D_COMPOSITION := true
 
 # Enables Adreno RS driver
@@ -49,12 +55,32 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+ifeq ($(ENABLE_AB),true)
+#A/B related defines
+AB_OTA_UPDATER := true
+# Full A/B partiton update set
+# AB_OTA_PARTITIONS := xbl rpm tz hyp pmic modem abl boot keymaster cmnlib cmnlib64 system bluetooth
+# Subset A/B partitions for Android-only image update
+AB_OTA_PARTITIONS ?= boot system
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+TARGET_NO_RECOVERY := true
+BOARD_USES_RECOVERY_AS_BOOT := true
+else
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_FLASH_BLOCK_SIZE := 262144
+TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
+endif
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3154116608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 57436708864
-BOARD_FLASH_BLOCK_SIZE := 262144
+
+ifeq ($(ENABLE_VENDOR_IMAGE), true)
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+endif
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
@@ -109,12 +135,6 @@ TARGET_PER_MGR_ENABLED := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
-#Enabling IMS Feature
-TARGET_USES_IMS := true
-
-#Enable PD locater/notifier
-TARGET_PD_SERVICE_ENABLED := true
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus3/init/init_oneplus3.cpp
@@ -147,3 +167,6 @@ TARGET_RECOVERY_FSTAB := device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
+
+#Enable early mount support for mmc/ufs
+EARLY_MOUNT_SUPPORT := true

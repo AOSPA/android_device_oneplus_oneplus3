@@ -9,10 +9,6 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9320; \
     ln -sf /data/misc/audio/mbhc.bin \
 	    $(TARGET_OUT_ETC)/firmware/wcd9320/wcd9320_mbhc.bin)
 
-$(shell mkdir -p $(TARGET_OUT)/etc/firmware; \
-    ln -sf /dev/block/bootdevice/by-name/msadp \
-	    $(TARGET_OUT)/etc/firmware/msadp)
-
 RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT)/rfs/msm/adsp/
 $(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MSM ADSP folder structure: $@"
@@ -38,8 +34,11 @@ $(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS)
 
 # Read WiFi MAC Address from persist partition
-$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld ; \
-	ln -sf /persist/wlan_mac.bin $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/wlan_mac.bin)
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld ; \
+	ln -sf /persist/wlan_mac.bin $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/wlan_mac.bin)
+
+#Create dsp directory
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/lib/dsp)
 
 include $(call all-subdir-makefiles)
 
