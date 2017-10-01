@@ -52,6 +52,40 @@ fi
 
 log -t BOOT -p i "MSM target '$1', SoC '$soc_hwplatform', HwID '$soc_hwid', SoC ver '$soc_hwver'"
 
+#For drm based display driver
+vbfile=/sys/module/drm/parameters/vblankoffdelay
+if [ -w $vbfile ]; then
+    echo -1 >  $vbfile
+else
+    log -t DRM_BOOT -p w "file: '$vbfile' or perms doesn't exist"
+fi
+
+# In mpss AT version is greater than 3.1, need
+# to use the new vendor-ril which supports L+L feature
+# otherwise use the existing old one.
+if [ -f /firmware/verinfo/ver_info.txt ]; then
+    modem=`cat /firmware/verinfo/ver_info.txt |
+            sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
+            sed 's/.*AT.\(.*\)/\1/g' | cut -d \- -f 1`
+    zygote=`getprop ro.zygote`
+    case "$zygote" in
+    "zygote64_32")
+        if [ "$modem" \< "3.1" ]; then
+            setprop vendor.rild.libpath "/vendor/lib64/libril-qc-qmi-1.so"
+        else
+            setprop vendor.rild.libpath "/vendor/lib64/libril-qc-hal-qmi.so"
+        fi
+        ;;
+    "zygote32")
+        if [ "$modem" \< "3.1" ]; then
+            setprop vendor.rild.libpath "/vendor/lib/libril-qc-qmi-1.so"
+        else
+            setprop vendor.rild.libpath "/vendor/lib/libril-qc-hal-qmi.so"
+        fi
+        ;;
+    esac
+fi
+
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
 # Loop through the sysfs nodes and determine

@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 # Copyright (c) 2012-2013, 2016, The Linux Foundation. All rights reserved.
 # Copyright (c) 2016, Paranoid Android.
 #
@@ -38,6 +38,9 @@ echo 0 > /sys/devices/soc/soc:qcom,bcl/hotplug_mask
 bcl_soc_hotplug_mask=`cat /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask`
 echo 0 > /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask
 echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
+
+# set sync wakee policy tunable
+echo 1 > /proc/sys/kernel/sched_prefer_sync_wakee_to_waker
 
 # configure governor settings for little cluster
 echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -184,3 +187,8 @@ if [ -f /sys/devices/soc0/select_image ]; then
     echo $image_variant > /sys/devices/soc0/image_variant
     echo $oem_version > /sys/devices/soc0/image_crm_version
 fi
+
+# Parse misc partition path and set property
+misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
+real_path=${misc_link##*>}
+setprop persist.vendor.mmi.misc_dev_path $real_path

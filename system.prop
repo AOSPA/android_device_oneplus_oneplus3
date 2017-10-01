@@ -200,7 +200,7 @@ sdm.debug.disable_rotator_split=1
 ro.vendor.qti.sys.fw.bg_apps_limit=36
 
 #reschedule killed services during app launch
-ro.am.reschedule_service=true
+ro.vendor.qti.am.reschedule_service=true
 
 #set cutoff voltage to 3250MV
 ro.cutoff_voltage_mv=3250

@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 # Copyright (c) 2015, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -35,9 +35,8 @@ start_sensors()
    chmod -h 664 /persist/sensors/sensors_settings
    chown -h system.root /persist/sensors/sensors_settings
    chmod -h 664 /persist/sensors/gyro_sensitity_cal
+   mkdir -p /persist/sensors/registry/registry
    chown -h system.root /persist/sensors/gyro_sensitity_cal
-   mkdir -p /data/misc/sensors
-   chmod -h 775 /data/misc/sensors
 
    start sensors
 }
