@@ -1,3 +1,8 @@
 # We don't ship qmipriod to begin with, so don't bother
 # giving it the permissions to set it's properties.
 dontaudit netmgrd vendor_default_prop:property_service set;
+
+userdebug_or_eng(`
+  allow netmgrd diag_device:chr_file rw_file_perms;
+')
+dontaudit netmgrd diag_device:chr_file rw_file_perms;
