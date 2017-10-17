@@ -308,3 +308,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #system prop for wipower support
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.wipower=true
+
+#Thermal
+PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
+                    android.hardware.thermal@1.0-service
+
