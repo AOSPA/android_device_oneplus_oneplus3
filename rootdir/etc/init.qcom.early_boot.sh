@@ -257,6 +257,12 @@ case "$target" in
                 fi
                 ;;
         esac
+        case "$soc_hwid" in
+                "319") #apq8098_latv
+                echo "\n==Loading ALX module==\n"
+                insmod /system/lib/modules/alx.ko
+		;;
+	esac
         ;;
     "sdm845")
         case "$soc_hwplatform" in
@@ -275,7 +281,6 @@ case "$target" in
         cap_ver=`cat /sys/devices/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
         if [ $cap_ver -eq 1 ]; then
             setprop media.msm8953.version 1
-            setprop media.settings.xml /etc/media_profiles_8953_v1.xml
         fi
         ;;
 esac
