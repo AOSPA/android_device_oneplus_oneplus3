@@ -161,9 +161,6 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 # Dirty workaround to supress building the open source HAL
 TARGET_USES_NQ_NFC := true
 
-# Enable sensor multi HAL
-USE_SENSOR_MULTI_HAL := true
-
 TARGET_RECOVERY_FSTAB := device/oneplus/oneplus3/rootdir/etc/fstab.qcom
 
 #BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
