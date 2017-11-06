@@ -243,7 +243,7 @@
     </integer-array>
 
     <!-- Bightness tuning -->
-    <integer name="config_autoBrightnessBrighteningLightFastDebounce">600</integer>
+    <!--<integer name="config_autoBrightnessBrighteningLightFastDebounce">600</integer>-->
     <integer name="config_autoBrightnessBrighteningLightDebounce">1600</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">3200</integer>
 

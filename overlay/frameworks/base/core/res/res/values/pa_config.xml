@@ -29,22 +29,22 @@
             32 - Camera
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">19</integer>
+    <!--<integer name="config_deviceHardwareKeys">19</integer>-->
 
     <!-- Whether device has fysical tri state switch -->
-    <bool name="config_hasAlertSlider">true</bool>
+    <!--<bool name="config_hasAlertSlider">true</bool>-->
 
     <!-- Whether device has dash charging support -->
-    <bool name="config_hasDashCharger">true</bool>
+    <!--<bool name="config_hasDashCharger">true</bool>-->
 
     <!-- sRGB sysfs path -->
-    <string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>
+    <!--<string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>-->
 
     <!-- Internal default to navigation bar value -->
-    <bool name="config_defaultToNavigationBar">false</bool>
+    <!--<bool name="config_defaultToNavigationBar">false</bool>-->
 
     <!-- Gestures' key codes. If the gesture is not supported set it to 0. -->
-    <integer name="config_doubleTapKeyCode">59</integer>
+    <!--<integer name="config_doubleTapKeyCode">59</integer>
     <integer name="config_drawOKeyCode">60</integer>
     <integer name="config_twoFingerSwipeKeyCode">61</integer>
     <integer name="config_drawVKeyCode">62</integer>
@@ -56,7 +56,7 @@
     <integer name="config_drawMKeyCode">68</integer>
     <integer name="config_drawWKeyCode">87</integer>
     <integer name="config_oneFingerSwipeUpKeyCode">88</integer>
-    <integer name="config_oneFingerSwipeDownKeyCode">183</integer>
+    <integer name="config_oneFingerSwipeDownKeyCode">183</integer>-->
 
     <!-- Default settings for gestures
              0 - Disabled
@@ -68,19 +68,19 @@
              6 - Previous music
              7 - Open camera
              8 - Open dialer -->
-    <integer name="config_doubleTapDefault">1</integer>
+    <!--<integer name="config_doubleTapDefault">1</integer>
     <integer name="config_drawVDefault">2</integer>
     <integer name="config_drawODefault">7</integer>
     <integer name="config_drawArrowLeftDefault">6</integer>
-    <integer name="config_drawArrowRightDefault">5</integer>
+    <integer name="config_drawArrowRightDefault">5</integer>-->
 
     <!-- Whether to intercept inputs on screen off -->
-    <bool name="config_enableKeyHandler">true</bool>
+    <!--<bool name="config_enableKeyHandler">true</bool>-->
 
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+    <!--<bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>-->
 
     <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
-    <string name="config_pocketBridgeSysfsInpocket">/sys/kernel/pocket_judge/inpocket</string>
+    <!--<string name="config_pocketBridgeSysfsInpocket">/sys/kernel/pocket_judge/inpocket</string>-->
 </resources>
