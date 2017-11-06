@@ -53,7 +53,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
+ifeq ($(HOST_OS),linux)
 TARGET_USERIMAGES_USE_F2FS := true
+endif
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 ifeq ($(ENABLE_AB),true)
 #A/B related defines
