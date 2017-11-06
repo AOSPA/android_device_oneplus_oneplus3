@@ -29,6 +29,8 @@
 
 #include <stdlib.h>
 
+#include <android-base/properties.h>
+
 #include "vendor_init.h"
 #include "property_service.h"
 
@@ -36,8 +38,8 @@
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type) {
 
-    std::string project_name = property_get("ro.boot.project_name");
-    std::string rf_version = property_get("ro.boot.rf_version");
+    std::string project_name = android::base::GetProperty("ro.boot.project_name", "");
+    std::string rf_version = android::base::GetProperty("ro.boot.rf_version", "");
 
     if (project_name == "15811") {
         property_set("ro.power_profile", "/system/etc/power_profile_3t.xml");
