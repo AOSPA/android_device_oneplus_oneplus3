@@ -43,29 +43,12 @@ on fs
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
-    wait /dev/block/bootdevice/by-name/cache
-    #ifdef VENDOR_EDIT
-    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/cache
-    #endif
-    mount ext4 /dev/block/bootdevice/by-name/cache /cache noatime nosuid nodev barrier=1
-
-    wait /dev/block/bootdevice/by-name/persist
-    #ifdef VENDOR_EDIT
-    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/persist
-    #endif
-    mount ext4 /dev/block/bootdevice/by-name/persist /persist noatime nosuid nodev barrier=1
     mkdir /persist/data 0700 system system
     mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
 
-    wait /dev/block/bootdevice/by-name/dsp
-    mount ext4 /dev/block/bootdevice/by-name/dsp /dsp ro nosuid nodev barrier=1
-
-    wait /dev/block/bootdevice/by-name/modem
-    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
-
-    wait /dev/block/bootdevice/by-name/bluetooth
-    mount vfat /dev/block/bootdevice/by-name/bluetooth /bt_firmware ro shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0
+on init
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -75,7 +58,6 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
-    mkdir /persist/qc_senseid 0700 system system
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/seemp 0700 system system
@@ -84,39 +66,57 @@ on post-fs-data
     mkdir /data/misc/qvr 0770 system system
     mkdir /data/misc/audio_pp 0771 media audio
 
-    mkdir /data/oemnvitems 0771 radio radio
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-3
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-    # Create directories for Fingerprint
+    # NFC, ruanbanmao add for 15801 nfc. 2015/10/19
+    mkdir /data/nfc
+    mkdir /data/oemnvitems  0771 radio radio
+    # fingerint, changhua add for fp debug image usage,feature default off
     mkdir /data/fpc_images 0770 system system
     mkdir /data/fpc_images/verify 0770 system system
     mkdir /data/fpc_images/enroll 0770 system system
     mkdir /data/fpc 0770 system system
-    mkdir /data/misc/stargate 0770 system system
-    mkdir /data/misc/stargate/bg_estimation 0770 system system
-    mkdir /data/misc/stargate/calib_test 0770 system system
-    mkdir /data/misc/stargate/database 0770 system system
-
-   # Add a cpuset for the camera daemon
-   # We want all cores for camera
-   mkdir /dev/cpuset/camera-daemon
-   write /dev/cpuset/camera-daemon/cpus 0-3
-   write /dev/cpuset/camera-daemon/mems 0
-   chown cameraserver cameraserver /dev/cpuset/camera-daemon
-   chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
-   chmod 0660 /dev/cpuset/camera-daemon/tasks
+    mkdir /data/coredump  0777 system system
+    mkdir /data/theme 0775 system system
+    mkdir /data/mdm 0775 system system
+    mkdir /data/theme_storage 0775 system system
+    # mediaserver, lifei add for Watchdog monitoring mediaextractor process. 2017/08/11
+    mkdir /data/misc/media_dump 0770 mediaex mediadrm
 
 #Create folder for mm-qcamera-daemon
 mkdir /data/vendor/camera 0770 camera camera
+
+on property:init.svc.bootanim=running
+    write /sys/class/leds/wled/brightness 4095
 
 on boot
     start rmt_storage
     start rfs_access
 
-    # Update tp firmware(s3320 and s1302)
-    write /sys/bus/i2c/devices/12-0020/tp_fw_update 0
-    write /proc/s1302/fw_update 0
+    # access permission for secure touch
+    chmod 0660 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
+    chmod 0440 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
+    chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
+    chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
+    write /proc/sys/kernel/sched_boost 1
+    write /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input0/update_fw 1
 
-    # Fingerprint
+    # chenneng@camera add for torch permission @2015-10-26
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chmod 666 /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chmod 666 /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:switch/brightness
+    chmod 666 /sys/class/leds/led:switch/brightness
+
+    # changhua add for fingerint
     chmod 0664 /sys/devices/soc/soc:fpc_fpc1020/irq
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/report_home
@@ -127,46 +127,18 @@ on boot
     chown system system /sys/devices/soc/soc:fpc_fpc1020/screen_state
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/hw_reset
     chown system system /sys/devices/soc/soc:fpc_fpc1020/hw_reset
-
-    # Graphics
-    chown system graphics /sys/class/graphics/fb0/dyn_pu
-    chmod 0664 /sys/class/graphics/fb0/dyn_pu
-    chown system graphics /sys/class/graphics/fb0/dynamic_fps
-    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
-    chown system graphics /sys/class/graphics/fb0/idle_time
-    chmod 0664 /sys/class/graphics/fb0/idle_time
-    chown system graphics /sys/class/graphics/fb0/mode
-    chmod 0664 /sys/class/graphics/fb0/mode
-    chown system graphics /sys/class/graphics/fb0/modes
-    chmod 0664 /sys/class/graphics/fb0/modes
-    chown system graphics /sys/class/graphics/fb0/sre
-    chmod 0664 /sys/class/graphics/fb0/sre
-
-    # Crypto
+    #chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/wakeup_enable
+    #chown system system /sys/devices/soc/soc:fpc_fpc1020/wakeup_enable
     chmod 0666 /dev/qseecom
-
-    # Dash Charging
-    chmod 0666 /dev/dash
-
-    # NFC
+    # NFC, ruanbanmao add for 15801 nfc. 2015/10/19
+    setprop ro.nfc.port "I2C"
     chmod 0666 /dev/pn544
     chown nfc nfc /dev/pn544
     chmod 0666 /dev/p61
     chown spi spi /dev/p61
+    chmod 0666 /dev/dash/
 
-    # RGB light
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/blue/brightness
-    chown system system /sys/class/leds/green/brightness
-
-    chown system system /sys/class/leds/red/duty_pcts
-    chown system system /sys/class/leds/blue/duty_pcts
-    chown system system /sys/class/leds/green/duty_pcts
-
-    chown system system /sys/class/leds/red/start_idx
-    chown system system /sys/class/leds/blue/start_idx
-    chown system system /sys/class/leds/green/start_idx
-
+    # wulaibin@bsp , 2015/11/18, Modify for RGB light support
     chown system system /sys/class/leds/red/pause_lo
     chown system system /sys/class/leds/blue/pause_lo
     chown system system /sys/class/leds/green/pause_lo
@@ -175,57 +147,31 @@ on boot
     chown system system /sys/class/leds/blue/pause_hi
     chown system system /sys/class/leds/green/pause_hi
 
-    chown system system /sys/class/leds/red/ramp_step_ms
-    chown system system /sys/class/leds/blue/ramp_step_ms
-    chown system system /sys/class/leds/green/ramp_step_ms
-
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/blue/blink
     chown system system /sys/class/leds/green/blink
 
-    chown system system /sys/class/leds/rgb/rgb_blink
+    # camera. enable mobicat
+    setprop persist.camera.mobicat 2
+    setprop persist.camera.stats.debugexif 3080192
+    # camera. enable mobicat
 
-    chmod 660 /sys/class/leds/red/brightness
-    chmod 660 /sys/class/leds/green/brightness
-    chmod 660 /sys/class/leds/blue/brightness
-
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/red/ramp_step_ms
+    chown system system /sys/class/leds/blue/ramp_step_ms
+    chown system system /sys/class/leds/green/ramp_step_ms
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/blue/duty_pcts
+    chown system system /sys/class/leds/green/duty_pcts
+    chmod 660 /sys/class/leds/red/ramp_step_ms
+    chmod 660 /sys/class/leds/green/ramp_step_ms
+    chmod 660 /sys/class/leds/blue/ramp_step_ms
     chmod 660 /sys/class/leds/red/duty_pcts
     chmod 660 /sys/class/leds/green/duty_pcts
     chmod 660 /sys/class/leds/blue/duty_pcts
 
-    chmod 660 /sys/class/leds/red/start_idx
-    chmod 660 /sys/class/leds/green/start_idx
-    chmod 660 /sys/class/leds/blue/start_idx
-
-    chmod 660 /sys/class/leds/red/pause_lo
-    chmod 660 /sys/class/leds/green/pause_lo
-    chmod 660 /sys/class/leds/blue/pause_lo
-
-    chmod 660 /sys/class/leds/red/pause_hi
-    chmod 660 /sys/class/leds/green/pause_hi
-    chmod 660 /sys/class/leds/blue/pause_hi
-
-    chmod 660 /sys/class/leds/red/ramp_step_ms
-    chmod 660 /sys/class/leds/green/ramp_step_ms
-    chmod 660 /sys/class/leds/blue/ramp_step_ms
-
-    chmod 660 /sys/class/leds/red/blink
-    chmod 660 /sys/class/leds/green/blink
-    chmod 660 /sys/class/leds/blue/blink
-
-    chmod 660 /sys/class/leds/rgb/rgb_blink
-
-    write /proc/sys/kernel/sched_boost 1
-
-    #chenneng@camera add for torch permission @2015-10-26
-    chown system system /sys/class/leds/led:torch_0/brightness
-    chmod 666 /sys/class/leds/led:torch_0/brightness
-    chown system system /sys/class/leds/led:torch_1/brightness
-    chmod 666 /sys/class/leds/led:torch_1/brightness
-    chown system system /sys/class/leds/led:switch/brightness
-    chmod 666 /sys/class/leds/led:switch/brightness
-
-#ifdef VENDOR_EDIT
     chmod 0666 /sys/devices/virtual/graphics/fb0/SRGB
     chmod 0666 /sys/devices/virtual/graphics/fb0/Adobe_RGB
     chmod 0666 /sys/devices/virtual/graphics/fb0/DCI_P3
@@ -261,34 +207,17 @@ on property:sys.default_mode=1
    write /sys/devices/virtual/graphics/fb0/oneplus_mode 1
 on property:sys.default_mode=0
    write /sys/devices/virtual/graphics/fb0/oneplus_mode 0
-#endif
 
 #start camera server as daemon
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-
-#start remosaic daemon
-service remosaic_daemon /system/bin/remosaic_daemon
-    class late_start
-    user camera
-
-#fingerprint service
-service fingerprintd /system/vendor/bin/fingerprintd
-    class late_start
-    user system
-    group system
 
 service qfp-daemon /system/vendor/bin/qfp-daemon
     class late_start
     user system
     group system drmrpc diag input
-
-service fps_hal /system/vendor/bin/fingerprint.qcom
-    class late_start
-    user system
-    group system input
 
 service qvrd /system/vendor/bin/qvrservice
     class late_start
@@ -315,6 +244,36 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
+service mdm_launcher /system/bin/sh init.mdm.sh
+     class core
+     oneshot
+
+service mdm_helper /system/bin/mdm_helper
+     class core
+     group root system
+     disabled
+## Allow usb charging to be disabled peristently
+#on property:persist.usb.chgdisabled=1
+#    write /sys/class/power_supply/battery/charging_enabled 0
+#
+#on property:persist.usb.chgdisabled=0
+#    write /sys/class/power_supply/battery/charging_enabled 1
+#
+#service qrngd /system/bin/qrngd -f
+#   class main
+#   user root
+#   group root
+#
+#service qrngp /system/bin/qrngp
+#    class main
+#    user root
+#    group root
+#    oneshot
+#    disabled
+#
+#on property:sys.boot_completed=1
+#    start qrngp
+
 service qseecomd /vendor/bin/qseecomd
    class core
    user root
@@ -332,14 +291,21 @@ service seempd /system/vendor/bin/seempd
    user system
    group system
    socket seempdw dgram 0666 system system
-   disabled
 
 service secotad /system/vendor/bin/secotad
    class late_start
    user system
    group system
-   disabled
 
+#service mpdecision /system/vendor/bin/mpdecision --avg_comp
+#   user root
+#   disabled
+#
+#service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
+#   user system
+#   group system
+#   disabled
+#
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
    user root
@@ -348,7 +314,18 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
    socket thermal-send-rule stream 0660 system system
    group root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
 
+#service security-check1 /sbin/security_boot_check system
+#    class core
+#    oneshot
+#
+#service security-check2 /sbin/security_boot_check recovery
+#    class core
+#    oneshot
+#
 service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
@@ -364,6 +341,67 @@ service audiod /system/vendor/bin/audiod
    user system
    group system
 
+
+service usf_tester /system/vendor/bin/usf_tester
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf_epos /system/vendor/bin/usf_epos
+    class main
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf_gesture /system/vendor/bin/usf_gesture
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf_sync_gesture /system/vendor/bin/usf_sync_gesture
+    user system
+    group system inet audio
+    disabled
+    oneshot
+
+service usf_p2p /system/vendor/bin/usf_p2p
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf_hovering /system/vendor/bin/usf_hovering
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf_proximity /system/vendor/bin/usf_proximity
+    class late_start
+    user system
+    group system inet audio
+
+service usf_pairing /system/vendor/bin/usf_pairing
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf_sw_calib /system/vendor/bin/usf_sw_calib
+    user system
+    group system inet
+    disabled
+    oneshot
+
+service usf-post-boot /system/vendor/bin/sh /system/etc/usf_post_boot.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
 on property:init.svc.bootanim=stopped
     start usf-post-boot
 
@@ -377,7 +415,7 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag readproc
+    group system wifi radio inet log diag
     disabled
 
 service pd_mapper /system/vendor/bin/pd-mapper
@@ -391,6 +429,12 @@ on property:persist.sys.pd_enable=1
 on property:persist.sys.pd_enable=0
      write /sys/class/service_locator/service_locator_status 0
 
+#
+## QCA1530 SoC late_start group trigger
+#service gnss-init /system/vendor/bin/gnss.qca1530.sh init
+#   class late_start
+#   oneshot
+#
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
@@ -447,7 +491,6 @@ service tlocd /system/bin/tloc_daemon
     class late_start
     user system
     group drmrpc gps net_raw
-    disabled
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main
@@ -455,25 +498,15 @@ service energy-awareness /system/vendor/bin/energy-awareness
     group system
     oneshot
 
-service dashd /sbin/dashd
-    class core
-    seclabel u:r:dashd:s0
-    group root system
-
-on property:init.svc.healthd=restarting
-    restart dashd
+service hvdcp_opti /system/vendor/bin/hvdcp_opti
+    class main
+    user root
+    group system wakelock
 
 service mdtpd /system/vendor/bin/mdtpd
    class late_start
    user root
    group system radio drmrpc
-   disabled
-
-service cameraserver /system/bin/cameraserver
-    class main
-    user cameraserver
-    group audio camera input drmrpc media_rw sdcard_rw
-    ioprio rt 4
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
@@ -481,7 +514,18 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+    start hvdcp_opti
     start dashd
+
+service dhcpcd_eth0 /system/vendor/bin/dhcpcd -ABKLG
+	class late_start
+	disabled
+	oneshot
+
+service iprenew_eth0 /system/vendor/bin/dhcpcd -n
+	class late_start
+	disabled
+	oneshot
 
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
@@ -489,3 +533,15 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+
+#david.liu@bsp, 20160926 Add dash charging
+service dashd /sbin/dashd
+    class core
+    critical
+    group root system
+
+#ifdef VENDOR_EDIT
+service remosaic_deamon /vendor/bin/remosaic_daemon
+    class late_start
+    user camera
+#endif
