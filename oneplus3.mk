@@ -68,10 +68,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/power/power_profile_3t.xml:system/etc/power_profile_3t.xml
 
 PRODUCT_PACKAGES += \
+    libcld80211 \
     hostapd \
     libwpa_client \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    android.hardware.wifi@1.0-service
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
