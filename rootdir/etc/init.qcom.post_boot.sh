@@ -39,6 +39,50 @@ function configure_zram_parameters() {
     fi
 }
 
+function configure_lmk_ppr_parameters(){
+    # Read adj series and set adj threshold for PPR and ALMK.
+    # This is required since adj values change from framework to framework.
+    adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
+    adj_1="${adj_series#*,}"
+    set_almk_ppr_adj="${adj_1%%,*}"
+
+    # PPR and ALMK should not act on HOME adj and below.
+    # Normalized ADJ for HOME is 6. Hence multiply by 6
+    # ADJ score represented as INT in LMK params, actual score can be in decimal
+    # Hence add 6 considering a worst case of 0.9 conversion to INT (0.9*6).
+    set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
+    echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
+    echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
+}
+
+function enable_swap() {
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    SWAP_ENABLE_THRESHOLD=1048576
+    swap_enable=`getprop ro.vendor.qti.config.swap`
+
+    if [ -f /sys/devices/soc0/soc_id ]; then
+        soc_id=`cat /sys/devices/soc0/soc_id`
+    else
+        soc_id=`cat /sys/devices/system/soc/soc0/id`
+    fi
+
+    # Enable swap initially only for 1 GB targets
+    if [ "$MemTotal" -le "$SWAP_ENABLE_THRESHOLD" ] && [ "$swap_enable" == "true" ]; then
+        # Static swiftness
+        echo 1 > /proc/sys/vm/swap_ratio_enable
+        echo 70 > /proc/sys/vm/swap_ratio
+
+        # Swap disk - 200MB size
+        if [ ! -f /data/system/swap/swapfile ]; then
+            dd if=/dev/zero of=/data/system/swap/swapfile bs=1m count=200
+        fi
+        mkswap /data/system/swap/swapfile
+        swapon /data/system/swap/swapfile -p 32758
+    fi
+}
+
 function configure_memory_parameters() {
     # Set Memory paremeters.
     #
@@ -56,6 +100,12 @@ function configure_memory_parameters() {
     #
 
 ProductName=`getprop ro.product.name`
+low_ram=`getprop ro.config.low_ram`
+
+MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+MemTotal=${MemTotalStr:16:8}
+
+LOW_RAM_DEVICE=1048576
 
 if [ "$ProductName" == "msm8996" ]; then
       # Enable Adaptive LMK
@@ -63,24 +113,34 @@ if [ "$ProductName" == "msm8996" ]; then
       echo 81250 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
 
       configure_zram_parameters
+elif [ "$MemTotal" -le "$LOW_RAM_DEVICE" ] && [ "$low_ram" == "true" ]; then
+    ulmk_config=`getprop ro.vendor.qti.config.ulmk_memcg`
+    if [ "$ulmk_config" == "true" ]; then
+        echo 0 > /sys/module/lowmemorykiller/parameters/enable_lmk
+        echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+    else
+        echo 1 > /sys/module/lowmemorykiller/parameters/enable_lmk
+        echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+
+        echo 70 > /sys/module/process_reclaim/parameters/pressure_max
+        echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
+        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+
+        echo 50 > /sys/module/process_reclaim/parameters/pressure_min
+        echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
+        echo "15360,19200,23040,26880,34415,43737" > /sys/module/lowmemorykiller/parameters/minfree
+        echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+
+        configure_lmk_ppr_parameters
+    fi
+
+    configure_zram_parameters
+
+    enable_swap
 else
     arch_type=`uname -m`
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
 
-    # Read adj series and set adj threshold for PPR and ALMK.
-    # This is required since adj values change from framework to framework.
-    adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
-    adj_1="${adj_series#*,}"
-    set_almk_ppr_adj="${adj_1%%,*}"
-
-    # PPR and ALMK should not act on HOME adj and below.
-    # Normalized ADJ for HOME is 6. Hence multiply by 6
-    # ADJ score represented as INT in LMK params, actual score can be in decimal
-    # Hence add 6 considering a worst case of 0.9 conversion to INT (0.9*6).
-    set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
-    echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
-    echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
+    configure_lmk_ppr_parameters
 
     #Set other memory parameters
     echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
@@ -111,28 +171,7 @@ else
 
     configure_zram_parameters
 
-    SWAP_ENABLE_THRESHOLD=1048576
-    swap_enable=`getprop ro.vendor.qti.config.swap`
-
-    if [ -f /sys/devices/soc0/soc_id ]; then
-        soc_id=`cat /sys/devices/soc0/soc_id`
-    else
-        soc_id=`cat /sys/devices/system/soc/soc0/id`
-    fi
-
-    # Enable swap initially only for 1 GB targets
-    if [ "$MemTotal" -le "$SWAP_ENABLE_THRESHOLD" ] && [ "$swap_enable" == "true" ]; then
-        # Static swiftness
-        echo 1 > /proc/sys/vm/swap_ratio_enable
-        echo 70 > /proc/sys/vm/swap_ratio
-
-        # Swap disk - 200MB size
-        if [ ! -f /data/system/swap/swapfile ]; then
-            dd if=/dev/zero of=/data/system/swap/swapfile bs=1m count=200
-        fi
-        mkswap /data/system/swap/swapfile
-        swapon /data/system/swap/swapfile -p 32758
-    fi
+    enable_swap
 fi
 }
 
