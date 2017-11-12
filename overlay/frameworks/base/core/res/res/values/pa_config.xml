@@ -35,7 +35,7 @@
     <!--<bool name="config_hasAlertSlider">true</bool>-->
 
     <!-- Whether device has dash charging support -->
-    <!--<bool name="config_hasDashCharger">true</bool>-->
+    <bool name="config_hasDashCharger">true</bool>
 
     <!-- sRGB sysfs path -->
     <!--<string name="config_srgb_path">/sys/class/graphics/fb0/SRGB</string>-->
