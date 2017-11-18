@@ -712,6 +712,8 @@ WIGIG += libwigig_utils
 WIGIG += libwigig_flashaccess
 WIGIG += libwigig_pciaccess
 
+PRODUCT_PACKAGES += netutils-wrapper-1.0
+
 PRODUCT_PACKAGES += $(ALSA_HARDWARE)
 PRODUCT_PACKAGES += $(ALSA_UCM)
 PRODUCT_PACKAGES += $(ANGLE)
