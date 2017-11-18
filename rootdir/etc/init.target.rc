@@ -39,10 +39,6 @@ on fs
     mount_all /vendor/etc/fstab.qcom
     swapon_all /vendor/etc/fstab.qcom
 
-    # Keeping following partitions outside fstab file. As user may not have
-    # these partition flashed on the device. Failure to mount any partition in fstab file
-    # results in failure to launch late-start class.
-
     mkdir /persist/data 0700 system system
     mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
@@ -66,14 +62,14 @@ on post-fs-data
     mkdir /data/misc/qvr 0770 system system
     mkdir /data/misc/audio_pp 0771 media audio
 
-    # Add a cpuset for the camera daemon
-    # We want all cores for camera
-    mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-3
-    write /dev/cpuset/camera-daemon/mems 0
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
-    chmod 0660 /dev/cpuset/camera-daemon/tasks
+   # Add a cpuset for the camera daemon
+   # We want all cores for camera
+   mkdir /dev/cpuset/camera-daemon
+   write /dev/cpuset/camera-daemon/cpus 0-3
+   write /dev/cpuset/camera-daemon/mems 0
+   chown cameraserver cameraserver /dev/cpuset/camera-daemon
+   chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+   chmod 0660 /dev/cpuset/camera-daemon/tasks
 
     # NFC, ruanbanmao add for 15801 nfc. 2015/10/19
     mkdir /data/nfc
@@ -99,8 +95,7 @@ on property:init.svc.bootanim=running
 on boot
     start rmt_storage
     start rfs_access
-
-    # access permission for secure touch
+# access permission for secure touch
     chmod 0660 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
     chmod 0440 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
     chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
@@ -108,7 +103,7 @@ on boot
     write /proc/sys/kernel/sched_boost 1
     write /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input0/update_fw 1
 
-    # chenneng@camera add for torch permission @2015-10-26
+# chenneng@camera add for torch permission @2015-10-26
     chown system system /sys/class/leds/led:torch_0/brightness
     chmod 666 /sys/class/leds/led:torch_0/brightness
     chown system system /sys/class/leds/led:torch_1/brightness
@@ -116,7 +111,7 @@ on boot
     chown system system /sys/class/leds/led:switch/brightness
     chmod 666 /sys/class/leds/led:switch/brightness
 
-    # changhua add for fingerint
+# changhua add for fingerint
     chmod 0664 /sys/devices/soc/soc:fpc_fpc1020/irq
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/report_home
@@ -127,18 +122,17 @@ on boot
     chown system system /sys/devices/soc/soc:fpc_fpc1020/screen_state
     chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/hw_reset
     chown system system /sys/devices/soc/soc:fpc_fpc1020/hw_reset
-    #chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/wakeup_enable
-    #chown system system /sys/devices/soc/soc:fpc_fpc1020/wakeup_enable
     chmod 0666 /dev/qseecom
-    # NFC, ruanbanmao add for 15801 nfc. 2015/10/19
+
+# NFC, ruanbanmao add for 15801 nfc. 2015/10/19
     setprop ro.nfc.port "I2C"
     chmod 0666 /dev/pn544
     chown nfc nfc /dev/pn544
     chmod 0666 /dev/p61
     chown spi spi /dev/p61
-    chmod 0666 /dev/dash/
+    chmod 0666 /dev/dash
 
-    # wulaibin@bsp , 2015/11/18, Modify for RGB light support
+# wulaibin@bsp , 2015/11/18, Modify for RGB light support
     chown system system /sys/class/leds/red/pause_lo
     chown system system /sys/class/leds/blue/pause_lo
     chown system system /sys/class/leds/green/pause_lo
@@ -151,10 +145,10 @@ on boot
     chown system system /sys/class/leds/blue/blink
     chown system system /sys/class/leds/green/blink
 
-    # camera. enable mobicat
+# camera. enable mobicat
     setprop persist.camera.mobicat 2
     setprop persist.camera.stats.debugexif 3080192
-    # camera. enable mobicat
+# camera. enable mobicat
 
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/blue/blink
@@ -501,7 +495,7 @@ service energy-awareness /system/vendor/bin/energy-awareness
 service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
-    group system wakelock
+    group root
 
 service mdtpd /system/vendor/bin/mdtpd
    class late_start
@@ -538,6 +532,7 @@ service ppd /vendor/bin/mm-pp-dpps
 service dashd /sbin/dashd
     class core
     critical
+#    seclabel u:r:dashd:s0
     group root system
 
 #ifdef VENDOR_EDIT
