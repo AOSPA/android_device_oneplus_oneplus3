@@ -140,6 +140,9 @@ ro.hwui.text_large_cache_height=2048
 
 persist.camera.llc=1
 
+# Disable EIS
+persist.vendor.camera.eis.enable=0
+
 #force HAL1 for some apps
 camera.hal1.packagelist=org.codeaurora.snapcam,com.snapchat.android
 
