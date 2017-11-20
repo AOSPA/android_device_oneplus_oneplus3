@@ -160,7 +160,7 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 
 TARGET_RECOVERY_FSTAB := device/oneplus/oneplus3/recovery/recovery.fstab
 
-#BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
+BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
 
 #Enable early mount support for mmc/ufs
 EARLY_MOUNT_SUPPORT := true

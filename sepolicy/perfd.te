@@ -1,6 +1,0 @@
-allow perfd device:file rw_file_perms;
-
-allow perfd {
-     cameraserver
-     mm-qcamerad
-}:process signull;
