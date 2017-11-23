@@ -231,7 +231,7 @@ persist.dbg.wfc_avail_ovr=0
 
 #Disable face beautification for gallery app
 persist.ts.postmakeup=false
-persist.ts.rtmakeup=true
+persist.ts.rtmakeup=false
 
 # Enable sdcardfs
 ro.sys.sdcardfs=true
