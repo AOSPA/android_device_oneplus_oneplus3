@@ -33,9 +33,6 @@ PRODUCT_PROPERTY_OVERRIDES  += \
     ro.opengles.version=196610
 
 # Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.fluencetype=fluence
-
 include $(TOPDIR)hardware/qcom/audio/configs/msm8996/msm8996.mk
 
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
