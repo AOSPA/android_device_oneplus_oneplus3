@@ -179,7 +179,7 @@ PRODUCT_PACKAGES += \
     libextmedia_jni
 
 # SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
-ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
+PRODUCT_PROPERTY_OVERRIDES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
