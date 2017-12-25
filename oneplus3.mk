@@ -13,8 +13,11 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # copy customized media_profiles and media_codecs xmls for oneplus3
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_codecs.xml:system/vendor/etc/media_codecs.xml \
-                      $(LOCAL_PATH)/media/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/media/media_profiles.xml:system/vendor/etc/media_profiles_vendor.xml \
+    $(LOCAL_PATH)/media/media_codecs.xml:system/vendor/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml
 
 # Power
 PRODUCT_PACKAGES += \
