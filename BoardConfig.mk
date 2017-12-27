@@ -131,6 +131,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus3/init/init_oneplus3.cpp
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
+CAMERA_ENABLED_NOTIFY_PERFORMANCE_MODE := false
 
 WITH_DEXPREOPT_PIC := false
 
