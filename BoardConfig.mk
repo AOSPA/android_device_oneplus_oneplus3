@@ -131,6 +131,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus3/init/init_oneplus3.cpp
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
 CAMERA_ENABLED_NOTIFY_PERFORMANCE_MODE := false
 
 WITH_DEXPREOPT_PIC := false
@@ -147,6 +148,8 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 
 TARGET_RECOVERY_FSTAB := device/oneplus/oneplus3/recovery/recovery.fstab
+
+TARGET_SPECIFIC_HEADER_PATH := device/oneplus/oneplus3/include
 
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus3/sepolicy
 
