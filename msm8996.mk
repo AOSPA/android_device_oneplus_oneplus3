@@ -265,6 +265,8 @@ PRODUCT_PACKAGES += \
 #Enable Lights Impl HAL Compilation
 PRODUCT_PACKAGES += android.hardware.light@2.0-impl
 
+TARGET_SUPPORT_SOTER := true
+
 #set KMGK_USE_QTI_SERVICE to true to enable QTI KEYMASTER and GATEKEEPER HIDLs
 ifeq ($(ENABLE_VENDOR_IMAGE), true)
 KMGK_USE_QTI_SERVICE := true
