@@ -136,12 +136,11 @@ CHROMIUM += libwebviewchromium_plat_support
 #CIMAX
 CIMAX := libcimax_spi
 
+ifneq ($(TARGET_HAS_LOW_RAM),true)
 #CM
 CM :=CMFileManager
 #CM += Trebuchet
-
-#Default Launcher
-DELAUN := Launcher3
+endif
 
 #CONNECTIVITY
 CONNECTIVITY := libcnefeatureconfig
@@ -720,6 +719,18 @@ WIGIG += libwigig_pciaccess
 
 PRODUCT_PACKAGES += netutils-wrapper-1.0
 
+ifeq ($(TARGET_HAS_LOW_RAM),true)
+    DELAUN := Launcher3Go
+else
+    # Live Wallpapers
+    PRODUCT_PACKAGES += \
+            LiveWallpapers \
+            LiveWallpapersPicker \
+            VisualizationWallpapers
+
+    DELAUN := Launcher3
+endif
+
 PRODUCT_PACKAGES += $(ALSA_HARDWARE)
 PRODUCT_PACKAGES += $(ALSA_UCM)
 PRODUCT_PACKAGES += $(ANGLE)
@@ -817,15 +828,11 @@ PRODUCT_PACKAGES += $(CARRIER_ONE_RCS)
 PRODUCT_PACKAGES += android.hidl.manager@1.0-java
 
 PRODUCT_PACKAGES += android.hardware.drm@1.0-impl
+ifneq ($(strip $(TARGET_HAS_LOW_RAM)),true)
 PRODUCT_PACKAGES += android.hardware.drm@1.0-service
+endif
 PRODUCT_PACKAGES += android.hardware.drm@1.0-service.widevine
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-        LiveWallpapers \
-        LiveWallpapersPicker \
-        VisualizationWallpapers \
-        librs_jni
+PRODUCT_PACKAGES += librs_jni
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -843,6 +850,21 @@ PRODUCT_PACKAGES += vcard
 
 # tcmiface for tcm support
 PRODUCT_PACKAGES += tcmiface
+
+# healthd libaray expanded for mode charger
+PRODUCT_PACKAGES += libhealthd.msm
+
+#Android net
+PRODUCT_PACKAGES += \
+   libandroid_net \
+   libandroid_net_32
+
+#intialise PRODUCT_PACKAGES_DEBUG list for debug modules
+PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh
+
+#Add init.qcom.test.rc to PRODUCT_PACKAGES_DEBUG list
+PRODUCT_PACKAGES_DEBUG += init.qcom.test.rc
+PRODUCT_PACKAGES_DEBUG += init.qcom.debug.sh
 
 #NANOPB_LIBRARY_NAME := libnanopb-c-2.8.0
 
@@ -888,9 +910,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+
+ifneq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+endif
 
 ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
 PRODUCT_COPY_FILES += \
@@ -904,6 +930,7 @@ endif
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-0.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
 
 #skip boot jars check
 SKIP_BOOT_JARS_CHECK := true
