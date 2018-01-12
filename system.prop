@@ -167,6 +167,10 @@ Camera.no_navigation_bar=true
 #property for game detection feature
 debug.enable.gamed=0
 
+#properties for limiting preview size in camera
+persist.vendor.camera.display.umax=1920x1080
+persist.vendor.camera.display.lmax=1280x720
+
 #Disable face beautification
 persist.ts.postmakeup=false
 persist.ts.rtmakeup=false
