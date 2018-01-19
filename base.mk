@@ -826,6 +826,8 @@ PRODUCT_PACKAGES += $(IMS_EXT)
 PRODUCT_PACKAGES += $(CARRIER_ONE_RCS)
 # Temp workarround for b/36603742
 PRODUCT_PACKAGES += android.hidl.manager@1.0-java
+# Temp workaround for IMS issues
+PRODUCT_PACKAGES += android.hidl.manager@1.0
 
 PRODUCT_PACKAGES += android.hardware.drm@1.0-impl
 ifneq ($(strip $(TARGET_HAS_LOW_RAM)),true)
