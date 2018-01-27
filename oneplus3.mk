@@ -204,10 +204,6 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
-# USB
-PRODUCT_PACKAGES += \
-android.hardware.usb@1.0-service
-
 #Android fingerprint daemon implementation
 PRODUCT_PACKAGES += fingerprintd
 
