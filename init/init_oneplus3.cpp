@@ -47,36 +47,33 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     if (project_name == "15811") {
         property_set("ro.power_profile", "/system/etc/power_profile_3t.xml");
         property_set("ro.product.device", "OnePlus3T");
+        property_set("ro.product.model", "OnePlus 3T");
         if (rf_version == "12") {
             /* China model */
             property_set("ro.telephony.default_network", "22,22");
             property_set("telephony.lteOnCdmaDevice", "1");
             property_set("persist.radio.force_on_dc", "true");
-            property_set("ro.product.model", "ONEPLUS A3010");
         } else if (rf_version == "22") {
             /* Europe / Asia model */
             property_set("ro.telephony.default_network", "9,9");
-            property_set("ro.product.model", "ONEPLUS A3003");
         } else if (rf_version == "32") {
             /* North America model */
             property_set("ro.telephony.default_network", "22,22");
             property_set("telephony.lteOnCdmaDevice", "1");
             property_set("persist.radio.force_on_dc", "true");
-            property_set("ro.product.model", "ONEPLUS A3000");
         }
    } else {
         property_set("ro.power_profile", "/system/etc/power_profile.xml");
         property_set("ro.product.device", "OnePlus3");
+        property_set("ro.product.model", "OnePlus 3T");
         if (rf_version == "11" || rf_version == "31") {
             /* China / North America model */
             property_set("ro.telephony.default_network", "22,22");
             property_set("telephony.lteOnCdmaDevice", "1");
             property_set("persist.radio.force_on_dc", "true");
-            property_set("ro.product.model", "ONEPLUS A3000");
         } else if (rf_version == "21") {
             /* Europe / Asia model */
             property_set("ro.telephony.default_network", "9,9");
-            property_set("ro.product.model", "ONEPLUS A3003");
         }
    }
 }
