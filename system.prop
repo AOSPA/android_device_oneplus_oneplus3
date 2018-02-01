@@ -41,6 +41,7 @@ debug.gralloc.enable_fb_ubwc=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 sdm.debug.disable_skip_validate=1
+debug.sf.recomputecrop=0
 
 #
 # system props for the cne module
@@ -232,7 +233,11 @@ persist.dbg.volte_avail_ovr=0
 persist.dbg.vt_avail_ovr=0
 persist.dbg.wfc_avail_ovr=0
 
-#Disable face beautification for gallery app
+#properties for limiting preview size in camera
+persist.vendor.camera.display.umax=1920x1080
+persist.vendor.camera.display.lmax=1280x720
+
+#Disable face beautification
 persist.ts.postmakeup=false
 persist.ts.rtmakeup=false
 
