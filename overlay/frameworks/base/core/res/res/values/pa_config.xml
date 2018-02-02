@@ -32,7 +32,7 @@
     <!--<integer name="config_deviceHardwareKeys">19</integer>-->
 
     <!-- Whether device has fysical tri state switch -->
-    <!--<bool name="config_hasAlertSlider">true</bool>-->
+    <bool name="config_hasAlertSlider">true</bool>
 
     <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
