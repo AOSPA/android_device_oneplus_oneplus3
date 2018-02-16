@@ -65,7 +65,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
    } else {
         property_set("ro.power_profile", "/system/etc/power_profile.xml");
         property_set("ro.product.device", "OnePlus3");
-        property_set("ro.product.model", "OnePlus 3T");
+        property_set("ro.product.model", "OnePlus 3");
         if (rf_version == "11" || rf_version == "31") {
             /* China / North America model */
             property_set("ro.telephony.default_network", "22,22");
