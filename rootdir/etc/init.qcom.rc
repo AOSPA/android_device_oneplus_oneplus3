@@ -440,7 +440,10 @@ service qcomsysd /system/vendor/bin/qcom-system-daemon
     disabled
 
 on property:persist.vendor.qcomsysd.enabled=1
-    start qcomsysd
+    enable qcomsysd
+
+on property:persist.vendor.qcomsysd.enabled=0
+    stop qcomsysd
 
 service ssr_setup /system/vendor/bin/ssr_setup
     oneshot
@@ -1158,13 +1161,6 @@ service vppservice /vendor/bin/vppservice
     class main
     user media
     group camera
-
-service chre /vendor/bin/chre
-    class late_start
-    user system
-    group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
 
 # Set vendor-ril lib path based on Meta version
 on property:vendor.rild.libpath=*
