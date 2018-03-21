@@ -562,6 +562,7 @@ NQ_NFC += com.nxp.nfc.nq.xml
 NQ_NFC += libpn547_fw.so
 NQ_NFC += libpn548ad_fw.so
 NQ_NFC += libnfc-brcm.conf
+NQ_NFC += libnfc-brcm_NCI2_0.conf
 NQ_NFC += libnfc-nxp_default.conf
 NQ_NFC += nqnfcee_access.xml
 NQ_NFC += nqnfcse_access.xml
@@ -911,6 +912,8 @@ PRODUCT_COPY_FILES += \
 #copy codecs_xxx.xml to (TARGET_COPY_OUT_VENDOR)/etc/
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
@@ -983,3 +986,5 @@ else
     PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.qcomsysd.enabled=1
 endif
+
+PRODUCT_PACKAGES_DEBUG += sl4a
