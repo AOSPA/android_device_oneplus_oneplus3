@@ -27,6 +27,9 @@ MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 -include $(QCPATH)/common/msm8996/BoardConfigVendor.mk
 include vendor/oneplus/oneplus3/BoardConfigVendor.mk
 
+# Audio
+BOARD_USES_GENERIC_AUDIO := true
+
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAS_QCA_BT_ROME := true
