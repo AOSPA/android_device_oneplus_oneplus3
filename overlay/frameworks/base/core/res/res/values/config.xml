@@ -38,4 +38,7 @@
        <item>"wigig0"</item>
        <item>"wlan0"</item>
    </string-array>
+
+   <!-- Boolean indicating wifi disconnect only on initial IpReachability lost -->
+   <bool translatable="false" name="config_wifi_disconnect_only_on_initial_ipreachability">true</bool>
 </resources>
