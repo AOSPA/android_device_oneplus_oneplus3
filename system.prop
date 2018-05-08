@@ -223,7 +223,7 @@ dalvik.vm.heapmaxfree=8m
 
 dalvik.vm.dex2oat-swap=false
 
-ro.sf.lcd_density=480
+ro.sf.lcd_density=420
 enable_prefetch=1
 
 # IMS
