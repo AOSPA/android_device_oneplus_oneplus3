@@ -29,7 +29,7 @@
             32 - Camera
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <!--<integer name="config_deviceHardwareKeys">19</integer>-->
+    <integer name="config_deviceHardwareKeys">19</integer>
 
     <!-- Whether device has fysical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
@@ -78,7 +78,7 @@
     <!--<bool name="config_enableKeyHandler">true</bool>-->
 
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <!--<bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>-->
+    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
 
     <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
