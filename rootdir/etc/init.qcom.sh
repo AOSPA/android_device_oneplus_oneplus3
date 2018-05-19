@@ -47,12 +47,6 @@ baseband=`getprop ro.baseband`
 echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
 
 #
-# Copy qcril.db if needed for RIL
-#
-start_copying_prebuilt_qcril_db
-echo 1 > /data/vendor/radio/db_check_done
-
-#
 # Make modem config folder and copy firmware config to that folder for RIL
 #
 #ifdef VENDOR_EDIT
