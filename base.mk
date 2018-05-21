@@ -1009,10 +1009,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml
 endif
 
+ifneq ($(TARGET_NOT_SUPPORT_VULKAN),true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-0.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
-    frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml
+endif
 
 # enable overlays to use our version of
 # source/resources etc.
@@ -1100,6 +1102,5 @@ else
         persist.vendor.qcomsysd.enabled=1
 endif
 
-PRODUCT_PACKAGES_DEBUG += sl4a
 PRODUCT_PACKAGES += liboemaids_system
 PRODUCT_PACKAGES += liboemaids_vendor
