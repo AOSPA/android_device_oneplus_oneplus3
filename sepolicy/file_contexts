@@ -23,3 +23,6 @@
 # RIL
 /dev/block/platform/soc/624000.ufshc/by-name/oem_dycnvbk                         u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/oem_stanvbk                         u:object_r:modem_efs_partition_device:s0
+
+# Thermal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.pixel    u:object_r:hal_thermal_default_exec:s0

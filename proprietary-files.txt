@@ -1012,6 +1012,12 @@ vendor/etc/init/vendor.qti.tftp.rc
 vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
 
+# Thermal - Google Pixel [QP1A.191005.007.A3]
+vendor/bin/thermal-engine|03c02182c1d0a11718eb7d41aaccd308832b22b3
+vendor/lib/libthermalclient.so|2e47903a3fe5d27d7e8df3a8a2927ab896f48bc8
+vendor/lib64/libthermalclient.so|e888a313c5aa25186964a0f27a81009b86aa7f58
+vendor/lib64/libthermalioctl.so|7f6df3a8c54b755b46b8b6b83b7b5701a6d8e3c4
+
 # Time - LA.UM.8.6.2.r1
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
