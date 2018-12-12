@@ -33,3 +33,6 @@
 /dev/block/sdf1    u:object_r:rmt_storage_block_device:s0
 /dev/block/sdf2    u:object_r:rmt_storage_block_device:s0
 /dev/block/sdf3    u:object_r:rmt_storage_block_device:s0
+
+# Thermal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.pixel         u:object_r:hal_thermal_default_exec:s0
