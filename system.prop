@@ -196,3 +196,6 @@ vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml
 # Sensors (OnePlus)
 ro.sensor.pickup=oneplus.sensor.pickup
 ro.sensor.pocket=oneplus.sensor.pocket
+
+# Enable GL composition backpressure.
+debug.sf.enable_gl_backpressure=1
