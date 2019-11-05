@@ -200,3 +200,7 @@ ro.vendor.display.paneltype=1
 ro.vendor.display.foss=1
 vendor.display.foss.config=1
 vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml
+
+# Sensors (OnePlus)
+ro.sensor.pickup=oneplus.sensor.pickup
+ro.sensor.pocket=oneplus.sensor.pocket
