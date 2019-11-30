@@ -667,31 +667,44 @@ vendor/lib/libvqzip.so|24e5eb30e5a2cdb544c8688d81d7cc75a1d85eaf
 # NFC firmware
 vendor/lib/libpn548ad_fw.so
 
-# Perf
-vendor/bin/energy-awareness
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
+# Perf - from LA.UM.8.6.2.r1-06600-89xx.0
+product/lib/vendor.qti.hardware.iop@2.0.so|c6b6cb9786005f91ae1cb4171f6c6c367fdc4b7f
+product/lib64/vendor.qti.hardware.iop@2.0.so|70bd46ab49f53f0af5b5379d5e4b98c25fc775b1
+vendor/bin/energy-awareness|056792da4f0bcfc34b1f85e3ee67820d8c80627f
+vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|e3257b0a7fb944c471eb98623427630b6423fd24
+vendor/bin/hw/vendor.qti.hardware.perf@2.0-service|3478f1a1de33d39b239f54e47b85dde6f01578c5
+vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc|fd11367b2585702190ef2577ce2ce6fc68f3a2f8
+vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc|cc8658db5e19f8e5e575fb986e7d38147e675f8d
+vendor/etc/perf/commonresourceconfigs.xml|42005b8a9ec8a527d22800e3aaa9215e6d58c8a9
+vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+vendor/etc/perf/perf-profile1.conf|58c8333b58183fe2412061e5ff22c218b7da305c
+vendor/etc/perf/perf-profile2.conf|66ac3877bf0030b72c99107f665bb392538d0237
+vendor/etc/perf/perf-profile3.conf|3a1edfaeaf087effcadba7c652737ab6dd2d87b5
+vendor/etc/perf/perf-profile4.conf|0bc4779472306b1b225e9fc9be40af54e14e2266
+vendor/etc/perf/perf-profile5.conf|5bc85ed4a0f3cedd57e1e046416f423a83dc4f63
+vendor/etc/perf/perf-profile6.conf|910a193b8425bbe0080f746d6788e66986b2e762
+vendor/etc/perf/perfboostsconfig.xml|f2999d37fe8c545a153e8351a44ef22623d144aa
+vendor/etc/perf/perfconfigstore.xml|b1d147be38c5a11f13cab051360226ef15b432c5
+vendor/etc/perf/targetconfig.xml|b2ea39d05d52364774dbd390732cb5f29ae14941
+vendor/etc/perf/targetresourceconfigs.xml|478715f7bcb07e08e62be023ac0b6302ef65bdb3
+vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so|75bd8cda17be32ee1b9f9cbea52cc24340bb92a4
+vendor/lib/libperfconfig.so|fa79f7bb7f63a91b276731dd20e091e8a1b24f94
+vendor/lib/libperfgluelayer.so|bfaeb9b02983d0e02fd4ffdb7ce24fe15d518f55
+vendor/lib/libqti-perfd-client.so|b68f2c41ae8dd483569d78551829a08efb824cb5
+vendor/lib/libqti-perfd.so|89de9e48fda4f2275f17858887cc36d9e02cbc30
+vendor/lib/libqti-util.so|7f1b080e1d5c2e03261b80699232b3153146d215
+vendor/lib/vendor.qti.hardware.iop@2.0.so|25cfe22f829d1b5288c574a852acc20478a91f74
+vendor/lib/vendor.qti.hardware.perf@1.0.so|b4969fa797d1957ad8f35d4f84615608f0e9cc2e
+vendor/lib/vendor.qti.hardware.perf@2.0.so|6578499c4538b894821a27d7c7722c31439b98f6
+vendor/lib64/libperfconfig.so|8b2f05c0905b4111ae913633c904045ae0183619
+vendor/lib64/libperfgluelayer.so|4c95e08abc1cef5b39db06579d8f9faceb8f23d4
+vendor/lib64/libqti-perfd-client.so|0c2b82b5e5df6e0efb03ace4a259eb63487dd2b6
+vendor/lib64/libqti-perfd.so|7a6c75d2ec8ba7ed6bf17ef048c3c79a1a2daf53
+vendor/lib64/libqti-util.so|45a80be449435d277f09cc59e4a315fa86072c41
+vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|fd2bcbc1f9c46fea6e8af477a909a35b38e8cfa0
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|7fdc8d9219a6d7a335fc91edb4837bccbac9fc49
+vendor/lib64/vendor.qti.hardware.perf@1.0.so|8858021553ea41933cdaaa4a68e9d4d15609db46
+vendor/lib64/vendor.qti.hardware.perf@2.0.so|b05e762bf5c7e86b0d6c1be4c8ae91e3f706dca7
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -944,11 +957,10 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
-# Thermal
-vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from LA.UM.8.6.2.r1-06600-89xx.0
+vendor/bin/thermal-engine|68f8be6513214025470c60a8534970de66c96397
+vendor/lib/libthermalclient.so|c0089a7fdd34bc5f3ea0556e5f4a087ab02fc34f
+vendor/lib64/libthermalclient.so|20f1fd238fc81bf1c6828ec416121c0ef66e0df1
 
 # Time services - from LA.UM.8.6.r1-01900-89xx.0
 bin/move_time_data.sh|56f1f79a88db709a0c7ed5c507b14c55976d6f32
