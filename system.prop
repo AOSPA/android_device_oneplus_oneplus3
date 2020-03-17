@@ -124,15 +124,8 @@ telephony.lteOnCdmaDevice=1
 persist.fuse_sdcard=true
 
 #
-#snapdragon value add features
+# Snapdragon value add features.
 #
-
-
-#property to enable user to access Google WFD settings
-persist.debug.wfd.enable=1
-##property to choose between virtual/external wfd display
-persist.sys.wfd.virtual=0
-
 #property to enable sde downscale feature for external display
 #sdm.debug.downscale_external=1
 
