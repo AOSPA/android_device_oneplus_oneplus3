@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
  *               2018-2019 The LineageOS Project
+ *               2020 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.pocketmode;
+package org.aospa.pocketmode;
 
 import android.content.Context;
 import android.hardware.Sensor;
