@@ -1,0 +1,1 @@
+allow cnd sysfs:file { open read };

@@ -1,1 +1,2 @@
 hal_client_domain(platform_app, hal_ifaa)
+allow platform_app time_daemon:unix_stream_socket { connectto };
