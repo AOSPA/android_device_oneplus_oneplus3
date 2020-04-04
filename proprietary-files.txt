@@ -26,6 +26,10 @@ vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
+# ADSP [Modules] - OOS
+vendor/lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so|5a091a4ea958d8d5c841c9f175500b185e279378
+vendor/lib/rfsa/adsp/libmorpho_video_denoiser_hvx_skel.so|0eba88c4bb08ef4f3920547b1366e6f8e044f99a
+
 # ANT+ - LA.UM.8.6.2.r1
 -lib/libantradio.so
 -lib64/libantradio.so
