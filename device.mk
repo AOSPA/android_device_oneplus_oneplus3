@@ -452,7 +452,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.0 \
+    android.hardware.radio.config@1.2 \
     android.hardware.secure_element@1.0 \
     librmnetctl \
     libxml2 \
