@@ -144,6 +144,9 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/restricted/cpus 0-1
 
+    # RIL
+    setprop gsm.version.baseband MPSS.TH.2.0.c1.9-00102-M8996FAAAANAZM-1.197095.1.198697.1
+
 service vendor.dashd /vendor/bin/dashd
     class core
     user root
