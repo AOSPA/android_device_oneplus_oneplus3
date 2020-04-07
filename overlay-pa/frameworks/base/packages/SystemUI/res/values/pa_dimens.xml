@@ -17,12 +17,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Tri-state UI -->
-    <dimen name="tri_state_up_dialog_position">350px</dimen>
-    <dimen name="tri_state_up_dialog_position_l">300px</dimen>
-    <dimen name="tri_state_middle_dialog_position">300px</dimen>
-    <dimen name="tri_state_middle_dialog_position_l">300px</dimen>
-    <dimen name="tri_state_down_dialog_position_l">300px</dimen>
-    <dimen name="tri_state_down_dialog_position">250px</dimen>
+    <dimen name="tri_state_down_dialog_position">150px</dimen>
+    <dimen name="tri_state_up_dialog_position_l">100px</dimen>
+    <dimen name="tri_state_middle_dialog_position">100px</dimen>
+    <dimen name="tri_state_middle_dialog_position_l">100px</dimen>
+    <dimen name="tri_state_down_dialog_position_l">100px</dimen>
+    <dimen name="tri_state_up_dialog_position">50px</dimen>
     <dimen name="tri_state_dialog_padding">20.0dip</dimen>
 
 </resources>
