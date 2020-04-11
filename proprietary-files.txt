@@ -122,15 +122,15 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Audio - OOS
 etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt|4c6acd032186f062fe6c5af58fb82fca91fccbcd
-vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb|d6dc0a73dcecf4b9ea2d522c4291e5f1a2aa9a56
-vendor/etc/acdbdata/MTP/MTP_General_cal.acdb|1848dc0af977343001a30d00199ebb45a1f43d5e
-vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb|f2cb98c01573054538a1b3a372933b7bd68b9e6a
-vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb|308b846f2f6321d152dfd807a1f3825f96c2896f
-vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb|2cfc9303cd1fa286fdf343f464499fdb6c14be87
-vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|29332163751038698b3de367927f9247b42b0133
-vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|bff85b0dace95a68a38549b0979f7c0fa6fe9467
 
-# Audio - AOSPA / LA.UM.8.6.2.r1
+# Audio - MSM8996 / LA.UM.8.6.2.r1
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb|f15b8230a54f584b4271be7ce3140658be468dc7
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb|c73d647b93a01ce6a5ed0247374074281b24119b
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb|415f365ddecee7b1cfc2592fefb11ec12d62f500
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb|70b6eea8ac67ec4c88c3734d4ad364560e9d6c84
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb|23736cb29e49973cfdcf7d12965d02573eb7be26
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|892f6d93d97e4d21b3d49a1275b37be1cdf1ee52
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|558776e9d38903627db78f07cbce93db94cab136
 vendor/lib/hw/sound_trigger.primary.msm8996.so|53ea5d4d254a62420381c76b933f52473433065d
 vendor/lib64/hw/sound_trigger.primary.msm8996.so|415f0d6e151bc104cdab6df62cbe5cb4a1bbf8ce
 
