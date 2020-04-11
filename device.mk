@@ -28,9 +28,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-pa
+PRODUCT_PACKAGES += \
+    AOSPAFrameworksOnePlusOverlay \
+    AOSPASettingsOnePlusOverlay \
+    AOSPASystemUIOnePlusOverlay \
+    BluetoothOnePlusOverlay \
+    CarrierConfigOnePlusOverlay \
+    CellBroadcastReceiverOnePlusOverlay \
+    FrameworksOnePlusOverlay \
+    MmsOnePlusOverlay \
+    SettingsProviderOnePlusOverlay \
+    SystemUIOnePlusOverlay \
+    TelecommOnePlusOverlay \
+    TelephonyOnePlusOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
