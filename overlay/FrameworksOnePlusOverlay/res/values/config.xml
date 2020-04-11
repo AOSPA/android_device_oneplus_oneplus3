@@ -249,10 +249,6 @@
         <item>"wlan0"</item>
     </string-array>
 
-    <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
-    on the headphone/microphone jack. When false use the older uevent framework -->
-    <bool name="config_useDevInputEventForAudioJack">true</bool>
-
     <!-- Device specific options -->
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
