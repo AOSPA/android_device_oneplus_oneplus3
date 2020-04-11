@@ -87,7 +87,6 @@ void load_props(const char* model, bool is_3t = false) {
     // ro.build.fingerprint property has not been set
     if (is_3t) {
         property_set("ro.build.fingerprint", BUILD_FINGERPRINT[1]);
-        property_set("ro.power_profile.override", "power_profile_3t");
     } else {
         property_set("ro.build.fingerprint", BUILD_FINGERPRINT[0]);
     }
