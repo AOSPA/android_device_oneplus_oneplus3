@@ -129,7 +129,10 @@ vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb|308b846f2f6321d152dfd807a1f3825f96c
 vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb|2cfc9303cd1fa286fdf343f464499fdb6c14be87
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|29332163751038698b3de367927f9247b42b0133
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|bff85b0dace95a68a38549b0979f7c0fa6fe9467
-vendor/lib/hw/sound_trigger.primary.msm8996.so|5b0c3a18e806e7441256211e5861add9cdce3309
+
+# Audio - AOSPA / LA.UM.8.6.r1-04000-89xx.0
+vendor/lib/hw/sound_trigger.primary.msm8996.so|e5dda00afb499fe73518401520e01b433749186c
+vendor/lib64/hw/sound_trigger.primary.msm8996.so|7dc80a438e69d87abbcd3f81bdad78b9ec934eac
 
 # Audio - LA.UM.8.6.2.r1
 vendor/lib/libI420colorconvert.so
