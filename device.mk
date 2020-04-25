@@ -148,6 +148,9 @@ PRODUCT_PACKAGES += \
     libantradio
 
 # Bluetooth
+PRODUCT_PACKAGES += \
+    libbluetooth_qti
+
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=rome
 
