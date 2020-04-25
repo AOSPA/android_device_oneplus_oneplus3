@@ -22,7 +22,7 @@ set -e
 DEVICE=oneplus3
 VENDOR=oneplus
 
-# Load extract_utils and do some sanity checks
+# Load the extract utilities and do some sanity checks.
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
@@ -35,7 +35,7 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Default to sanitizing the vendor folder before extraction
+# Default to sanitizing the vendor folder before extraction.
 CLEAN_VENDOR=true
 
 while [ "$1" != "" ]; do
@@ -56,7 +56,7 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
-# Initialize the helper
+# Initialize the helper.
 setup_vendor "$DEVICE" "$VENDOR" "$ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"

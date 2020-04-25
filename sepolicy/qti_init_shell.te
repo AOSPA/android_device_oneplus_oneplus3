@@ -1,3 +1,4 @@
+# Give QTI initialization access to "/system/vendor/firmware/mbn_ota".
 allow qti_init_shell vendor_file:dir { open read };
+
 allow qti_init_shell ctl_start_prop:property_service set;
-allow qti_init_shell radio_prop:property_service set;

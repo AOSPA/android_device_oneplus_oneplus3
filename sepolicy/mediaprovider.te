@@ -1,2 +1,1 @@
-allow mediaprovider hal_perf_default:binder { call };
-dontaudit mediaprovider hal_perf_hwservice:hwservice_manager find;
+binder_call(mediaprovider, hal_perf_default)
