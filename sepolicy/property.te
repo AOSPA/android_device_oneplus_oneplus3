@@ -1,3 +1,0 @@
-type thermal_prop, property_type;
-type qseecomd_block_device, dev_type;
-type rmt_storage_block_device, dev_type;

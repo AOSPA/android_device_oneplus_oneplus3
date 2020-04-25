@@ -1,1 +1,0 @@
-allow qti sysfs:file { open read };

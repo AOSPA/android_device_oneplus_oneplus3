@@ -1,1 +1,0 @@
-allow adpl sysfs:file { open read };
