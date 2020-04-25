@@ -13,14 +13,14 @@
 // limitations under the License.
 
 prebuilt_etc {
-    name: "qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml",
+    name: "qdcm_s6e3fa3",
 
     src: "qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml",
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml",
+    name: "qdcm_s6e3fa5",
 
     src: "qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml",
     vendor: true,

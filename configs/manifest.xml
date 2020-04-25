@@ -337,7 +337,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
@@ -347,7 +346,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>dpmQmiService</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>vendor.qti.imsrtpservice</name>
         <transport>hwbinder</transport>
@@ -356,8 +354,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
         </interface>
- </hal>
-
+    </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
@@ -524,7 +521,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.2::IDrmFactory/clearkey</fqname>
         <fqname>@1.2::ICryptoFactory/widevine</fqname>
         <fqname>@1.2::IDrmFactory/widevine</fqname>
-    </hal>
+   </hal>
    <!-- IMS UCE Service -->
    <hal format="hidl">
        <name>com.qualcomm.qti.uceservice</name>
@@ -535,7 +532,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          <instance>com.qualcomm.qti.uceservice</instance>
        </interface>
    </hal>
-
    <!-- IMS callinfo Service -->
    <hal format="hidl">
        <name>vendor.qti.ims.callinfo</name>
@@ -642,9 +638,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-
     <!-- tui communicator service -->
-  <hal format="hidl">
+    <hal format="hidl">
         <name>vendor.qti.hardware.tui_comm</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -653,7 +648,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-
     <!--  Soter service -->
     <hal format="hidl">
         <name>vendor.qti.hardware.soter</name>
@@ -664,7 +658,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-
     <!-- qdutils service -->
     <hal format="hidl">
         <name>vendor.qti.hardware.qdutils_disp</name>
@@ -715,16 +708,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.capabilityconfigstore</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICapabilityConfigStore</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ICapabilityConfigStore/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.nfc</name>
         <transport>hwbinder</transport>
         <version>1.2</version>
@@ -766,24 +749,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>IVendorFingerprintExtensions</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oneplus.hardware.ifaa</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IOneplusIfaa</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oneplus.hardware.param</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOneplusParam</name>
             <instance>default</instance>
         </interface>
     </hal>

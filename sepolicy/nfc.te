@@ -1,2 +1,0 @@
-allow nfc hal_perf_hwservice:hwservice_manager { find };
-allow nfc hal_perf_default:binder { call };

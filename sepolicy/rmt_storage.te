@@ -1,2 +1,0 @@
-allow rmt_storage sysfs:file { open read };
-allow rmt_storage rmt_storage_block_device:blk_file { open read write };
