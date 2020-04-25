@@ -1,6 +1,6 @@
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2019 The LineageOS Project
-# Copyright (C) 2020 Paranoid Android
+#               2017-2019 The LineageOS Project
+#               2020 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,9 +22,10 @@
 # definition file).
 #
 
-# Device was launched with M
+# Device was launched with M.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
+# Vendor
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
 # Overlays
@@ -44,7 +45,7 @@ PRODUCT_PACKAGES += \
     TelecommOnePlusOverlay \
     TelephonyOnePlusOverlay
 
-# Soong namespaces
+# Soong
 PRODUCT_SOONG_NAMESPACES += \
     device/oneplus/oneplus3
 
@@ -92,13 +93,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# Device uses high-density artwork where available
+# Device uses high-density artwork where available.
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m \
@@ -118,25 +115,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config \
     persist.radio.multisim.config=dsds
 
-# Haters gonna hate..
+# SDCard
 PRODUCT_CHARACTERISTICS := nosdcard
-
-# Alipay
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.a2dp.default \
     audio.primary.msm8996 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libaudioroute \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -208,7 +196,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7
 
-# Additional native libraries
+# Public libraries.
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
@@ -228,7 +216,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
-# Connectivity Engine support (CNE)
+# CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne \
@@ -259,11 +247,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES  += \
     ro.opengles.version=196610
 
-# Display calibration
+# Display calibration.
 PRODUCT_PACKAGES += \
     FOSSConfig.xml \
-    qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
-    qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
+    qdcm_s6e3fa3 \
+    qdcm_s6e3fa5
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -287,9 +275,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
-
-# Gestures
-TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -353,18 +338,21 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     NQNfcNci \
-    libnqnfc-nci \
-    libnqnfc_nci_jni \
-    nfc_nci.nqx.default \
-    libp61-jcop-kit \
-    com.nxp.nfc.nq \
-    com.nxp.nfc.nq.xml \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
     Tag \
     com.android.nfc_extras \
-    vendor.nxp.hardware.nfc@1.2-service \
-    nfc_nci.nqx.default.hw
+    com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
+    libnqnfc-nci \
+    libnqnfc_nci_jni \
+    libp61-jcop-kit \
+    nfc_nci.nqx.default \
+    nfc_nci.nqx.default.hw \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    vendor.nxp.hardware.nfc@1.2-service
+
+PRODUCT_BOOT_JARS += \
+    com.nxp.nfc.nq
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-mtp_default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-mtp_default.conf \
@@ -375,7 +363,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.nfc_nci=nqx.default \
     vendor.qti.nfc.chipid=0x51
 
-# OEM Unlock reporting
+# OEM Unlock
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1
 
@@ -445,10 +433,6 @@ PRODUCT_PACKAGES += \
     rcs_service_api \
     rcs_service_api.xml
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_op3
-
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
@@ -461,13 +445,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     telephony \
     wfd
 
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0 \
-    librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -477,12 +454,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libui_shim
 
-# Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml
-
-# TextClassifier smart selection model files
+# TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
@@ -504,7 +476,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
-# VNDK-SP:
+# VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
 
@@ -513,7 +485,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
     wificond \

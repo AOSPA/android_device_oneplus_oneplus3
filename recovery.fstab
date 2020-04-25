@@ -1,4 +1,4 @@
-# Copyright (c) 2013, The Linux Foundation. All rights reserved.
+# Copyright (c) 2013-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,9 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Non A/B, non-split(no vendor.img) recovery.fstab variant.
-#device         mount point      fstype        [device2] [length=]
-
+# [Device]                                 [Mount]         [FS]    [Mount Flags & Options]                                         [fs_mgr_flags]
 /dev/block/bootdevice/by-name/system       /system         ext4    ro,barrier=1                                                    wait,verify
 /dev/block/bootdevice/by-name/cache        /cache          f2fs    noatime,nosuid,nodev,inline_xattr,flush_merge,data_flush        wait,check
 /dev/block/bootdevice/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
