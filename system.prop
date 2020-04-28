@@ -137,6 +137,10 @@ ro.nfc.port=I2C
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
+# WFD
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+
 #Enable stm events
 persist.debug.coresight.config=stm-events
 #property to enable fingerprint
