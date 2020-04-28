@@ -1,1 +1,4 @@
 allow vold mnt_vendor_file:dir { ioctl open read };
+
+# OP3 is not A/B.
+dontaudit vold hal_bootctl_hwservice:hwservice_manager find;
