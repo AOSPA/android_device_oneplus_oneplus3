@@ -147,7 +147,6 @@ vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxG711Dec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -1026,21 +1025,46 @@ vendor/bin/time_daemon
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
 
-# WFD - LA.UM.8.6.2.r1
+# WFD - LA.UM.8.1.r1-14500-sm8150.0
+vendor/bin/wfdhdcphalservice
+vendor/bin/wfdvndservice
 vendor/bin/wifidisplayhalservice
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
+vendor/etc/init/wfdvndservice.rc
+vendor/lib/libDxHdcp.so
+vendor/lib/libOmxMux_proprietary.so
+vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libmiracast.so
+vendor/lib/libmm-hdcpmgr.so
+vendor/lib/libwfdcodecv4l2_proprietary.so
 vendor/lib/libwfdcommonutils_proprietary.so
-vendor/lib/libwfdhaldsmanager.so
 vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib/libwfdhdcpservice_proprietary.so
+vendor/lib/libwfdmminterface_proprietary.so
+vendor/lib/libwfdmmservice_proprietary.so
+vendor/lib/libwfdmmsrc_proprietary.so
+vendor/lib/libwfdrtsp_proprietary.so
+vendor/lib/libwfdsessionmodule.so
+vendor/lib/libwfdsm_proprietary.so
+vendor/lib/libwfdsourcesession_proprietary.so
+vendor/lib/libwfdsourcesm_proprietary.so
+vendor/lib/libwfduibcinterface_proprietary.so
+vendor/lib/libwfduibcsink_proprietary.so
+vendor/lib/libwfduibcsinkinterface_proprietary.so
+vendor/lib/libwfduibcsrc_proprietary.so
+vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so
+vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libmiracast.so
+vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
+
+# WFD OP7
+vendor/lib/libwfdconfigutils_proprietary.so
 
 # WLAN - LA.UM.8.6.2.r1
 -vendor/app/IWlanService/IWlanService.apk

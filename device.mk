@@ -503,6 +503,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk-sp
 
+# WFD
+PRODUCT_PACKAGES += \
+libclang_rt.ubsan_standalone-arm-android
+
 # Wifi
 PRODUCT_PACKAGES += \
     ipacm \
