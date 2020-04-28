@@ -1,0 +1,1 @@
+allow wfdservice vendor_system_prop:file read;

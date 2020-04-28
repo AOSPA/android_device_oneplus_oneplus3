@@ -453,8 +453,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     perf \
-    telephony \
-    wfd
+    telephony
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -489,6 +488,15 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
+
+# WFD
+PRODUCT_PACKAGES += \
+    libaacwrapper \
+    libnl \
+    libwfdaac
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
