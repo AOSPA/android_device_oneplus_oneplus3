@@ -130,7 +130,7 @@ vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb|2cfc9303cd1fa286fdf343f464499fdb6c14be
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|29332163751038698b3de367927f9247b42b0133
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|bff85b0dace95a68a38549b0979f7c0fa6fe9467
 
-# Audio - AOSPA / LA.UM.8.6.r1-04000-89xx.0
+# Audio - AOSPA / LA.UM.8.6.2.r1
 vendor/lib/hw/sound_trigger.primary.msm8996.so|e5dda00afb499fe73518401520e01b433749186c
 vendor/lib64/hw/sound_trigger.primary.msm8996.so|7dc80a438e69d87abbcd3f81bdad78b9ec934eac
 
@@ -779,10 +779,17 @@ vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0-service.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 
+# GPU - LA.UM.8.6.2.r1
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+
 # GPU - OOS
-vendor/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
-vendor/firmware/a530_pfp.fw|137b74a30e664f387fcd1e5562474a6c5d8dd6b4
-vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 vendor/firmware/a530_zap.b00|85a7fc0008f9a2071d8b3d0cc212b19141633267
 vendor/firmware/a530_zap.b01|d2fe120bd5aca4b74de19a668df8e724a91acc8f
 vendor/firmware/a530_zap.b02|c2e2027ad4567b3445b80d924138a5a4f5dc1fb4
@@ -793,11 +800,6 @@ vendor/firmware/a530_zap-pro.b01|4c1193d7afca023dad617c34f8314a0ab9d21f86
 vendor/firmware/a530_zap-pro.b02|c2e2027ad4567b3445b80d924138a5a4f5dc1fb4
 vendor/firmware/a530_zap-pro.elf|6ac10140817cdba6c89ea349ef43bc6c5dfe00cd
 vendor/firmware/a530_zap-pro.mdt|e88a6d7cae04dc9561576b68bae4c7c04230a63f
-vendor/firmware/a530v1_pfp.fw|0864291b99bed712edfcffa94be7b4595d3af306
-vendor/firmware/a530v1_pm4.fw|6a82a4fb4035fa2a933c1a26b5535d7ec7c0ac4c
-vendor/firmware/a530v2_seq.fw2|63b6d25594a5c1f4217d996a2b636e17a29fc840
-vendor/firmware/a530v3_gpmu.fw2|0a2f6f450231673d75ba39e5d28776db3becf810
-vendor/firmware/a530v3_seq.fw2|8963a53acc689725dee4b22881a4dd4b80e5def8
 
 # IMS - LA.UM.8.6.2.r1
 vendor/bin/ims_rtp_daemon
@@ -879,26 +881,24 @@ vendor/lib64/libstreamparser.so
 vendor/lib64/libvideoutils.so
 
 # NFC - LA.UM.8.6.2.r1
-vendor/lib/libpn548ad_fw.so
+vendor/lib/libpn548ad_fw.so|e78f2c9e7a5cb0001d2f71a69f37ec8261fb05b8
 
 # Performance - LA.UM.8.6.2.r1
-lib/libqspmsvc.so
-lib64/libqspmsvc.so
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
 vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
+vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+vendor/etc/perf/perf-profile1.conf|58c8333b58183fe2412061e5ff22c218b7da305c
+vendor/etc/perf/perf-profile2.conf|66ac3877bf0030b72c99107f665bb392538d0237
+vendor/etc/perf/perf-profile3.conf|3a1edfaeaf087effcadba7c652737ab6dd2d87b5
+vendor/etc/perf/perf-profile4.conf|0bc4779472306b1b225e9fc9be40af54e14e2266
+vendor/etc/perf/perf-profile5.conf|5bc85ed4a0f3cedd57e1e046416f423a83dc4f63
+vendor/etc/perf/perf-profile6.conf|910a193b8425bbe0080f746d6788e66986b2e762
+vendor/etc/perf/perfboostsconfig.xml|f2999d37fe8c545a153e8351a44ef22623d144aa
+vendor/etc/perf/perfconfigstore.xml|b1d147be38c5a11f13cab051360226ef15b432c5
+vendor/etc/perf/targetconfig.xml|b2ea39d05d52364774dbd390732cb5f29ae14941
+vendor/etc/perf/targetresourceconfigs.xml|478715f7bcb07e08e62be023ac0b6302ef65bdb3
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib/libperfconfig.so
 vendor/lib/libperfgluelayer.so
