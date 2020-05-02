@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
     MmsOnePlusOverlay \
     OnePlus3PowerOverlay \
     OnePlus3TPowerOverlay \
+    ParanoidCameraOverlay \
     SettingsProviderOnePlusOverlay \
     SystemUIOnePlusOverlay \
     TelecommOnePlusOverlay \
