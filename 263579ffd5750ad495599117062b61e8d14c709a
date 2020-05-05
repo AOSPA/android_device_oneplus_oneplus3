@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c72bb8d6_245ea133",
+        "filename": "overlay/ParanoidCameraOverlay/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000447
+      },
+      "writtenOn": "2020-05-05T19:01:44Z",
+      "side": 1,
+      "message": "Just so I don\u0027t forget, module owner should be aospa",
+      "revId": "263579ffd5750ad495599117062b61e8d14c709a",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad",
+      "unresolved": true
+    }
+  ]
+}
