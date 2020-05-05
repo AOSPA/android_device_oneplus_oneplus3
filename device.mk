@@ -453,7 +453,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     perf \
-    telephony
+    telephony \
+    wfd-legacy
 
 # RIL
 PRODUCT_PACKAGES += \
