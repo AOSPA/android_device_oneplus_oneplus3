@@ -1,2 +1,2 @@
-allow nfc hal_perf_hwservice:hwservice_manager { find };
-allow nfc hal_perf_default:binder { call };
+# Allow NFC to access performance HAL.
+hal_client_domain(nfc, hal_perf)

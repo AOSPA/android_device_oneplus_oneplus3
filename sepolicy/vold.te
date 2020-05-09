@@ -1,4 +1,2 @@
-allow vold mnt_vendor_file:dir { ioctl open read };
-
-# OP3 is not A/B.
+# BootControl is only for A/B devices, ignore.
 dontaudit vold hal_bootctl_hwservice:hwservice_manager find;

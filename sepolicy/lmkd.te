@@ -1,1 +1,1 @@
-allow lmkd hwservicemanager:binder { transfer };
+allow lmkd hwservicemanager:binder transfer;
