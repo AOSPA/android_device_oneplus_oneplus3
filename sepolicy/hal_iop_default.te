@@ -1,2 +1,2 @@
-allow hal_iop_default hal_perf_hwservice:hwservice_manager { find };
-allow hal_iop_default hal_perf_default:binder { call };
+binder_call(hal_iop_default, hal_perf_default)
+allow hal_iop_default hal_perf_hwservice:hwservice_manager find;

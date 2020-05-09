@@ -1,11 +1,9 @@
-# dash daemon
-
 type dashd, domain;
 type dashd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(dashd)
 
-# Write to /dev/kmsg
+# Write to /dev/kmsg.
 allow dashd kmsg_device:chr_file rw_file_perms;
 
 r_dir_file(dashd, sysfs_battery_supply)
