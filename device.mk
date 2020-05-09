@@ -421,7 +421,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.qti.ims.sh \
-    init.recovery.qcom.rc \
     init.target.rc \
     init.oneplus3.rc \
     ueventd.qcom.rc
@@ -432,10 +431,6 @@ PRODUCT_PACKAGES += \
     rcs_service_aidl.xml \
     rcs_service_api \
     rcs_service_api.xml
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_op3
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
