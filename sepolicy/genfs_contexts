@@ -1,30 +1,27 @@
-# Fingerprint
-genfscon sysfs /devices/soc/soc:fpc_fpc1020         u:object_r:sysfs_fpc:s0
+# Alert Slider 
+genfscon proc /tri-state-key                                                                                             u:object_r:proc_touchpanel:s0
 
-# Healthd
-genfscon sysfs /devices/soc/msm-bcl-14/power_supply/fg_adc/type         u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc/qpnp-fg-17/power_supply/bms                 u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/battery     u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/dc          u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply/bcl/type          u:object_r:sysfs_batteryinfo:s0
+# Health
+genfscon sysfs /devices/soc/msm-bcl-14/power_supply/fg_adc/type                                                          u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/dc                                                           u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/battery                                                      u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-fg-17/power_supply/bms                                                                  u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply/bcl/type                                                           u:object_r:sysfs_batteryinfo:s0
 
 # LEDs
 genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,haptics@c000/leds    u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d000/leds       u:object_r:sysfs_leds:s0
 
-# Ril
-genfscon debugfs /rmt_storage                       u:object_r:debugfs_rmt_storage:s0
+# RMT
+genfscon debugfs /rmt_storage                                                                                            u:object_r:debugfs_rmt_storage:s0
 
-# Thermal engine
-genfscon sysfs /devices/soc/70000.qcom,msm-core/uio/uio1           u:object_r:sysfs_uio_file:s0
-genfscon sysfs /devices/soc/70000.qcom,msm-thermal/uio/uio2        u:object_r:sysfs_uio_file:s0
+# Thermal Engine
+genfscon sysfs /devices/soc/70000.qcom,msm-core/uio/uio1                                                                 u:object_r:sysfs_uio_file:s0
+genfscon sysfs /devices/soc/70000.qcom,msm-thermal/uio/uio2                                                              u:object_r:sysfs_uio_file:s0
 
 # Touchscreen
-genfscon proc /touchpanel                           u:object_r:proc_touchpanel:s0
-genfscon proc /s1302                                u:object_r:proc_touchpanel:s0
-
-# Tri-state key
-genfscon proc /tri-state-key                        u:object_r:proc_touchpanel:s0
+genfscon proc /touchpanel                                                                                                u:object_r:proc_touchpanel:s0
+genfscon proc /s1302                                                                                                     u:object_r:proc_touchpanel:s0
 
 # USB
-genfscon sysfs /devices/soc/6a00000.ssusb/6a00000.dwc3/gadget/lun0/     u:object_r:sysfs_android_usb:s0
+genfscon sysfs /devices/soc/6a00000.ssusb/6a00000.dwc3/gadget/lun0/                                                      u:object_r:sysfs_android_usb:s0

@@ -1,0 +1,2 @@
+# Give DPMD access to TMPFS
+allow dpmd device:file { open write };

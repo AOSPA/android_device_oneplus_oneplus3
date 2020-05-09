@@ -1,1 +1,3 @@
-allow netmgrd sysfs:file { open read };
+# We don't ship qmipriod to begin with, so don't bother
+# giving it the permissions to set it's properties.
+dontaudit netmgrd vendor_default_prop:property_service set;
