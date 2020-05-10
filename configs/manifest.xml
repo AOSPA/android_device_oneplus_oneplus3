@@ -1,4 +1,4 @@
-<!-- Copyright (c) 2017, 2018-2020 The Linux Foundation. All rights reserved.
+<!-- Copyright (c) 2017-2020 The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -25,7 +25,7 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-<manifest version="1.0" type="device" target-level="2">
+<manifest version="1.0" type="device" target-level="4">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -245,14 +245,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.2::ISap/slot1</fqname>
         <fqname>@1.2::ISap/slot2</fqname>
     </hal>
-   <hal format="hidl">
-       <name>android.hardware.radio.config</name>
-       <transport>hwbinder</transport>
-       <version>1.0</version>
-       <interface>
-           <name>IRadioConfig</name>
-           <instance>default</instance>
-       </interface>
+    <hal format="hidl">
+        <name>android.hardware.radio.config</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IRadioConfig</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
        <name>vendor.qti.hardware.radio.am</name>
@@ -308,7 +308,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>Uim1</instance>
         </interface>
     </hal>
-    <!-- gnss -->
+    <!-- GNSS -->
     <hal format="hidl">
         <name>android.hardware.gnss</name>
         <transport>hwbinder</transport>
@@ -337,7 +337,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
@@ -347,7 +346,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>dpmQmiService</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>vendor.qti.imsrtpservice</name>
         <transport>hwbinder</transport>
@@ -356,8 +354,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
         </interface>
- </hal>
-
+    </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
@@ -451,7 +448,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-   <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.wifi.hostapd</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -525,37 +522,36 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.2::ICryptoFactory/widevine</fqname>
         <fqname>@1.2::IDrmFactory/widevine</fqname>
     </hal>
-   <!-- IMS UCE Service -->
-   <hal format="hidl">
-       <name>com.qualcomm.qti.uceservice</name>
-       <transport>hwbinder</transport>
-       <version>2.1</version>
-       <interface>
-         <name>IUceService</name>
-         <instance>com.qualcomm.qti.uceservice</instance>
-       </interface>
-   </hal>
-
-   <!-- IMS callinfo Service -->
-   <hal format="hidl">
-       <name>vendor.qti.ims.callinfo</name>
-       <transport>hwbinder</transport>
-       <version>1.0</version>
-       <interface>
-         <name>IService</name>
-         <instance>default</instance>
-       </interface>
-   </hal>
-   <!-- IMS CM Service -->
-   <hal format="hidl">
-       <name>com.qualcomm.qti.imscmservice</name>
-       <transport>hwbinder</transport>
-       <version>2.2</version>
-       <interface>
-         <name>IImsCmService</name>
-         <instance>qti.ims.connectionmanagerservice</instance>
-       </interface>
-   </hal>
+    <!-- IMS UCE Service -->
+    <hal format="hidl">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IUceService</name>
+            <instance>com.qualcomm.qti.uceservice</instance>
+        </interface>
+    </hal>
+    <!-- IMS callinfo Service -->
+    <hal format="hidl">
+        <name>vendor.qti.ims.callinfo</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- IMS CM Service -->
+    <hal format="hidl">
+        <name>com.qualcomm.qti.imscmservice</name>
+        <transport>hwbinder</transport>
+        <version>2.2</version>
+        <interface>
+            <name>IImsCmService</name>
+            <instance>qti.ims.connectionmanagerservice</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>
@@ -579,61 +575,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>wifidisplaydshal</instance>
         </interface>
     </hal>
-    <!-- WIGIG HAL service -->
+    <!-- TUI communicator service -->
     <hal format="hidl">
-        <name>vendor.qti.hardware.wigig.supptunnel</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISuppTunnelProvider</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.esepowermanager</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IEsePowerManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- WIGIG network performance tuner service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.wigig.netperftuner</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INetPerfTuner</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- Iop HAL service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.iop</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IIop</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- QTEEConnector HAL service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qteeconnector</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAppConnector</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGPAppConnector</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- tui communicator service -->
-  <hal format="hidl">
         <name>vendor.qti.hardware.tui_comm</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -642,7 +585,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-
     <!--  Soter service -->
     <hal format="hidl">
         <name>vendor.qti.hardware.soter</name>
@@ -650,17 +592,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>ISoter</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-
-    <!-- qdutils service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qdutils_disp</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IQdutilsDisp</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -693,7 +624,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- BluetoothSar service-->
+    <!-- Bluetooth SAR -->
     <hal format="hidl">
         <name>vendor.qti.hardware.bluetooth_sar</name>
         <transport>hwbinder</transport>
@@ -702,16 +633,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IBluetoothSar</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.capabilityconfigstore</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICapabilityConfigStore</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ICapabilityConfigStore/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.nfc</name>
@@ -755,24 +676,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>IVendorFingerprintExtensions</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oneplus.hardware.ifaa</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IOneplusIfaa</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oneplus.hardware.param</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOneplusParam</name>
             <instance>default</instance>
         </interface>
     </hal>
