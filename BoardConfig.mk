@@ -24,8 +24,6 @@
 
 PLATFORM_PATH := device/oneplus/oneplus3
 
-BOARD_VENDOR := oneplus
-
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := OnePlus3,oneplus3,OnePlus3T,oneplus3t
@@ -63,14 +61,10 @@ TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
 TARGET_KERNEL_CONFIG := oneplus3_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
-AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -94,41 +88,27 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-TARGET_USE_QTI_BT_STACK := true
-
-# Camera
-BOARD_QTI_CAMERA_32BIT_ONLY := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
-# CNE and DPM
-BOARD_USES_QCNE := true
-
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Display
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
-TARGET_USES_C2D_COMPOSITION := true
-TARGET_USES_ION := true
-TARGET_USES_OVERLAY := true
-USE_OPENGL_RENDERER := true
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-MAX_EGL_CACHE_SIZE := 2048*1024
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
-TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
-VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
-TARGET_USES_HWC2 := true
-TARGET_USES_GRALLOC1 := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_SCREEN_DENSITY := 420
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_GRALLOC1 := true
+TARGET_USES_HWC2 := true
+TARGET_USES_ION := true
+VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 
-# Enable dexpreopt to speed boot time
+# Enable dexpreopt to speed boot time.
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
     ifeq ($(WITH_DEXPREOPT),)
@@ -145,20 +125,16 @@ TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 LOC_HIDL_VERSION := 3.0
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit_oneplus3
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Mainfest
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/configs/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifest.xml
-DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/configs/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifests/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifests/manifest.xml
+DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/configs/manifests/compatibility_matrix.xml
 
 # NFC
 TARGET_USES_NQ_NFC := true
@@ -172,7 +148,8 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3154116608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 57436708864
 BOARD_FLASH_BLOCK_SIZE := 262144
 TARGET_USES_MKE2FS := true
-# Enable System As Root even for non-A/B from P onwards
+
+# Enable SAR even for non-A/B from Android 9 onwards.
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
@@ -197,14 +174,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libui.so|libui_shim.so \
     /system/lib64/libui.so|libui_shim.so
 
-# Thermal
-USE_DEVICE_SPECIFIC_THERMAL := true
-
-# Treble
-#PRODUCT_FULL_TREBLE_OVERRIDE := true
-PRODUCT_VENDOR_MOVE_ENABLED := true
-
-# Wifi
+# WiFi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
@@ -218,5 +188,5 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# inherit from the proprietary version
+# Vendor
 -include vendor/oneplus/oneplus3/BoardConfigVendor.mk
