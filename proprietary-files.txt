@@ -1040,18 +1040,18 @@ vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 # WiFi - LA.UM.8.6.2.r1
 vendor/bin/cnss-daemon
 
-# Widevine - Google Pixel 4 XL [QQ2A.200305.003]
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|706a475ee3e06758bea869317cfad12426792111
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|e3cb732c0bd519988100675edf385d947abf5f6c
-vendor/firmware/widevine.b00|a53f3035e4aa5a7d5b8d26aef2f657a13afc1301
-vendor/firmware/widevine.b01|8ccc30dd0e797c962fe766e9cf72b1a5309523b3
-vendor/firmware/widevine.b02|bc7c45c5f40f8b1c4f41c31896f70ec43056cf81
-vendor/firmware/widevine.b03|517be4e5bed7dd8cafec2b6dcaf0f7a1127d0566
-vendor/firmware/widevine.b04|7e7bcd6c129ffc29a4d6a0058a00b0f64c4e113e
-vendor/firmware/widevine.b05|13bae993c75b51a621754979c7c7dbd815672a2c
-vendor/firmware/widevine.b06|4da05c9c81331f41e819674fe09d7fdf19f1e588
-vendor/firmware/widevine.b07|172ec9c33ea626cca5d0ad486937dac759566e8b
-vendor/firmware/widevine.mdt|00765ceffbb921278f826a3efc9f587a9bdee852
-vendor/lib/liboemcrypto.so|2b35920077be246f0b3d212efa34951b589259f5
-vendor/lib64/liboemcrypto.so|de8722bdd263a5dd8e092bf8711f8668a00700fc
-vendor/lib64/libwvhidl.so|b38b6028d5332fda32430a40b957a75e3acace65
+# Widevine - IN2023 (QKQ1.191222.002)
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine|65f79dd7dce028f9595d0f0c4a93bbb4c89c6180
+vendor/etc/firmware/widevine.b00|f3832049141cde7c688ebfbc75e121163c3be1de
+vendor/etc/firmware/widevine.b01|f574ef325bdd33eb8a35090b9974c38dc60a6926
+vendor/etc/firmware/widevine.b02|bb4439dd0a423583ed4008338e82e90ec2b1d5e6
+vendor/etc/firmware/widevine.b03|7e7aaebe4a46e9c79b974724e3c4d9a8012e6daa
+vendor/etc/firmware/widevine.b04|aef9303bdb9a6a170cb84eeed56e8a30d9f90746
+vendor/etc/firmware/widevine.b05|42569b50feaebef531e34d49a55dea8cde59bf3d
+vendor/etc/firmware/widevine.b06|ed177c9b17e1ea898296c8a518bd4f07bdf48745
+vendor/etc/firmware/widevine.b07|baa7b8ecf38abcf6b04ad85c9f4c36530e8fc9b2
+vendor/etc/firmware/widevine.mdt|fa84a0f6b2fc90812bac1d4f2cff9a4f16eaa8cd
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
+vendor/lib/liboemcrypto.so|7747d6c69404c4128534386393e069bf3993cf75
+vendor/lib/libwvhidl.so|3959312fdf6131dbbd194f42299bb941608c36ba
+vendor/lib64/liboemcrypto.so|6d03178c12b691e21ee84d85da42f5eb9ba8797a
