@@ -131,8 +131,8 @@ vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|29332163751038698b3de367927f9247b42
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|bff85b0dace95a68a38549b0979f7c0fa6fe9467
 
 # Audio - AOSPA / LA.UM.8.6.2.r1
-vendor/lib/hw/sound_trigger.primary.msm8996.so|e5dda00afb499fe73518401520e01b433749186c
-vendor/lib64/hw/sound_trigger.primary.msm8996.so|7dc80a438e69d87abbcd3f81bdad78b9ec934eac
+vendor/lib/hw/sound_trigger.primary.msm8996.so|53ea5d4d254a62420381c76b933f52473433065d
+vendor/lib64/hw/sound_trigger.primary.msm8996.so|415f0d6e151bc104cdab6df62cbe5cb4a1bbf8ce
 
 # Audio - LA.UM.8.6.2.r1
 vendor/lib/libI420colorconvert.so
