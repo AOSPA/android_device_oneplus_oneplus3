@@ -138,7 +138,13 @@ PRODUCT_PACKAGES += \
     antradio_app
 
 # Bluetooth
+PRODUCT_PACKAGES += \
+    libbluetooth_qti \
+    vendor.qti.hardware.bluetooth_audio@2.0
+
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=false \
+    ro.vendor.bluetooth.wipower=false \
     vendor.qcom.bluetooth.soc=rome
 
 # Camera

@@ -88,7 +88,8 @@ ro.vendor.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 persist.vendor.data.mode=concurrent
 
-#system prop for Bluetooth SOC type
+# Bluetooth
+ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=rome
 
 #system props for time-services
