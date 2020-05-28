@@ -132,16 +132,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    antradio_app
-
 # Bluetooth
-PRODUCT_PACKAGES += \
-    libbluetooth_qti \
-    vendor.qti.hardware.bluetooth_audio@2.0
-
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.enable.splita2dp=false \
     ro.vendor.bluetooth.wipower=false \
