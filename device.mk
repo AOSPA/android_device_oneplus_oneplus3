@@ -97,7 +97,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
-    sys.vendor.shutdown.waittime=500 \
     ro.frp.pst=/dev/block/bootdevice/by-name/config \
     persist.radio.multisim.config=dsds
 
@@ -176,7 +175,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.hw.aac.encoder=true \
     ro.af.client_heap_size_kbyte=7168 \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7
 
 # Additional native libraries.
