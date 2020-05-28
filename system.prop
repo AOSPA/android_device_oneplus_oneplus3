@@ -43,8 +43,8 @@ persist.vendor.radio.sw_mbn_update=0
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # Sensors
-ro.sensor.pickup=oneplus.sensor.pickup
-ro.sensor.pocket=oneplus.sensor.pocket
+ro.sensor.pickup=com.oneplus.sensor.pickup
+ro.sensor.pocket=com.oneplus.sensor.pocket
 
 # Telephony
 ro.telephony.default_network=22,20
