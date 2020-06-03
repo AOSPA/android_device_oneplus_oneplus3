@@ -224,6 +224,16 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 
 # CNE - LA.UM.8.6.2.r1
+product/lib/com.quicinc.cne.api@1.0.so
+product/lib/com.quicinc.cne.api@1.1.so
+product/lib/com.quicinc.cne.constants@1.0.so
+product/lib/com.quicinc.cne.constants@2.0.so
+product/lib/com.quicinc.cne.constants@2.1.so
+product/lib64/com.quicinc.cne.api@1.0.so
+product/lib64/com.quicinc.cne.api@1.1.so
+product/lib64/com.quicinc.cne.constants@1.0.so
+product/lib64/com.quicinc.cne.constants@2.0.so
+product/lib64/com.quicinc.cne.constants@2.1.so
 -vendor/app/CneApp/CneApp.apk
 vendor/bin/cnd
 vendor/etc/cne/profileSlm.xml
@@ -263,6 +273,9 @@ vendor/lib/libcneqmiutils.so
 vendor/lib/libwms.so
 vendor/lib/libwqe.so
 vendor/lib/libxml.so
+vendor/lib/vendor.qti.hardware.data.cne.internal.api@1.0.so
+vendor/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+vendor/lib/vendor.qti.hardware.data.cne.internal.server@1.0.so
 vendor/lib/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so 
@@ -271,6 +284,9 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
+vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
+vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 
 # Camera - OOS
@@ -646,6 +662,7 @@ vendor/lib/libnlnetmgr.so
 vendor/lib/libqcmaputils.so
 vendor/lib/libqcrildatactl.so
 vendor/lib/libqdp.so
+vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -657,6 +674,7 @@ vendor/lib64/libnlnetmgr.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqcrildatactl.so
 vendor/lib64/libqdp.so
+vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 
 # Secure MSM - LA.UM.8.6.2.r1
