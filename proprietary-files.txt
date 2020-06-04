@@ -189,7 +189,6 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
 # Bluetooth - LA.UM.8.6.2.r1
-vendor/bin/btconfig
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -207,6 +206,7 @@ vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_dun@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
+vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
@@ -222,6 +222,7 @@ vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_dun@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # CNE - LA.UM.8.6.2.r1
 product/lib/com.quicinc.cne.api@1.0.so
