@@ -35,10 +35,9 @@ PRODUCT_PACKAGES += \
     BluetoothOnePlusOverlay \
     CarrierConfigOnePlusOverlay \
     CellBroadcastReceiverOnePlusOverlay \
+    FrameworksOnePlus3Overlay \
+    FrameworksOnePlus3TOverlay \
     FrameworksOnePlusOverlay \
-    MmsOnePlusOverlay \
-    OnePlus3PowerOverlay \
-    OnePlus3TPowerOverlay \
     SettingsProviderOnePlusOverlay \
     SystemUIOnePlusOverlay \
     TelecommOnePlusOverlay \

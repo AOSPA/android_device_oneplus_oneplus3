@@ -13,11 +13,8 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
+
 include $(CLEAR_VARS)
-LOCAL_MODULE_TAGS := optional
 LOCAL_PACKAGE_NAME := CarrierConfigOnePlusOverlay
-LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/overlay
-LOCAL_IS_RUNTIME_RESOURCE_OVERLAY := true
-LOCAL_PRIVATE_PLATFORM_APIS := true
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-include $(BUILD_PACKAGE)
+LOCAL_SDK_VERSION := current
+include $(BUILD_RRO_PACKAGE)

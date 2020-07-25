@@ -14,12 +14,12 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="co.aospa.oneplus3t.overlay"
-        android:versionCode="1"
-        android:versionName="1.0">
-        <overlay android:targetPackage="android"
-                android:requiredSystemPropertyName="ro.product.vendor.device"
-                android:requiredSystemPropertyValue="OnePlus3T"
-		android:priority="800"
-		android:isStatic="true" />
+    package="co.aospa.oneplus3t.overlay">
+
+    <overlay
+        android:isStatic="true"
+        android:priority="800"
+        android:requiredSystemPropertyName="ro.product.vendor.device"
+        android:requiredSystemPropertyValue="OnePlus3T"
+        android:targetPackage="android" />
 </manifest>
