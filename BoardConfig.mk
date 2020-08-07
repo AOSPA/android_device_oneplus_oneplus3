@@ -118,9 +118,6 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
-
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
