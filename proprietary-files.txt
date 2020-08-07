@@ -1065,18 +1065,18 @@ vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 # WiFi - LA.UM.8.6.2.r1
 vendor/bin/cnss-daemon
 
-# Widevine - IN2023 (QKQ1.191222.002)
+# Widevine - OnePlus 8 (OOS 10.5.11)
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|65f79dd7dce028f9595d0f0c4a93bbb4c89c6180
-vendor/etc/firmware/widevine.b00|f3832049141cde7c688ebfbc75e121163c3be1de
-vendor/etc/firmware/widevine.b01|f574ef325bdd33eb8a35090b9974c38dc60a6926
-vendor/etc/firmware/widevine.b02|bb4439dd0a423583ed4008338e82e90ec2b1d5e6
-vendor/etc/firmware/widevine.b03|7e7aaebe4a46e9c79b974724e3c4d9a8012e6daa
-vendor/etc/firmware/widevine.b04|aef9303bdb9a6a170cb84eeed56e8a30d9f90746
-vendor/etc/firmware/widevine.b05|42569b50feaebef531e34d49a55dea8cde59bf3d
-vendor/etc/firmware/widevine.b06|ed177c9b17e1ea898296c8a518bd4f07bdf48745
-vendor/etc/firmware/widevine.b07|baa7b8ecf38abcf6b04ad85c9f4c36530e8fc9b2
-vendor/etc/firmware/widevine.mdt|fa84a0f6b2fc90812bac1d4f2cff9a4f16eaa8cd
+vendor/etc/firmware/widevine.b00|afa95c3370f0315034e3e043ad659524ee60a728
+vendor/etc/firmware/widevine.b01|7a9bd40acd0fd87ad44aba21d1c8638d837e8398
+vendor/etc/firmware/widevine.b02|53678feddd347d1360aaed16b812b63bfc143fc7
+vendor/etc/firmware/widevine.b03|82ac66a75a1a8f044ce097753747f51fe3ef9a98
+vendor/etc/firmware/widevine.b04|8e5ed343719c33d401eb44a2d2c1e51847ec99ce
+vendor/etc/firmware/widevine.b05|416f6140efe5ac45315a07de7904f31936b1ed5f
+vendor/etc/firmware/widevine.b06|3fa7f9f1b9d8ec2ee4edfa994b149c7202197391
+vendor/etc/firmware/widevine.b07|4bec9d100ddf7a9b062f2990f637ba08827d29a9
+vendor/etc/firmware/widevine.mdt|d2c8e4bdf02ded615abc91ae5761cc266c95b781
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
-vendor/lib/liboemcrypto.so|7747d6c69404c4128534386393e069bf3993cf75
-vendor/lib/libwvhidl.so|3959312fdf6131dbbd194f42299bb941608c36ba
-vendor/lib64/liboemcrypto.so|6d03178c12b691e21ee84d85da42f5eb9ba8797a
+vendor/lib/liboemcrypto.so|2a2181f23f56318694c0d592d8c65a0ceb0ea55e
+vendor/lib/libwvhidl.so|58830c1b879bee13077ff6a58cf68587bb555071
+vendor/lib64/liboemcrypto.so|dacc887ef9a0abe1c6f4f6b28201753faae19d4f
