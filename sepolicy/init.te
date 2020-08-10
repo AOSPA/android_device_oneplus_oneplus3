@@ -4,3 +4,5 @@ allow init {
   bt_firmware_file
   firmware_file
 }:filesystem getattr;
+
+allow init sysfs_display:file rw_file_perms;

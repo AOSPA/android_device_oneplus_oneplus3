@@ -131,6 +131,8 @@ on boot
     chmod 0664 /sys/class/graphics/fb0/mode
     chown system graphics /sys/class/graphics/fb0/modes
     chmod 0664 /sys/class/graphics/fb0/modes
+    chown system graphics /sys/class/graphics/fb0/P3
+    chmod 0664 /sys/class/graphics/fb0/P3
     chown system graphics /sys/class/graphics/fb0/SRGB
     chmod 0664 /sys/class/graphics/fb0/SRGB
 
@@ -158,6 +160,21 @@ on property:sys.boot_completed=1
 
     # RIL
     setprop gsm.version.baseband MPSS.TH.2.0.c1.9-00102-M8996FAAAANAZM-1.197095.1.198697.1
+
+# Set sRGB calibration on Natural and Boosted Mode
+on property:persist.sys.sf.native_mode=0
+    write /sys/class/graphics/fb0/P3 0
+    write /sys/class/graphics/fb0/SRGB 1
+
+# Set unmanaged calibration on Saturated Mode
+on property:persist.sys.sf.native_mode=1
+    write /sys/class/graphics/fb0/SRGB 0
+    write /sys/class/graphics/fb0/P3 0
+
+# Set P3 calibration on Adaptive/Automatic Mode
+on property:persist.sys.sf.native_mode=2
+    write /sys/class/graphics/fb0/SRGB 0
+    write /sys/class/graphics/fb0/P3 1
 
 service vendor.dashd /vendor/bin/dashd
     class core
